@@ -1,5 +1,6 @@
 import React from "react";
-
+// import { LazyLoading } from "./Component/LazyLoading";
+import { Link } from "react-router-dom";
 function Sidebar({ isOpen }) {
   return (
     <aside
@@ -17,9 +18,12 @@ function Sidebar({ isOpen }) {
     >
       {isOpen && (
         <ul style={{ listStyleType: "none", padding: 0 }}>
-          <li><a href="#home">🏠 Home</a></li>
-          <li><a href="#about">ℹ️ About</a></li>
-          <li><a href="#contact">📞 Contact</a></li>
+          <Link to="/about">🏠 About</Link>
+          <br/>
+          <Link to="/contact">📞Contact</Link>
+          <br/>
+          <Link to="/lazy">Lazy Loading</Link>
+
         </ul>
       )}
     </aside>
