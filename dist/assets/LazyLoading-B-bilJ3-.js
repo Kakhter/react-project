@@ -1,0 +1,1 @@
+import{r as e,j as t}from"./index-D-uUuJ60.js";const a=()=>{const[n,o]=e.useState(!0);return e.useEffect(()=>{const r=setTimeout(()=>{o(!1)},2e3);return()=>clearTimeout(r)},[]),n?t.jsx("h3",{children:"⏳ Loading content..."}):t.jsx("h2",{children:"✅ Content Loaded after delay inside component!"})};export{a as default};

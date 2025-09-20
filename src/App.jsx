@@ -29,7 +29,7 @@ function App() {
           transition: "margin-left 0.3s ease",
         }}
       >
-        <h1>Welcome to My React App1</h1>
+        <h1>Welcome to My React Application..</h1>
          <Suspense fallback={<h3 style={{ textAlign: "center" }}>⏳ Loading Page...</h3>}>
         
         <Routes>
