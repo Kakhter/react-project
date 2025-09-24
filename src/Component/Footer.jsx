@@ -6,14 +6,15 @@ function Footer() {
       style={{
         background: "#333",
         color: "white",
-        padding: "10px",
+        padding: "4px",
         textAlign: "center",
         position: "fixed",
         bottom: 0,
         width: "100%",
+        height:"20px"
       }}
     >
-      <p>© 2025 My React App. All Rights Reserved.</p>
+       © 2025 My React App. All Rights Reserved.
     </footer>
   );
 }

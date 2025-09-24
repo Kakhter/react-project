@@ -23,6 +23,8 @@ function Sidebar({ isOpen }) {
           <Link to="/contact">📞Contact</Link>
           <br/>
           <Link to="/lazy">Lazy Loading</Link>
+          <br/>
+          <Link to="/react">React Session 1</Link>
 
         </ul>
       )}
