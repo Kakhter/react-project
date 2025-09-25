@@ -19,13 +19,14 @@ function Sidebar({ isOpen }) {
       {isOpen && (
         <ul style={{ listStyleType: "none", padding: 0 }}>
           <Link to="/about">🏠 About</Link>
-          <br/>
+          <br />
           <Link to="/contact">📞Contact</Link>
-          <br/>
+          <br />
           <Link to="/lazy">Lazy Loading</Link>
-          <br/>
+          <br />
           <Link to="/react">React Session 1</Link>
-
+          <br />
+          <Link to="/somecode"> Some Code Session 2</Link>
         </ul>
       )}
     </aside>
