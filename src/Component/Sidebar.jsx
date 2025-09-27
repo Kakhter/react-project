@@ -26,7 +26,13 @@ function Sidebar({ isOpen }) {
           <br />
           <Link to="/react">React Session 1</Link>
           <br />
-          <Link to="/somecode"> Some Code Session 2</Link>
+          <Link to="/somecode">Some Code Session 2</Link>
+          <br />
+          <Link to="/session3">Session 3</Link>
+          <br />
+          <Link to="/interview">Interview Question</Link>
+          <br />
+          <Link to="/session4">use Context </Link>
         </ul>
       )}
     </aside>

@@ -48,10 +48,10 @@ const SomeCode = () => {
         <pre>
           <code>
             {`movies.map(movie => (
-                <div key={movie.id}>
-                <p>Movie Title: {movie.title}</p>
-                </div>
-            ))`}
+<div key={movie.id}>
+<p>Movie Title: {movie.title}</p>
+</div>
+))`}
           </code>
         </pre>
         <li>Path concaneting</li>
@@ -61,18 +61,18 @@ const SomeCode = () => {
         <pre>
           <code>
             {`
-            const handleSearchChange=(e)=>{
-            SetSearchTerm(e.target.value)
-            };
-         
-            <input 
-            type="text"
-            className="search-input"
-            placeholder="Search Movies"
-            value={searchTerm}
-            onChange={handleSearchChange}
-            />
-        `}
+const handleSearchChange=(e)=>{
+SetSearchTerm(e.target.value)
+};
+
+<input 
+type="text"
+className="search-input"
+placeholder="Search Movies"
+value={searchTerm}
+onChange={handleSearchChange}
+/>
+`}
           </code>
         </pre>
         <li>
@@ -81,29 +81,30 @@ const SomeCode = () => {
         <pre style={{ background: "#f4f4f4", padding: "0px" }}>
           <code>
             {`
-            const filteredMovies = movies.filter(movie=>
-            movies.title.toLowerCase().include(searchTerm.toLowerCase()))
+const filteredMovies = movies.filter(movie=>
+movies.title.toLowerCase().include(searchTerm.toLowerCase()))
 
-            Here 'searchTerm' we are updating from input control property value i.e. value={searchTerm}
-            
-            filteredMovies.map(movie => (
-            <div key={movie.id}>
-                <p>Movie Title: {movie.title}</p>
-            </div>
-        ))`}
+Here 'searchTerm' we are updating from input control property value i.e. value={searchTerm}
+
+filteredMovies.map(movie => (
+<div key={movie.id}>
+<p>Movie Title: {movie.title}</p>
+</div>
+));
+`}
           </code>
         </pre>
         <pre>
           <code>
             {`
-                Here is testing
+Here is testing
 
-                f
-                d
-                d
-                d
-                d
-            `}
+f
+d
+d
+d
+d
+`}
           </code>
         </pre>
         <li>Path concaneting</li>

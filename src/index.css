@@ -66,3 +66,35 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+
+
+/* body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+} */
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+pre {
+  font-size: 1.2em;
+}
+li {
+  font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2px;
+  
+}
+
+.box {
+  background-color: rgb(242, 241, 244);
+  border: 1px solid rgb(46, 45, 45);
+  align-items: center;
+  padding:5px;
+  text-align: center;
+}

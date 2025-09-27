@@ -9,8 +9,11 @@ import ContactUs from "./Component/ContactUs";
 import { Suspense, lazy } from "react";
 import TutorialReact from "./Component/TutorialReact";
 import SomeCode from "./Component/SomeCode";
-const LazyLoading = lazy(() => import("./Component/LazyLoading"));
+import Session3 from "./Component/Session3";
+import Interview from "./Component/Interview";
+import Session4 from "./Component/Session4";
 
+const LazyLoading = lazy(() => import("./Component/LazyLoading"));
 function App() {
   const [isSidebarOpen, setSidebarOpen] = useState(true);
 
@@ -38,6 +41,9 @@ function App() {
             <Route path="/lazy" element={<LazyLoading />}></Route>
             <Route path="/react" element={<TutorialReact />}></Route>
             <Route path="/somecode" element={<SomeCode />} />
+            <Route path="/session3" element={<Session3 />} />
+            <Route path="/interview" element={<Interview />} />
+            <Route path="/session4" element={<Session4></Session4>} />
           </Routes>
         </Suspense>
       </main>
