@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext } from "react";
-import MessageContext from "../utilities/messageContext";
+import MessageContext from "../utilities/OurMessageContext";
 import SyntaxHighlighter from "react-syntax-highlighter/dist/cjs/light";
 
 const Session4 = () => {

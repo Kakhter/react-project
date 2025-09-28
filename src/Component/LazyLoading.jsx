@@ -81,6 +81,9 @@ const LazyLoading = () => {
       >
         Git Kakhter Workflow
       </a>
+      <a href="https://youtu.be/QamPUyCZZpA" target="_blank">
+        Azure Custom Domain for Static web
+      </a>
     </>
   );
 };
