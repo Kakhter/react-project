@@ -74,6 +74,13 @@ const LazyLoading = () => {
       >
         Job
       </a>
+      <br />
+      <a
+        href="https://github.com/Kakhter/react-project/actions"
+        target="_blank"
+      >
+        Git Kakhter Workflow
+      </a>
     </>
   );
 };
