@@ -28,11 +28,13 @@ function Sidebar({ isOpen }) {
           <br />
           <Link to="/somecode">Some Code Session 2</Link>
           <br />
-          <Link to="/session3">Session 3</Link>
+          <Link to="/session3">useReducer</Link>
           <br />
           <Link to="/interview">Interview Question</Link>
           <br />
           <Link to="/session4">use Context </Link>
+          <br />
+          <Link to="/javascript">Java Script</Link>
         </ul>
       )}
     </aside>

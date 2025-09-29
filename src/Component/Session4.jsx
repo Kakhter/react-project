@@ -6,9 +6,9 @@ import SyntaxHighlighter from "react-syntax-highlighter/dist/cjs/light";
 const Session4 = () => {
   return (
     <>
+      <h1> Use of useContext</h1>
+      <img src="./UseContext.jpg" alt="useReducer" width="100%"></img>
       <div>
-        <h1> Use of useContext</h1>
-
         <ComponentA></ComponentA>
 
         <ComponentC />

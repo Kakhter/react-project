@@ -1,12 +1,11 @@
-import React from "react"
+import React from "react";
 
-const ContactUs=()=> {
-
-    return (
-        <>
-         <h1>Contact Us</h1>
-        </>
-    )
-}
+const ContactUs = () => {
+  return (
+    <>
+      <h2>Contact Us</h2>
+    </>
+  );
+};
 
 export default ContactUs;

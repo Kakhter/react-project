@@ -3,86 +3,11 @@ import React from "react";
 const Session3 = () => {
   return (
     <>
-      <h1>Java Script</h1>
-      <h2>String interpolation</h2>
+      <h2>Reducer</h2>
+      <img src="./UseReducer.jpg" alt="useReducer" width="100%"></img>
       <pre>
         <code>
-          {`
-Example:
-
-const name = "Raj";
-const welcomMessage = \`Welcome: \${name}\`;
-
-console.log(welcomMessage);
-
-Result:
-Welcome: Raj
-
-`}
-        </code>
-      </pre>
-      <h2>Import & Export in JavaScript</h2>
-      <h2>Array find()</h2>
-      Example:
-      <pre>
-        <code>
-          {`
-const todos =[
-  { id: 1, subject:"Python", completed:false}
-  { id: 2, subject:"Java", completed:false},
-  { id: 3, subject:"Node", completed:true},
-]
-
-const todoById = todos.find((todo)=>todo.id===2)
-
-console.log(todoById);
-
-<h2>Array filter()</h2>
-
-const filteredArray = todos.filter((m)=>m.completed===fals && m.subject==="Java");
-const filteredArray = todos.filter((m)=>m.subject.includes("Ja"));
-
-Sorting:
-
-Sorting
-
-const sorted = [...users].sort((a, b) =>
-  a.subject.localeCompare(b.subject))
-
-const sorted = [...users].sort((a, b) => a.id - b.id)
-  
-
-<h2>forEach Loop()</h2>
-
-  todos.forEach((m)=> { m.completed=true});
-
-  including index:
-
-  todos.forEach((m, index)=> {
-     console.log(index + " : " +  m.subject)
-    })
-
-  
-Array Map
-
-const mappedTodos = todos.map((todo)=> {
-
-     return{id:todo.id, desc: todo.subject};
-});
-
-Array Map
-
-const mappedTodos = todos.map((todo)=> {
-
-     return{...todo, priority: "High"};
-});
-
-const mappedTodos = todos.map((todo)=> {
-
-     return{...todo, subject: "High"};   //existing subject will be overwritten
-}); 
-
-Reducer:
+          {`Reducer:
 Reducer manages the state in a centralized way.
 Component- What should happe
 Reducer: How it's done.
@@ -153,7 +78,7 @@ export function cartReducer(state, action) {
   }
 }
 
-<strong> Cart.js------------------- </strong>
+Cart.js------------------- 
 
 import React, { useReducer } from 'react';
 import { cartReducer, initialCartState } from './cartReducer';

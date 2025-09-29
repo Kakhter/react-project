@@ -12,6 +12,7 @@ import SomeCode from "./Component/SomeCode";
 import Session3 from "./Component/Session3";
 import Interview from "./Component/Interview";
 import Session4 from "./Component/Session4";
+import JavaScript1 from "./Component/JavaScript1";
 
 const LazyLoading = lazy(() => import("./Component/LazyLoading"));
 function App() {
@@ -44,6 +45,7 @@ function App() {
             <Route path="/session3" element={<Session3 />} />
             <Route path="/interview" element={<Interview />} />
             <Route path="/session4" element={<Session4></Session4>} />
+            <Route path="/javascript" element={<JavaScript1 />}></Route>
           </Routes>
         </Suspense>
       </main>
