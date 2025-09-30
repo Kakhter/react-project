@@ -13,6 +13,7 @@ import Session3 from "./Component/Session3";
 import Interview from "./Component/Interview";
 import Session4 from "./Component/Session4";
 import JavaScript1 from "./Component/JavaScript1";
+import UseMemo from "./Component/UseMemo";
 
 const LazyLoading = lazy(() => import("./Component/LazyLoading"));
 function App() {
@@ -46,6 +47,7 @@ function App() {
             <Route path="/interview" element={<Interview />} />
             <Route path="/session4" element={<Session4></Session4>} />
             <Route path="/javascript" element={<JavaScript1 />}></Route>
+            <Route path="/usememo" element={<UseMemo />}></Route>
           </Routes>
         </Suspense>
       </main>
