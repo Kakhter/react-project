@@ -37,6 +37,10 @@ function Sidebar({ isOpen }) {
           <Link to="/session4">useContext </Link>
           <br />
           <Link to="/usememo">useMemo</Link>
+          <br />
+          <Link to="/usecallback">useCallback</Link>
+          <br />
+          <Link to="/memo">Memo</Link>
         </ul>
       )}
     </aside>

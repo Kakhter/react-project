@@ -34,43 +34,50 @@ const UseMemo = () => {
   return (
     <>
       <div>
-        <h2>My Todos</h2>
-        {todos.map((todo, index) => {
-          return <p key={index}>{todo}</p>;
-        })}
-        <button onClick={addTodo}>Add Todo</button>
-      </div>
-      <hr />
+        <div style={{ textAlign: "center" }}>
+          <img src="./UseMemo.jpg" alt="use memo" width="70%" />
+        </div>
+        <div style={{ display: "flex", marginLeft: "40px" }}>
+          <div
+            style={{
+              textAlign: "center",
+              width: "100%",
+              backgroundColor: "green",
+            }}
+          >
+            <h2>My Todos</h2>
+            {todos.map((todo, index) => {
+              return <p key={index}>{todo}</p>;
+            })}
+            <button onClick={addTodo}>Add Todo</button>
+          </div>
 
-      <div style={{ textAlign: "center" }}>
-        <h1>
-          Use of <span style={{ textDecoration: "underline" }}>useMemo</span>{" "}
-          Example
-        </h1>
-        The current value of count is: {count}
-        <br />
-        Current value of expensive is {calculation}
-        <br />
-        <button className="btn btn-success" onClick={handleIncrement}>
-          Increment
-        </button>
-        <button onClick={handleDecrement}>Decrement</button>
+          <div
+            style={{
+              textAlign: "center",
+              marginLeft: "20px",
+              backgroundColor: "grey",
+              width: "100%",
+            }}
+          >
+            <h1>
+              Use of{" "}
+              <span style={{ textDecoration: "underline" }}>useMemo</span>{" "}
+              Example
+            </h1>
+            The current value of count is: {count}
+            <br />
+            Current value of expensive is {calculation}
+            <br />
+            <button className="btn btn-success" onClick={handleIncrement}>
+              Increment
+            </button>
+            <button onClick={handleDecrement}>Decrement</button>
+          </div>
+        </div>
       </div>
-      <hr />
+
       <UserMemoExpensive />
-      <pre>
-        <code>
-          {`
-Syntax:
-
-//const calculation = expensiveCalculation(count);
-
-  const calculation = useMemo(() => {
-    return expensiveCalculation(count);
-  }, [count]);
-  `}
-        </code>
-      </pre>
     </>
   );
 };

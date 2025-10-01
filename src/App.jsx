@@ -14,6 +14,8 @@ import Interview from "./Component/Interview";
 import Session4 from "./Component/Session4";
 import JavaScript1 from "./Component/JavaScript1";
 import UseMemo from "./Component/UseMemo";
+import UseCallback from "./Component/UseCallback";
+import Memo from "./Component/Memo";
 
 const LazyLoading = lazy(() => import("./Component/LazyLoading"));
 function App() {
@@ -48,6 +50,8 @@ function App() {
             <Route path="/session4" element={<Session4></Session4>} />
             <Route path="/javascript" element={<JavaScript1 />}></Route>
             <Route path="/usememo" element={<UseMemo />}></Route>
+            <Route path="/usecallback" element={<UseCallback></UseCallback>} />
+            <Route path="/memo" element={<Memo />} />
           </Routes>
         </Suspense>
       </main>

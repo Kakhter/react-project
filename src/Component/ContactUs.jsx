@@ -52,6 +52,10 @@ after component is rerendered ?
           `}
         </code>
       </pre>
+
+      <h1>37. Custom Hook</h1>
+      <br />
+      <img src="./CustomHook.jpg" width="90%"></img>
     </>
   );
 };
