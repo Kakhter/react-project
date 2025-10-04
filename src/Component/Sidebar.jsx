@@ -41,6 +41,8 @@ function Sidebar({ isOpen }) {
           <Link to="/usecallback">useCallback</Link>
           <br />
           <Link to="/memo">Memo</Link>
+          <br />
+          <Link to="/tvs">TVS Paper</Link>
         </ul>
       )}
     </aside>

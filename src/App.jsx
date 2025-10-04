@@ -16,6 +16,8 @@ import JavaScript1 from "./Component/JavaScript1";
 import UseMemo from "./Component/UseMemo";
 import UseCallback from "./Component/UseCallback";
 import Memo from "./Component/Memo";
+import DML from "./Component/DML";
+import TVSPaper from "./Component/personal/TVSPaper";
 
 const LazyLoading = lazy(() => import("./Component/LazyLoading"));
 function App() {
@@ -52,6 +54,8 @@ function App() {
             <Route path="/usememo" element={<UseMemo />}></Route>
             <Route path="/usecallback" element={<UseCallback></UseCallback>} />
             <Route path="/memo" element={<Memo />} />
+            <Route path="/dml" element={<DML />} />
+            <Route path="/tvs" element={<TVSPaper />} />
           </Routes>
         </Suspense>
       </main>
