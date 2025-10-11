@@ -4,12 +4,10 @@ import { Link } from "react-router-dom";
 const DML = () => {
   return (
     <>
-      <Link to="../about">About Page</Link>
-      <br></br>
-
       <a href="/DML.pdf" target="_blank" rel="noopener noreferrer">
         Open pdf in new tab
       </a>
+      <br />
 
       <iframe
         src="./DML.pdf"

@@ -3,7 +3,8 @@ import React from "react";
 const ContactUs = () => {
   return (
     <>
-      <h2>Contact Us</h2>
+      <div className="box"> Contact Us</div>
+
       <pre>
         <code>
           {`
@@ -52,7 +53,6 @@ after component is rerendered ?
           `}
         </code>
       </pre>
-
       <h1>37. Custom Hook</h1>
       <br />
       <img src="./CustomHook.jpg" width="90%"></img>

@@ -43,6 +43,8 @@ function Sidebar({ isOpen }) {
           <Link to="/memo">Memo</Link>
           <br />
           <Link to="/tvs">TVS Paper</Link>
+          <br />
+          <Link to="/appservice">Azure</Link>
         </ul>
       )}
     </aside>

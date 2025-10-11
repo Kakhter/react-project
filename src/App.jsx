@@ -18,6 +18,7 @@ import UseCallback from "./Component/UseCallback";
 import Memo from "./Component/Memo";
 import DML from "./Component/DML";
 import TVSPaper from "./Component/personal/TVSPaper";
+import AppService from "./Component/azure/AppService";
 
 const LazyLoading = lazy(() => import("./Component/LazyLoading"));
 function App() {
@@ -34,7 +35,7 @@ function App() {
       <main
         style={{
           marginLeft: isSidebarOpen ? "210px" : "10px",
-          padding: "20px",
+          padding: "5px",
           transition: "margin-left 0.3s ease",
         }}
       >
@@ -56,6 +57,7 @@ function App() {
             <Route path="/memo" element={<Memo />} />
             <Route path="/dml" element={<DML />} />
             <Route path="/tvs" element={<TVSPaper />} />
+            <Route path="appservice" element={<AppService />} />
           </Routes>
         </Suspense>
       </main>
