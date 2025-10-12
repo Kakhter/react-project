@@ -1,6 +1,6 @@
 import React from "react";
 import Data from "./Data";
-import "./card.css";
+import "/src/Component/azure/card.css";
 
 const AppService = () => {
   return (
@@ -44,7 +44,7 @@ const AppService = () => {
       >
         {Data.map(({ id, pdfLink, description, image }) => {
           return (
-            <div className="card" style={{ padding: "10px", width: "30%" }}>
+            <div className="card">
               <div
                 key={id}
                 style={{ padding: "3px", backgroundColor: "white" }}

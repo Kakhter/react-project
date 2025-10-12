@@ -45,6 +45,8 @@ function Sidebar({ isOpen }) {
           <Link to="/tvs">TVS Paper</Link>
           <br />
           <Link to="/appservice">Azure</Link>
+          <br />
+          <Link to="/professional">Gyansys Reg</Link>
         </ul>
       )}
     </aside>
