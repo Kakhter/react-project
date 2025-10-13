@@ -1,9 +1,12 @@
-import resignationPDF from "/resigned/1_Re_Resignation.pdf"
+import resignationPDF from "/resigned/ReResignation.pdf"
 import acceptancePDF from "/resigned/2_0994_Acceptance.pdf"
 import exitFormalities from "/resigned/3_Re_0994_ExitFormalities.pdf"
 import ndaSeparation from "/resigned/4_NDASeparationAgreementSigned.pdf"
 import ndaSeparationSigned from "/resigned/5_NDASeparationAgreementSignedDone.pdf"
 import ndaAudit from "/resigned/6_NDASeparationAgreement_0994Audit.pdf"
+
+
+ 
 
 
 const Data =[
