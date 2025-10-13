@@ -1,13 +1,9 @@
-import resignationPDF from "/resigned/ReResignation.pdf"
-import acceptancePDF from "/resigned/2_0994_Acceptance.pdf"
-import exitFormalities from "/resigned/3_Re_0994_ExitFormalities.pdf"
-import ndaSeparation from "/resigned/4_NDASeparationAgreementSigned.pdf"
-import ndaSeparationSigned from "/resigned/5_NDASeparationAgreementSignedDone.pdf"
-import ndaAudit from "/resigned/6_NDASeparationAgreement_0994Audit.pdf"
-
-
-//  const appServicePDFLink = "/azure/AppService.pdf"
-
+const resignationPDF = "/resigned/ReResignation.pdf"
+const acceptancePDF = "/resigned/2_0994_Acceptance.pdf"
+const exitFormalities = "/resigned/3_Re_0994_ExitFormalities.pdf"
+const ndaSeparation = "/resigned/4_NDASeparationAgreementSigned.pdf"
+const ndaSeparationSigned = "/resigned/5_NDASeparationAgreementSignedDone.pdf"
+const ndaAudit = "/resigned/6_NDASeparationAgreement_0994Audit.pdf"
 
 const Data =[
 {
