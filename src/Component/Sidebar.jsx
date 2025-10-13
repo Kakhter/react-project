@@ -47,6 +47,8 @@ function Sidebar({ isOpen }) {
           <Link to="/appservice">Azure</Link>
           <br />
           <Link to="/professional">Gyansys Reg</Link>
+          <br />
+          <Link to="/sql">SQL DBA/DEV</Link>
         </ul>
       )}
     </aside>
