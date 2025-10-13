@@ -14,7 +14,7 @@ const AppService = () => {
         }}
       >
         <div>
-          <h3> App Service</h3>
+          <h3> App Service:</h3>
         </div>
 
         <div style={{ display: "flex" }}>
