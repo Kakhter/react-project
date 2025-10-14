@@ -1,48 +1,65 @@
 import React from "react";
-import Data from "./Data";
-import "/src/Component/azure/card.css";
+import { Data, DataSalary } from "./Data.js";
+// import "/src/Component/azure/card.css";
+import "./gyansysStyle.css";
 
 const GyansysReg = () => {
   return (
     <>
-      <h1>Gyansys Resignation Documents</h1>
-
-      <div
-        style={{
-          backgroundColor: "ThreeDFace",
-          display: "flex",
-          //   justifyContent: "space-between",
-          //   alignItems: "center",
-          flexWrap: "wrap",
-          width: "100%",
-          padding: "10px",
-        }}
-      >
+      <h2>Gyansys Resignation Documents</h2>
+      <div className="gyancontainer">
         {Data.map(({ id, pdfLink, description }) => {
           return (
-            <div className="card">
-              <div
-                key={id}
-                style={{
-                  padding: "3px",
-                  backgroundColor: "white",
-                }}
-              >
-                <div style={{ textAlign: "center" }}>
-                  <h3>Step: {id}</h3>
+            <div className="gyancard">
+              <div key={id}>
+                <div className={id % 2 === 0 ? "cardheader" : "cardheader1"}>
+                  Step: {id}
                   {/* <img src={image} alt="image" width="50%" height="50%"></img> */}
                 </div>
-                <p>
+                <br />
+                <div className="carddescription">
                   <b>Description:</b> {description}
-                </p>
-                <a href={pdfLink} target="_blank">
-                  PDF Link
-                </a>
+                </div>
+                <br />
+                <div className="cardlink">
+                  <a href={pdfLink} target="_blank">
+                    <span className={id % 2 === 0 ? "oval-text" : "oval-text1"}>
+                      PDF Link
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
           );
         })}
       </div>
+
+      <h2>Salary Slips</h2>
+      <div className="gyancontainer">
+        {DataSalary.map(({ id, pdfLink, description }) => {
+          return (
+            <div className="gyancard">
+              <div key={id}>
+                <div className="cardheader">
+                  Step: {id}
+                  {/* <img src={image} alt="image" width="50%" height="50%"></img> */}
+                </div>
+                <br />
+                <div className="carddescription">
+                  <b>Description:</b> {description}
+                </div>
+                <br />
+                <div className="cardlink">
+                  <a href={pdfLink} target="_blank">
+                    <span className="oval-text">PDF Link</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <br />
     </>
   );
 };

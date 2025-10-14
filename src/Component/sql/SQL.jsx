@@ -7,6 +7,12 @@ const SQL = () => {
   return (
     <>
       <h1> SQL Guideline for Developer/DBA</h1>
+      <li>
+        <ol>Activity Monitor</ol>
+        <ol>SQL Server Profiler</ol>
+        <ol>Execution Plan</ol>
+        <ol>Extended Event</ol>
+      </li>
 
       <div className="container">
         {Data.map(({ id, pdfLink, description, pdfimage }) => {
@@ -30,14 +36,19 @@ const SQL = () => {
                   height="25%"
                 ></img>
                 <br />
-
-                <div style={{ textAlign: "left" }}>
+                <div style={{ padding: "10px", textAlign: "left" }}>
                   <b>Description:</b> {description}{" "}
                 </div>
                 <br />
-                <div style={{ textAlign: "right" }}>
+                <div
+                  style={{
+                    backgroundColor: "rgb(116, 200, 137)",
+                    textAlign: "center",
+                    height: "4vh",
+                  }}
+                >
                   <a href={pdfLink} target="_blank">
-                    PDF Link
+                    <b>PDF Link</b>
                   </a>
                 </div>
               </div>

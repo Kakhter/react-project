@@ -1,0 +1,67 @@
+.gyancontainer {
+  display: flex;
+  flex-wrap: wrap;          /* allows wrapping to next line */
+  justify-content: space-between;
+  gap:20px;        /* space between divs */
+ }
+
+.gyancard {
+  flex: 1 1 calc(15.33% - 10px); /* 3 per row */
+  background-color: #f6fbfe;
+  text-align: center;
+  padding: 5px;
+  border-radius: 8px;
+  /* font-weight: bold; */
+  font-size: 14px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  border-style: outset;
+}
+
+ .gyancard:hover{
+    background-color: white;
+    box-shadow: 0px 5px 10px #222;  
+    width:calc(26.33% - 10px);
+    transition: all 400ms ease-in-out;
+  }  
+.cardheader {
+width: 100%;
+background-color: lightblue;
+font-size: 19px;
+}
+
+.cardheader1 {
+width: 100%;
+background-color: rgb(210, 231, 161);
+font-size: 19px;
+}
+
+.carddescription{
+    text-align: left;
+}
+
+.cardlink {
+    text-align: right;
+   
+}
+
+.oval-text {
+  display: inline-block;
+  background-color: lightblue;
+  color: rgb(82, 73, 73);
+  padding: 4px 15px;   /* More horizontal padding = oval shape */
+  border-radius: 50px;  /* Keeps corners rounded */
+  font-size: 12px;
+  text-align: center;
+}
+
+.oval-text1 {
+  display: inline-block;
+  background-color: rgb(210, 231, 161);
+  color: rgb(82, 73, 73);
+  padding: 4px 15px;   /* More horizontal padding = oval shape */
+  border-radius: 50px;  /* Keeps corners rounded */
+  font-size: 12px;
+  text-align: center;
+}
+
+                    
