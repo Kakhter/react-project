@@ -2,16 +2,14 @@ import React from "react";
 
 import Data from "./SQLData";
 import "./sqlStyle.css";
+import { Link } from "react-router-dom";
 
 const SQL = () => {
   return (
     <>
       <h1> SQL Guideline for Developer/DBA</h1>
       <li>
-        <ol>Activity Monitor</ol>
-        <ol>SQL Server Profiler</ol>
-        <ol>Execution Plan</ol>
-        <ol>Extended Event</ol>
+        <Link to="/dml">Some More SQL</Link>
       </li>
 
       <div className="container">

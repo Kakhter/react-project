@@ -49,6 +49,8 @@ function Sidebar({ isOpen }) {
           <Link to="/professional">Gyansys Documents</Link>
           <br />
           <Link to="/sql">SQL DBA/DEV</Link>
+          <br />
+          <Link to="dotnetdata">Dot Net</Link>
         </ul>
       )}
     </aside>

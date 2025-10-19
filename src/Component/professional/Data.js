@@ -16,7 +16,7 @@ const salarySlipAug ="resigned/Payslip_Aug_2025.pdf"
 const salarySlipSep ="resigned/Payslip_Sep_2025.pdf"
 
 
-export const Data =[
+const Data =[
 {
     id:1,
     pdfLink:resignationPDF,
@@ -59,7 +59,7 @@ export const Data =[
 }
 ]
 
-export const DataSalary =[
+const DataSalary =[
     {
     id:1,
     pdfLink:offerletter,
@@ -104,3 +104,4 @@ export const DataSalary =[
 
 ]
  
+export { Data , DataSalary };  

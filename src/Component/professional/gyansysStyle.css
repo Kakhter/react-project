@@ -3,9 +3,11 @@
   flex-wrap: wrap;          /* allows wrapping to next line */
   justify-content: space-between;
   gap:20px;        /* space between divs */
+  
  }
 
 .gyancard {
+  
   flex: 1 1 calc(15.33% - 10px); /* 3 per row */
   background-color: #f6fbfe;
   text-align: center;
@@ -40,6 +42,7 @@ font-size: 19px;
 }
 
 .cardlink {
+    margin-top: auto;
     text-align: right;
    
 }

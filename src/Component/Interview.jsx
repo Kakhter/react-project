@@ -198,11 +198,33 @@ Builds a collection (list) containing:
 Passes this list into the CustomerResolver constructor.
 
 So, _customers becomes a list of all registered customer classes.
-
-                
-                `}
+               
+`}
           </code>
         </pre>
+        <li>Repository Pattern</li>
+        <img src="/dotnet/Repository.jpg" width="100%"></img>
+        <br />
+        🔎 8️⃣ Why Interviewers Love This Question Because it checks multiple
+        skills:
+        <br />
+        <br />
+        ✅Understanding of SOLID Principles (especially SRP, DIP)
+        <br />
+        ✅Knowledge of Dependency Injection
+        <br />
+        ✅Familiarity with EF Core abstraction <br />
+        ✅Awareness of testing-friendly architecture
+        <br />
+        ✅Real-world project design mindset <br />
+        <br />
+        💬 9️⃣ Benefits of this Clean Architecture <br /> <br />
+        ✅ Testable (you can mock repositories easily)
+        <br /> ✅ Maintainable (each layer has clear responsibility)
+        <br /> ✅ Flexible (change EF to Dapper without touching controllers)
+        <br />✅ Scalable (add new entities and services cleanly)
+        <br />
+        <br />
       </ol>
     </>
   );

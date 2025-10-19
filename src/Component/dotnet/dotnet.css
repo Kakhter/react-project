@@ -1,0 +1,21 @@
+.oval-text {
+  display: inline-block;
+  background-color: lightblue;
+  color: rgb(11, 1, 1);
+  padding: 4px 15px;   /* More horizontal padding = oval shape */
+  border-radius: 50px;  /* Keeps corners rounded */
+  font-size: 12px;
+  text-align: center;
+   cursor: pointer;
+}
+
+.oval-text:hover {
+  display: inline-block;
+  background-color: rgb(76, 174, 146);
+  color: rgb(253, 251, 251);
+  padding: 4px 15px;   /* More horizontal padding = oval shape */
+  border-radius: 50px;  /* Keeps corners rounded */
+  font-size: 12px;
+  text-align: center;
+   cursor: pointer;
+}

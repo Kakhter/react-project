@@ -16,11 +16,12 @@ import JavaScript1 from "./Component/JavaScript1";
 import UseMemo from "./Component/UseMemo";
 import UseCallback from "./Component/UseCallback";
 import Memo from "./Component/Memo";
-import DML from "./Component/DML";
+import DML from "./Component/sql/DML";
 import TVSPaper from "./Component/personal/TVSPaper";
 import AppService from "./Component/azure/AppService";
 import GyansysReg from "./Component/professional/GyansysReg";
 import SQL from "./Component/sql/SQL";
+import DotNet from "./Component/dotnet/DotNet";
 
 const LazyLoading = lazy(() => import("./Component/LazyLoading"));
 function App() {
@@ -62,6 +63,7 @@ function App() {
             <Route path="/appservice" element={<AppService />} />
             <Route path="/professional" element={<GyansysReg />} />
             <Route path="/sql" element={<SQL />} />
+            <Route path="/dotnetdata" element={<DotNet />} />
           </Routes>
         </Suspense>
       </main>

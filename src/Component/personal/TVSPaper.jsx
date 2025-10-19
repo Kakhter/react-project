@@ -5,7 +5,7 @@ const TVSPaper = () => {
   return (
     <>
       <h3 className={styles.box}>
-        Transport Department E Drive - Target - gyansysCopy folder
+        Transport Department E Drive - Desktop - Rest -GyansysCopy
       </h3>
       <hr />
       <img src="./Vehicle/TransportDepartment.jpeg" width="90%"></img>
