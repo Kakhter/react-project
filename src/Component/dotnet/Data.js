@@ -10,6 +10,7 @@ var  JWT= "./dotnet/JWT_Implementation.pdf"
 var  EF= "./dotnet/NetCRUDOperationEF.pdf"
 var  internAPI ="./dotnet/InternAPI.zip"
 var Jan31 = "./dotnet/DotNet_Jan312025.pdf"
+var errFixex = "./dotnet/FixedIssue500.19.pdf"
 
 const Data =
 [
@@ -72,6 +73,12 @@ const Data =
     topic:"31 Jan",
     description:"Description",
     pdfLink:Jan31
+  },
+   {
+    id:"11",
+    topic:"Error Fixed 500.19",
+    description:"Description",
+    pdfLink:errFixex
   }
 
 ]

@@ -7,6 +7,9 @@ import Test from "./Test";
 import EnvironmentSetting from "./EnvironmentSetting";
 import MiddleWare from "./MiddleWare";
 import Filter from "./Filter";
+import EF from "./EF";
+import CORS from "./CORS";
+import JWT from "./JWT";
 import Data from "./Data";
 
 import "./dotnet.css";
@@ -23,11 +26,22 @@ const DotNet = () => {
     if (id == 5) setData(EnvironmentSetting);
     if (id == 6) setData(MiddleWare);
     if (id == 7) setData(Filter);
+    if (id == 8) setData(EF);
+    if (id == 9) setData(CORS);
+    if (id == 10) setData(JWT);
   }
   return (
     <>
       <h1>Dot Net Practices</h1>
-      <div style={{ display: "flex", padding: "2px", gap: "10px" }}>
+      Theoretical: <br />
+      <div
+        style={{
+          display: "flex",
+          padding: "2px",
+          gap: "10px",
+          flexWrap: "wrap",
+        }}
+      >
         {Data.map((data) => (
           <div
             className="oval-text"
@@ -44,7 +58,14 @@ const DotNet = () => {
         ))}
       </div>
       Dot Net Code: C:\Users\KhalidAkhter\source\repos <br />
-      <div style={{ display: "flex", padding: "2px", gap: "10px" }}>
+      <div
+        style={{
+          display: "flex",
+          padding: "2px",
+          gap: "10px",
+          flexWrap: "wrap",
+        }}
+      >
         <div className="oval-text" onClick={() => DisplayData(0)}>
           Test
         </div>
@@ -55,7 +76,7 @@ const DotNet = () => {
           Repository Pattern
         </div>
         <div className="oval-text" onClick={() => DisplayData(3)}>
-          Clean Architecture1
+          Clean Architecture
         </div>
         <div className="oval-text" onClick={() => DisplayData(4)}>
           Dapper
@@ -68,6 +89,15 @@ const DotNet = () => {
         </div>
         <div className="oval-text" onClick={() => DisplayData(7)}>
           Filter
+        </div>
+        <div className="oval-text" onClick={() => DisplayData(8)}>
+          Entity Framework
+        </div>
+        <div className="oval-text" onClick={() => DisplayData(9)}>
+          CORS
+        </div>
+        <div className="oval-text" onClick={() => DisplayData(10)}>
+          JWT
         </div>
       </div>
       <pre>

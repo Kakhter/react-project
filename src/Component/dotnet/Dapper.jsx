@@ -1,26 +1,293 @@
 const Dapper = (
   <>
-    <span style={{ color: "red", fontWeight: "bold" }}>How to decorate </span>
+    {/* <span style={{ color: "red", fontWeight: "bold" }}>How to decorate </span>
     <span style={{ textDecoration: "underline", color: "green" }}>
       the text
     </span>
     i.e. Bold Underline color etc
-    <br />
+    <br /> */}
     {/* <img src="/dotnet/Repository.jpg" width="100%"></img> */}
     <br />
     {`
+      Folder Structure:
 
-    public interface ICustomer{
-        string Name {get;}
-        decimal GetDiscount(decimal amount);
+      📦 DapperCleanArchitecture
+      ┣ 📂 DapperCleanArchitecture.Domain
+      ┃ ┣ Entities
+            Customer.cs
+      ┃ ┗ Interfaces/
+            ICustomerRepository.cs
+
+      ┣ 📂 DapperCleanArchitecture.Infrastructure
+      ┃ ┣ Data
+            DapperContext.cs
+      ┃ ┗ Repositories
+            CustomerRepository.cs
+      ┣ 📂 DapperCleanArchitecture.Application
+      ┃ ┗ Services 
+            CustomerService.cs
+      ┣ 📂 DapperCleanArchitecture.API
+      ┃ ┣ Controllers
+            CustomerController.cs
+      ┃ ┣ appsettings.json
+      ┃ ┗ Program.cs
+
+    🧩 1️⃣ Domain Layer
+
+    namespace DapperCleanArchitecture.Domain.Entities
+    {
+        public class Customer
+        {
+            public int Id { get; set; }
+            public string Name { get; set; } = string.Empty;
+            public string Email { get; set; } = string.Empty;
+        }
     }
 
-    public class GoldCustomer: ICustomer
-    {
-        public string Name=> "Gold";
-        public string Name {
-        get{ return("Gold");};
-    } `}
+    🔹 ICustomerRepository.cs
+
+        using DapperCleanArchitecture.Domain.Entities;
+
+        namespace DapperCleanArchitecture.Domain.Interfaces
+        {
+            public interface ICustomerRepository
+            {
+                Task<IEnumerable<Customer>> GetAllAsync();
+                Task<Customer?> GetByIdAsync(int id);
+                Task<int> AddAsync(Customer customer);
+                Task<int> UpdateAsync(Customer customer);
+                Task<int> DeleteAsync(int id);
+            }
+        }
+
+        🧩 2️⃣ Infrastructure Layer
+              🔹 DapperContext.cs
+              using Microsoft.Data.SqlClient;
+              using System.Data;
+
+              namespace DapperCleanArchitecture.Infrastructure.Data
+              {
+                  public class DapperContext
+                  {
+                      private readonly string _connectionString;
+
+                      public DapperContext(IConfiguration configuration)
+                      {
+                          _connectionString = configuration.GetConnectionString("DefaultConnection");
+                      }
+
+                      public IDbConnection CreateConnection() => new SqlConnection(_connectionString);
+                  }
+              }
+
+              🔹 CustomerRepository.cs
+              using Dapper;
+              using DapperCleanArchitecture.Domain.Entities;
+              using DapperCleanArchitecture.Domain.Interfaces;
+              using DapperCleanArchitecture.Infrastructure.Data;
+
+              namespace DapperCleanArchitecture.Infrastructure.Repositories
+              {
+                  public class CustomerRepository : ICustomerRepository
+                  {
+                      private readonly DapperContext _context;
+
+                      public CustomerRepository(DapperContext context)
+                      {
+                          _context = context;
+                      }
+
+                      public async Task<IEnumerable<Customer>> GetAllAsync()
+                      {
+                          var sql = "SELECT * FROM Customers";
+                          using var connection = _context.CreateConnection();
+                          return await connection.QueryAsync<Customer>(sql);
+                      }
+
+                      public async Task<Customer?> GetByIdAsync(int id)
+                      {
+                          var sql = "SELECT * FROM Customers WHERE Id = @Id";
+                          using var connection = _context.CreateConnection();
+                          return await connection.QueryFirstOrDefaultAsync<Customer>(sql, new { Id = id });
+                      }
+
+                      public async Task<int> AddAsync(Customer customer)
+                      {
+                          var sql = "INSERT INTO Customers (Name, Email) VALUES (@Name, @Email)";
+                          using var connection = _context.CreateConnection();
+                          return await connection.ExecuteAsync(sql, customer);
+                      }
+
+                      public async Task<int> UpdateAsync(Customer customer)
+                      {
+                          var sql = "UPDATE Customers SET Name = @Name, Email = @Email WHERE Id = @Id";
+                          using var connection = _context.CreateConnection();
+                          return await connection.ExecuteAsync(sql, customer);
+                      }
+
+                      public async Task<int> DeleteAsync(int id)
+                      {
+                          var sql = "DELETE FROM Customers WHERE Id = @Id";
+                          using var connection = _context.CreateConnection();
+                          return await connection.ExecuteAsync(sql, new { Id = id });
+                      }
+                  }
+              }
+
+       🧩 3️⃣ Application Layer
+            🔹 CustomerService.cs
+            using DapperCleanArchitecture.Domain.Entities;
+            using DapperCleanArchitecture.Domain.Interfaces;
+
+            namespace DapperCleanArchitecture.Application.Services
+            {
+                public class CustomerService
+                {
+                    private readonly ICustomerRepository _repository;
+
+                    public CustomerService(ICustomerRepository repository)
+                    {
+                        _repository = repository;
+                    }
+
+                    public async Task<IEnumerable<Customer>> GetAllCustomersAsync() =>
+                        await _repository.GetAllAsync();
+
+                    public async Task<Customer?> GetCustomerByIdAsync(int id) =>
+                        await _repository.GetByIdAsync(id);
+
+                    public async Task AddCustomerAsync(Customer customer) =>
+                        await _repository.AddAsync(customer);
+
+                    public async Task UpdateCustomerAsync(Customer customer) =>
+                        await _repository.UpdateAsync(customer);
+
+                    public async Task DeleteCustomerAsync(int id) =>
+                        await _repository.DeleteAsync(id);
+                }
+            }       
+
+        🧩 4️⃣ API Layer
+        🔹 appsettings.json
+        {
+          "ConnectionStrings": {
+            "DefaultConnection": "Server=.;Database=CustomerDB;User Id=sa;Password=sa;TrustServerCertificate=True;"
+          },
+          "Logging": {
+            "LogLevel": {
+              "Default": "Information"
+            }
+          }
+        }
+
+        🔹 CustomerController.cs
+        using DapperCleanArchitecture.Application.Services;
+        using DapperCleanArchitecture.Domain.Entities;
+        using Microsoft.AspNetCore.Mvc;
+
+        namespace DapperCleanArchitecture.API.Controllers
+        {
+            [Route("api/[controller]")]
+            [ApiController]
+            public class CustomerController : ControllerBase
+            {
+                private readonly CustomerService _service;
+
+                public CustomerController(CustomerService service)
+                {
+                    _service = service;
+                }
+
+                [HttpGet]
+                public async Task<IActionResult> GetAll()
+                {
+                    var customers = await _service.GetAllCustomersAsync();
+                    return Ok(customers);
+                }
+
+                [HttpGet("{id}")]
+                public async Task<IActionResult> GetById(int id)
+                {
+                    var customer = await _service.GetCustomerByIdAsync(id);
+                    if (customer == null)
+                        return NotFound();
+
+                    return Ok(customer);
+                }
+
+                [HttpPost]
+                public async Task<IActionResult> Add(Customer customer)
+                {
+                    await _service.AddCustomerAsync(customer);
+                    return Ok("Customer added successfully");
+                }
+
+                [HttpPut]
+                public async Task<IActionResult> Update(Customer customer)
+                {
+                    await _service.UpdateCustomerAsync(customer);
+                    return Ok("Customer updated successfully");
+                }
+
+                [HttpDelete("{id}")]
+                public async Task<IActionResult> Delete(int id)
+                {
+                    await _service.DeleteCustomerAsync(id);
+                    return Ok("Customer deleted successfully");
+                }
+            }
+        }
+
+        🔹 Program.cs
+        using DapperCleanArchitecture.Application.Services;
+        using DapperCleanArchitecture.Domain.Interfaces;
+        using DapperCleanArchitecture.Infrastructure.Data;
+        using DapperCleanArchitecture.Infrastructure.Repositories;
+
+        var builder = WebApplication.CreateBuilder(args);
+
+        // Add services
+        builder.Services.AddSingleton<DapperContext>();
+        builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+        builder.Services.AddScoped<CustomerService>();
+
+        builder.Services.AddControllers();
+        builder.Services.AddEndpointsApiExplorer();
+        builder.Services.AddSwaggerGen();
+
+        var app = builder.Build();
+        app.UseSwagger();
+        app.UseSwaggerUI();
+
+        app.MapControllers();
+        app.Run();
+
+        🧩 Database Table
+        CREATE TABLE Customers (
+            Id INT IDENTITY(1,1) PRIMARY KEY,
+            Name NVARCHAR(100),
+            Email NVARCHAR(100)
+        );
+
+        ✅ API Endpoints
+        Method	Endpoint	Description
+        GET	/api/customer	Get all customers
+        GET	/api/customer/{id}	Get customer by ID
+        POST	/api/customer	Add new customer
+        PUT	/api/customer	Update customer
+        DELETE	/api/customer/{id}	Delete customer
+        💡 Notes
+
+        ✅ Clean separation of concerns
+        ✅ No Entity Framework — purely Dapper
+        ✅ Each layer has its own responsibility
+        ✅ Very fast, lightweight API
+        ✅ Easy to extend for more entities (e.g., Orders, Products, etc.)
+
+
+
+
+    `}
   </>
 );
 export default Dapper;
