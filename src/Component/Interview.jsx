@@ -226,6 +226,240 @@ So, _customers becomes a list of all registered customer classes.
         <br />
         <br />
       </ol>
+
+      <br />
+      <h3> Another Example of Factory Pattern</h3>
+
+      <pre>
+        <code>
+          {`
+            CustomerDiscountSolution/
+            │
+            ├── src/
+            │   ├── CustomerDiscount.Domain/
+            │   │   ├── Entities/
+            │   │   │   └── Customer.cs
+            │   │   ├── Interfaces/
+            │   │   │   └── ICustomer.cs
+            │   │   └── Rules/
+            │   │       ├── GoldCustomer.cs
+            │   │       ├── SilverCustomer.cs
+            │   │       ├── PlatinumCustomer.cs   ← new one (extension)
+            │   │       └── CustomerResolver.cs
+            │   │
+            │   ├── CustomerDiscount.Application/
+            │   │   ├── Interfaces/
+            │   │   │   └── ICustomerService.cs
+            │   │   └── Services/
+            │   │       └── CustomerService.cs
+            │   │
+            │   ├── CustomerDiscount.Infrastructure/
+            │   │   ├── Data/
+            │   │   │   └── CustomerDbContext.cs  (if using DB)
+            │   │   └── Repositories/
+            │   │       └── CustomerRepository.cs
+            │   │
+            │   ├── CustomerDiscount.API/
+            │   │   ├── Controllers/
+            │   │   │   └── CustomerController.cs
+            │   │   ├── Program.cs
+            │   │   └── appsettings.json
+            │   │
+            │   └── CustomerDiscount.Tests/
+            │       └── CustomerServiceTests.cs
+            │
+            └── CustomerDiscount.sln
+            🧩 Layer-by-Layer Breakdown
+            1️⃣ Domain Layer
+            📁 CustomerDiscount.Domain
+
+            This layer contains core business logic and rules.
+
+            🔹 Interfaces/ICustomer.cs
+            csharp
+            Copy code
+            namespace CustomerDiscount.Domain.Interfaces
+            {
+                public interface ICustomer
+                {
+                    string Name { get; }
+                    decimal GetDiscount(decimal totalAmount);
+                }
+            }
+            🔹 Rules/GoldCustomer.cs
+            csharp
+            Copy code
+            using CustomerDiscount.Domain.Interfaces;
+
+            namespace CustomerDiscount.Domain.Rules
+            {
+                public class GoldCustomer : ICustomer
+                {
+                    public string Name => "Gold";
+                    public decimal GetDiscount(decimal totalAmount) => totalAmount * 0.10M;
+                }
+            }
+            🔹 Rules/SilverCustomer.cs
+            csharp
+            Copy code
+            using CustomerDiscount.Domain.Interfaces;
+
+            namespace CustomerDiscount.Domain.Rules
+            {
+                public class SilverCustomer : ICustomer
+                {
+                    public string Name => "Silver";
+                    public decimal GetDiscount(decimal totalAmount) => totalAmount * 0.05M;
+                }
+            }
+            🔹 Rules/PlatinumCustomer.cs (New Customer)
+            csharp
+            Copy code
+            using CustomerDiscount.Domain.Interfaces;
+
+            namespace CustomerDiscount.Domain.Rules
+            {
+                public class PlatinumCustomer : ICustomer
+                {
+                    public string Name => "Platinum";
+                    public decimal GetDiscount(decimal totalAmount) => totalAmount * 0.15M;
+                }
+            }
+            🔹 Rules/CustomerResolver.cs
+            csharp
+            Copy code
+            using CustomerDiscount.Domain.Interfaces;
+
+            namespace CustomerDiscount.Domain.Rules
+            {
+                public class CustomerResolver
+                {
+                    private readonly IEnumerable<ICustomer> _customers;
+
+                    public CustomerResolver(IEnumerable<ICustomer> customers)
+                    {
+                        _customers = customers;
+                    }
+
+                    public ICustomer GetCustomer(string name)
+                    {
+                        return _customers.FirstOrDefault(c => 
+                            c.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+                    }
+                }
+            }
+            2️⃣ Application Layer
+            📁 CustomerDiscount.Application
+
+            Handles use cases and orchestrates domain logic.
+
+            🔹 Services/CustomerService.cs
+            csharp
+            Copy code
+            using CustomerDiscount.Domain.Interfaces;
+            using CustomerDiscount.Domain.Rules;
+
+            namespace CustomerDiscount.Application.Services
+            {
+                public class CustomerService
+                {
+                    private readonly CustomerResolver _resolver;
+
+                    public CustomerService(CustomerResolver resolver)
+                    {
+                        _resolver = resolver;
+                    }
+
+                    public decimal CalculateDiscount(string customerType, decimal amount)
+                    {
+                        var customer = _resolver.GetCustomer(customerType);
+
+                        if (customer == null)
+                            throw new Exception("Invalid customer type");
+
+                        return customer.GetDiscount(amount);
+                    }
+                }
+            }
+            3️⃣ API Layer
+            📁 CustomerDiscount.API
+
+            Handles endpoints and dependency injection.
+
+            🔹 Controllers/CustomerController.cs
+            csharp
+            Copy code
+            using Microsoft.AspNetCore.Mvc;
+            using CustomerDiscount.Application.Services;
+
+            namespace CustomerDiscount.API.Controllers
+            {
+                [ApiController]
+                [Route("api/[controller]")]
+                public class CustomerController : ControllerBase
+                {
+                    private readonly CustomerService _service;
+
+                    public CustomerController(CustomerService service)
+                    {
+                        _service = service;
+                    }
+
+                    [HttpGet("discount")]
+                    public IActionResult GetDiscount(string type, decimal amount)
+                    {
+                        var discount = _service.CalculateDiscount(type, amount);
+                        return Ok(new { CustomerType = type, Discount = discount });
+                    }
+                }
+            }
+            🔹 Program.cs
+            csharp
+            Copy code
+            var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddControllers();
+
+            // Register all customer types (OCP in action)
+            builder.Services.AddSingleton<ICustomer, GoldCustomer>();
+            builder.Services.AddSingleton<ICustomer, SilverCustomer>();
+            builder.Services.AddSingleton<ICustomer, PlatinumCustomer>();
+
+            // Register resolver and service
+            builder.Services.AddSingleton<CustomerResolver>();
+            builder.Services.AddSingleton<CustomerService>();
+
+            var app = builder.Build();
+
+            app.MapControllers();
+
+            app.Run();
+            4️⃣ Infrastructure Layer (Optional)
+            If persistence is needed — this layer stores DBContext, repository, etc.
+
+            For this logic-based scenario, it’s optional.
+
+            ⚙️ How OCP Is Achieved
+            Each customer type (GoldCustomer, SilverCustomer, PlatinumCustomer) implements the same interface (ICustomer).
+
+            The system depends only on the interface, not concrete classes.
+
+            To add a new type, e.g. DiamondCustomer, you create a new class — no need to edit existing ones.
+
+            You just register it in DI (or use reflection to auto-register).
+
+            ✅ Hence: open for extension, closed for modification.
+
+            ✅ Summary
+            Layer	Responsibility	Example Files
+            Domain	Core business logic, rules	ICustomer, GoldCustomer, CustomerResolver
+            Application	Use cases / services	CustomerService.cs
+            Infrastructure	Data access or external dependencies	CustomerDbContext.cs
+            API	Presentation / endpoints	CustomerController.cs, Program.cs
+
+            `}
+        </code>
+      </pre>
     </>
   );
 };

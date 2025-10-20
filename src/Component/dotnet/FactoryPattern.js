@@ -1,19 +1,29 @@
 
 const FactoryPattern = `
-    ------------------------FACTORY PATTERN---------------------
+    ------------------------FACTORY PATTERN----------------------------------------
+    Scenario based
+    There are two customer say "Gold" and "Silver" and having discount 10% and 5%.
+    We have some rule for each customer. Write C# programe in such a way that we can
+    add new customer say "Platinum" without modifing the existing code.
 
-1. Create interface ICustomer;
-2. Implement different Customer inherits from ICustomer;
+    Solution:
+    This is a classic Open/Closed Principle (OCP) question from SOLID design principles
+    --------------------------------------------------------------------------------
 
-   get Customer Class as per customer name input.
-3. Register All Customer in program.cs
-        builder.Services.AddSingleton<ICustomer GoldCustomer>();
-        builder.Services.AddSingleton<ICustomer SilverCustomer>();
-        builder.Services.AddSingleton<CustomerResolver>();
-4. Create CustomerResolver using DI
-   private readonly IEnumeriable<ICustomer> _customers;
-5. In Controller
-   private readonly CustomerResolver _customerResolver;
+    1. Create interface ICustomer;
+    2. Implement different Customer inherits from ICustomer;
+
+    get Customer Class as per customer name input.
+    3. Register All Customer in program.cs
+            builder.Services.AddSingleton<ICustomer GoldCustomer>();
+            builder.Services.AddSingleton<ICustomer SilverCustomer>();
+            builder.Services.AddSingleton<CustomerResolver>();
+    4. Create CustomerResolver using DI
+    private readonly IEnumeriable<ICustomer> _customers;
+    5. In Controller
+        private readonly CustomerResolver _customerResolver;
+
+    --------------------------IMPLEMENTATION---------------------------
 
     public interface ICustomer{
         string Name {get;}

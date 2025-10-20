@@ -1,0 +1,96 @@
+const MiddleWare = (
+  <>
+    <div style={{ textAlign: "left", marginLeft: "20px" }}>
+      <h1>Middleware</h1>
+    </div>
+    {`
+    Middleware https://www.iscalepro.com/post/asp-net-core-interview-questions/
+
+    What is Middleware?
+
+        In ASP.NET Core, middleware is a component that is executed in the HTTP request/response pipeline.
+
+        Every incoming request passes through a sequence (pipeline) of middleware components, and each can:
+
+        Process the request
+
+        Call the next middleware (or stop the chain)
+
+        Modify the response before it goes back to the client
+
+
+    Examples of common middleware: 
+
+        • Authentication Middleware: This middleware is responsible for authenticating
+    users, ensuring that only authorized users can access protected resources. 
+
+        •  Static Files Middleware: This middleware serves static files, such as CSS
+    stylesheets, JavaScript files, and images, directly to the client. 
+
+        • Routing Middleware: This middleware matches incoming requests to specific
+    controllers and actions based on the defined routes. 
+
+        • Session Middleware: This middleware enables session management, allowing you to store
+    user-specific data across multiple requests. 
+
+        • CORS Middleware: This middleware handles Cross-Origin Resource Sharing (CORS), allowing your
+    application to accept requests from different origins. 
+
+        • Exception Handling Middleware: This middleware catches unhandled exceptions and provides a
+    mechanism for logging errors and displaying custom error pages.
+
+    `}
+    {`
+        Example of middleware order:
+        C#
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            // … other middleware …
+            app.UseHttpsRedirection(); // Redirect HTTP requests to HTTPS
+            app.UseStaticFiles(); // Serve static files
+            app.UseRouting(); // Match requests to routes
+            app.UseAuthentication(); // Authenticate users
+            app.UseAuthorization(); // Authorize users
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers(); // Map controllers for API requests
+                endpoints.MapRazorPages(); // Map Razor Pages for page-based requests
+            });
+            // … other middleware …
+        }
+        
+        2️⃣ Custom Middleware
+
+            Created by developers to handle specific logic (e.g., logging, error handling, request timing, API key validation, etc.)
+
+            Example:
+
+            public class RequestLoggingMiddleware
+            {
+                private readonly RequestDelegate _next;
+                private readonly ILogger<RequestLoggingMiddleware> _logger;
+
+                public RequestLoggingMiddleware(RequestDelegate next, ILogger<RequestLoggingMiddleware> logger)
+                {
+                    _next = next;
+                    _logger = logger;
+                }
+
+                public async Task InvokeAsync(HttpContext context)
+                {
+                    _logger.LogInformation($"Request: {context.Request.Method} {context.Request.Path}");
+                    await _next(context);
+                    _logger.LogInformation($"Response: {context.Response.StatusCode}");
+                }
+            }
+
+
+            Register in Program.cs:
+
+            app.UseMiddleware<RequestLoggingMiddleware>();
+
+`}
+  </>
+);
+
+export default MiddleWare;

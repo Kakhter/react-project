@@ -2,22 +2,52 @@ import React, { useState } from "react";
 import RepositoryPattern from "./RepositoryPattern";
 import FactoryPattern from "./FactoryPattern";
 import CleanArchitecture from "./CleanArchitecture";
+import Dapper from "./Dapper";
+import Test from "./Test";
+import EnvironmentSetting from "./EnvironmentSetting";
+import MiddleWare from "./MiddleWare";
+import Filter from "./Filter";
+import Data from "./Data";
+
 import "./dotnet.css";
 
 const DotNet = () => {
   const [data, setData] = useState("Select Topic");
 
   function DisplayData(id, e) {
+    if (id == 0) setData(Test);
     if (id == 1) setData(FactoryPattern);
     if (id == 2) setData(RepositoryPattern);
     if (id == 3) setData(CleanArchitecture);
+    if (id == 4) setData(Dapper);
+    if (id == 5) setData(EnvironmentSetting);
+    if (id == 6) setData(MiddleWare);
+    if (id == 7) setData(Filter);
   }
-
   return (
     <>
       <h1>Dot Net Practices</h1>
+      <div style={{ display: "flex", padding: "2px", gap: "10px" }}>
+        {Data.map((data) => (
+          <div
+            className="oval-text"
+            key={data.id}
+            // onClick={() => DisplayData(data.id)}
+          >
+            <div>{data.topic}</div>
+            <div>
+              <a href={data.pdfLink} target="_blank">
+                Link
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
       Dot Net Code: C:\Users\KhalidAkhter\source\repos <br />
       <div style={{ display: "flex", padding: "2px", gap: "10px" }}>
+        <div className="oval-text" onClick={() => DisplayData(0)}>
+          Test
+        </div>
         <div className="oval-text" onClick={() => DisplayData(1)}>
           Factory Pattern
         </div>
@@ -25,11 +55,23 @@ const DotNet = () => {
           Repository Pattern
         </div>
         <div className="oval-text" onClick={() => DisplayData(3)}>
-          Clean Architecture
+          Clean Architecture1
+        </div>
+        <div className="oval-text" onClick={() => DisplayData(4)}>
+          Dapper
+        </div>
+        <div className="oval-text" onClick={() => DisplayData(5)}>
+          API EnvironmentSetting
+        </div>
+        <div className="oval-text" onClick={() => DisplayData(6)}>
+          MiddleWare
+        </div>
+        <div className="oval-text" onClick={() => DisplayData(7)}>
+          Filter
         </div>
       </div>
       <pre>
-        <code>{data}</code>
+        <code style={{ color: "black" }}>{data}</code>
       </pre>
     </>
   );
