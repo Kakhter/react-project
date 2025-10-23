@@ -10,16 +10,48 @@ const FactoryPattern = `
     This is a classic Open/Closed Principle (OCP) question from SOLID design principles
     --------------------------------------------------------------------------------
 
+    [    ICustomer - > GoldCustomer/SilverCustomer:ICustomer
+
+        CustomerResolver (private readonly IEnumeriable<ICustomer> _customers;)
+
+        Register <ICustomer, GoldCustomer>
+        Register <ICustomer, SilverCustomer>
+        Register <CustomerResolver>
+    ]
+
+    📦 CleanCustomerArchitecture
+            ┣ 📂 CleanCustomerArchitecture.Domain
+            ┃ ┣ 📂 Entities
+            ┃ ┃ ┣ ICustomer.cs
+            ┃ ┃ ┣ GoldCustomer.cs
+            ┃ ┃ ┣ SilverCustomer.cs
+            ┃ ┃ ┗ PlatinumCustomer.cs
+            ┃ ┃ 📂 Interface
+            ┃ ┗ 📂 Exceptions
+            ┃ ┃ ┗ CustomerNotFoundException.cs
+            ┣ 📂 CleanCustomerArchitecture.Application
+            ┃ ┗ 📂 Services
+            ┃ ┃ ┗ CustomerResolver.cs
+            ┣ 📂 CleanCustomerArchitecture.API
+            ┃ ┣ 📂 Controllers
+            ┃ ┃ ┗ CustomerController.cs
+            ┃ ┣ Program.cs
+            ┃ ┗ appsettings.json
+            ┗ 📂 CleanCustomerArchitecture.Infrastructure
+                ┗ (Optional: if you later add DB, file storage, or caching logic)
+
+
+
     1. Create interface ICustomer;
     2. Implement different Customer inherits from ICustomer;
-
+    3. Create CustomerResolver using DI
+    private readonly IEnumeriable<ICustomer> _customers;
+    
     get Customer Class as per customer name input.
-    3. Register All Customer in program.cs
+    4. Register All Customer in program.cs
             builder.Services.AddSingleton<ICustomer GoldCustomer>();
             builder.Services.AddSingleton<ICustomer SilverCustomer>();
             builder.Services.AddSingleton<CustomerResolver>();
-    4. Create CustomerResolver using DI
-    private readonly IEnumeriable<ICustomer> _customers;
     5. In Controller
         private readonly CustomerResolver _customerResolver;
 

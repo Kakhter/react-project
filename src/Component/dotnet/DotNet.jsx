@@ -10,6 +10,8 @@ import Filter from "./Filter";
 import EF from "./EF";
 import CORS from "./CORS";
 import JWT from "./JWT";
+import CSRF from "./CSRF";
+import Caching from "./Caching";
 import Data from "./Data";
 
 import "./dotnet.css";
@@ -29,6 +31,8 @@ const DotNet = () => {
     if (id == 8) setData(EF);
     if (id == 9) setData(CORS);
     if (id == 10) setData(JWT);
+    if (id == 11) setData(CSRF);
+    if (id == 12) setData(Caching);
   }
   return (
     <>
@@ -58,6 +62,8 @@ const DotNet = () => {
         ))}
       </div>
       Dot Net Code: C:\Users\KhalidAkhter\source\repos <br />
+      Select Topic
+      <br />
       <div
         style={{
           display: "flex",
@@ -97,7 +103,13 @@ const DotNet = () => {
           CORS
         </div>
         <div className="oval-text" onClick={() => DisplayData(10)}>
-          JWT
+          JWT:
+        </div>
+        <div className="oval-text" onClick={() => DisplayData(11)}>
+          CSRF
+        </div>
+        <div className="oval-text" onClick={() => DisplayData(12)}>
+          Caching
         </div>
       </div>
       <pre>

@@ -2,6 +2,66 @@
     const RepositoryPattern =`
     ------------------------REPOSITORY PATTERN----------------------
 
+    Folder Structure with DTO:
+
+    📦 CleanArchitectureRepositoryPattern
+        ┣ 📂 CleanArchitecture.Domain
+        ┃ ┣ 📂 Entities
+        ┃ ┃ ┗ Customer.cs
+        ┃ ┣ 📂 Interfaces
+        ┃ ┃ ┗ ICustomerRepository.cs
+        ┃ ┗ 📂 Common
+        ┃    ┗ BaseEntity.cs
+        ┣ 📂 CleanArchitecture.Application
+        ┃ ┣ 📂 DTOs
+        ┃ ┃ ┗ CustomerDto.cs
+        ┃ ┣ 📂 Interfaces
+        ┃ ┃ ┗ ICustomerService.cs
+        ┃ ┗ 📂 Services
+        ┃    ┗ CustomerService.cs
+        ┣ 📂 CleanArchitecture.Infrastructure
+        ┃ ┣ 📂 Data
+        ┃ ┃ ┗ AppDbContext.cs
+        ┃ ┣ 📂 Repositories
+        ┃ ┃ ┗ CustomerRepository.cs
+        ┃ ┗ 📂 Configurations
+        ┃    ┗ CustomerConfiguration.cs
+        ┣ 📂 CleanArchitecture.API
+        ┃ ┣ 📂 Controllers
+        ┃ ┃ ┗ CustomerController.cs
+        ┃ ┣ Program.cs
+        ┃ ┗ appsettings.json
+        ┗ 📂 CleanArchitecture.Tests (Optional)
+            ┗ UnitTests
+            ┗ CustomerServiceTests.cs
+
+    Ohter Folder Structure without DTO:
+
+    📦 CleanArchitectureRepositoryPattern
+        ┣ 📂 CleanArchitecture.Domain
+        ┃ ┣ 📂 Entities
+        ┃ ┃ ┗ Customer.cs
+        ┃ ┣ 📂 Interfaces
+        ┃ ┃ ┗ ICustomerRepository.cs
+        ┣ 📂 CleanArchitecture.Application
+        ┃ ┗ 📂 Services
+        ┃    ┗ CustomerService.cs
+        ┣ 📂 CleanArchitecture.Infrastructure
+        ┃ ┣ 📂 Data
+        ┃ ┃ ┗ AppDbContext.cs
+        ┃ ┣ 📂 Repositories
+        ┃ ┃ ┗ CustomerRepository.cs
+        ┃ ┗ 📂 Configurations
+        ┃    ┗ CustomerConfiguration.cs
+        ┣ 📂 CleanArchitecture.API
+        ┃ ┣ 📂 Controllers
+        ┃ ┃ ┗ CustomerController.cs
+        ┃ ┣ Program.cs
+        ┃ ┗ appsettings.json
+        ┗ 📂 CleanArchitecture.Tests (Optional)
+            ┗ UnitTests
+            ┗ CustomerServiceTests.cs
+
     A. Under Domain Folder 
     1. Create class/entity: Customer (Under Enity Folder)
     2. Interface for Repository ICustomerReposity (Under Interface Folder)

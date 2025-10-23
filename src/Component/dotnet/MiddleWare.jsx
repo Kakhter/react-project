@@ -6,6 +6,29 @@ const MiddleWare = (
     {`
     Middleware https://www.iscalepro.com/post/asp-net-core-interview-questions/
 
+    Folder Structure:
+    ✅ Middleware is Framework-dependent
+       Middleware depends directly on ASP.NET Core’s pipeline (i.e., HttpContext, RequestDelegate, etc.), which are part of the presentation framework.
+       That means:
+       It cannot be reused by another presentation layer (like a console app or Blazor front-end).
+       It’s specific to Web API behavior, not business logic.
+
+    📦 CleanArchitecture.API
+        ┣ 📂 Controllers
+        ┃ ┗ CustomerController.cs
+        ┣ 📂 Middleware
+        ┃ ┗ CustomerMiddleware.cs
+        ┣ Program.cs
+        ┗ appsettings.json
+
+        var path = context.Request.Path;            // /api/customers
+        var method = context.Request.Method;        // GET, POST, PUT, DELETE
+        var query = context.Request.QueryString;    // ?page=2&size=10
+        var headers = context.Request.Headers;      // Authorization, Content-Type, etc.
+        var bodyStream = context.Request.Body;      // Request body stream
+        var contentType = context.Request.ContentType;
+
+
     What is Middleware?
 
         In ASP.NET Core, middleware is a component that is executed in the HTTP request/response pipeline.
