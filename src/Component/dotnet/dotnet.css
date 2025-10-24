@@ -19,3 +19,8 @@
   text-align: center;
    cursor: pointer;
 }
+
+
+.highlightText::selection {
+  background-color: lightgoldenrodyellow;
+}

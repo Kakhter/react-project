@@ -112,6 +112,85 @@ const MiddleWare = (
 
             app.UseMiddleware<RequestLoggingMiddleware>();
 
+--------------Another Example-----------------------------------------
+
+        using Microsoft.AspNetCore.Http;
+        using Microsoft.Extensions.Configuration;
+        using Microsoft.IdentityModel.Tokens;
+        using System.IdentityModel.Tokens.Jwt;
+        using System.Text;
+        using System.Threading.Tasks;
+
+        public class JwtValidationMiddleware
+        {
+            private readonly RequestDelegate _next;
+            private readonly IConfiguration _configuration;
+
+            public JwtValidationMiddleware(RequestDelegate next, IConfiguration configuration)
+            {
+                _next = next;
+                _configuration = configuration;
+            }
+
+            public async Task InvokeAsync(HttpContext context)
+            {
+                var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+
+                if (token == null)
+                {
+                    context.Response.StatusCode = 401; // Unauthorized
+                    await context.Response.WriteAsync("Token is missing");
+                    return;
+                }
+
+                try
+                {
+                    var tokenHandler = new JwtSecurityTokenHandler();
+                    var key = Encoding.ASCII.GetBytes(_configuration["Jwt:Key"]); // Secret key from appsettings
+                    tokenHandler.ValidateToken(token, new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(key),
+                        ValidateIssuer = true,
+                        ValidIssuer = _configuration["Jwt:Issuer"],
+                        ValidateAudience = true,
+                        ValidAudience = _configuration["Jwt:Audience"],
+                        ValidateLifetime = true
+                    }, out SecurityToken validatedToken);
+
+                    // Optionally attach user info to context
+                    var jwtToken = (JwtSecurityToken)validatedToken;
+                    context.Items["UserId"] = jwtToken.Claims.First(x => x.Type == "id").Value;
+
+                    await _next(context); // Call the next middleware
+                }
+                catch
+                {
+                    context.Response.StatusCode = 401;
+                    await context.Response.WriteAsync("Invalid Token");
+                }
+            }
+        }
+    2---------- Register Middleware in Program.cs
+        var builder = WebApplication.CreateBuilder(args);
+        var app = builder.Build();
+
+        // Add your middleware before controllers
+        app.UseMiddleware<JwtValidationMiddleware>();
+
+        app.MapControllers();
+        app.Run();
+
+    3---------- Sample appsettings.json for JWT
+    {
+    "Jwt": {
+        "Key": "ThisIsASecretKeyForJWT12345",
+        "Issuer": "MyApp",
+        "Audience": "MyAppUsers"
+    }
+    }
+
+
 `}
   </>
 );

@@ -12,6 +12,13 @@ import CORS from "./CORS";
 import JWT from "./JWT";
 import CSRF from "./CSRF";
 import Caching from "./Caching";
+import ReturnType from "./ReturnType";
+import Throttling from "./Throttling";
+import Scope from "./Scope";
+import Swagger from "./Swagger";
+import Compression from "./Compression";
+import WorkerService from "./WorkerSerivce";
+import GlobalException from "./GlobalException";
 import Data from "./Data";
 
 import "./dotnet.css";
@@ -33,10 +40,19 @@ const DotNet = () => {
     if (id == 10) setData(JWT);
     if (id == 11) setData(CSRF);
     if (id == 12) setData(Caching);
+    if (id == 13) setData(ReturnType);
+    if (id == 14) setData(Throttling);
+    if (id == 15) setData(Scope);
+    if (id == 16) setData(Compression);
+    if (id == 17) setData(Swagger);
+    if (id == 18) setData(WorkerService);
+    if (id == 19) setData(GlobalException);
   }
   return (
     <>
-      <h1>Dot Net Practices</h1>
+      <h1>
+        <span className="highlightText">Dot Net Practices</span>
+      </h1>
       Theoretical: <br />
       <div
         style={{
@@ -106,10 +122,33 @@ const DotNet = () => {
           JWT:
         </div>
         <div className="oval-text" onClick={() => DisplayData(11)}>
-          CSRF
+          X-CSRF
         </div>
         <div className="oval-text" onClick={() => DisplayData(12)}>
           Caching
+        </div>
+        <div className="oval-text" onClick={() => DisplayData(13)}>
+          Return XML format
+        </div>
+        <div className="oval-text" onClick={() => DisplayData(14)}>
+          Throttling
+        </div>
+        <div className="oval-text" onClick={() => DisplayData(15)}>
+          DI Scope
+        </div>
+
+        <div className="oval-text" onClick={() => DisplayData(16)}>
+          Compression
+        </div>
+
+        <div className="oval-text" onClick={() => DisplayData(17)}>
+          Swagger
+        </div>
+        <div className="oval-text" onClick={() => DisplayData(18)}>
+          WorkerService
+        </div>
+        <div className="oval-text" onClick={() => DisplayData(19)}>
+          GlobalException
         </div>
       </div>
       <pre>
