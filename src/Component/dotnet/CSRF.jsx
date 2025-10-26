@@ -1,5 +1,8 @@
 const CSRF = (
   <>
+    <div style={{ textAlign: "left", marginLeft: "3%" }}>
+      <h2>X-CSRF</h2>
+    </div>
     {`
     1. What is CSRF?
 

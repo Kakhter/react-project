@@ -1,5 +1,9 @@
 const CORS = (
   <>
+    <div style={{ textAlign: "left", marginLeft: "3%" }}>
+      <h2>CORS</h2>
+    </div>
+
     {`
     Import in program.cs
     using Microsoft.EntityFrameworkCore;
@@ -20,8 +24,10 @@ const CORS = (
     
     Note:
     .policy.WithOrigin()
-    .policy.WithHeader()
-    .policy.WithMetho("PUT","GET","POST","DELETE")
+    .policy.WithHeader() OR
+    .WithHeaders("Content-Type", "Authorization") OR
+    .WithHeaders("Content-Type", "Authorization", "X-CSRF-TOKEN","Content-Type");
+    .policy.WithMetho("PUT","GET","POST","DELETE","PATCH")
   `}
   </>
 );

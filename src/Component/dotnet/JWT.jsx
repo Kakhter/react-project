@@ -1,5 +1,8 @@
 const JWT = (
   <>
+    <div style={{ textAlign: "left", marginLeft: "3%" }}>
+      <h2>JWT</h2>
+    </div>
     {`
     JWT Implementation
     Generate JWT Token

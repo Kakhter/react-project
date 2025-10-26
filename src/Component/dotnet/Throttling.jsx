@@ -1,5 +1,9 @@
 const Throttling = (
   <>
+    <div style={{ textAlign: "left", marginLeft: "3%" }}>
+      <h2>Throttling</h2>
+    </div>
+
     {`
     -------------------------------Welcome to Throttling--------------------------------------------
 

@@ -1,5 +1,8 @@
 const Filter = (
   <>
+    <div style={{ textAlign: "left", marginLeft: "3%" }}>
+      <h2>Filter</h2>
+    </div>
     {`
 
     ├── WebAPI/
@@ -30,7 +33,7 @@ const Filter = (
     🧩 Types of Filters in ASP.NET Core
     Filter Type	                  Runs When	                            Common Use
     Authorization Filter	        Before anything else	                Check user permissions (Auth)
-    Resource Filter	              Before model binding	                Caching, short-circuit logic
+    Resource Filter	                Before model binding	                Caching, short-circuit logic
     Action Filter	                Before and after an action executes	  Logging, validation, timing
     Exception Filter	            When an exception occurs	            Custom error handling
     Result Filter	                Before and after result execution	    Modify response or headers
@@ -165,6 +168,141 @@ const Filter = (
     
     Exception filters: Handle exceptions that occur during the execution of an action method. 
     They can be used to log exceptions or provide custom error responses.
+
+    -----------------------------ACTION FILTER FROM InternAPI------------------------------------
+
+            using InternAPI.Models;
+            using Microsoft.AspNetCore.Mvc;
+            using Microsoft.AspNetCore.Mvc.Filters;
+
+            namespace InternAPI.Filters
+            {
+                public class ActionFilter : IActionFilter
+                {
+                    public void OnActionExecuted(ActionExecutedContext context)
+                    {
+                        Console.WriteLine("Action Filter has executed...");
+                    }
+                
+                    public void OnActionExecuting(ActionExecutingContext context)
+                    {
+
+                        if (context.ActionArguments.ContainsKey("std"))
+                        {
+                            var student = context.ActionArguments["std"] as Student;
+
+                            // Perform custom validation on the employee model
+                            if (student == null)
+                            {
+                                context.Result = new BadRequestObjectResult("Student data is missing.");
+                                return;
+                            }
+
+                            if (string.IsNullOrWhiteSpace(student.StudentName))
+                            {
+                                context.Result = new BadRequestObjectResult("Student name is required.");
+                                return;
+                            }
+
+                            if (student.Age<0)
+                            {
+                                context.Result = new BadRequestObjectResult("Age must be +ve.");
+                                return;
+                            }
+
+                            //if (employee.DateOfBirth == default || employee.DateOfBirth > DateTime.Now)
+                            //{
+                            //    context.Result = new BadRequestObjectResult("A valid date of birth is required.");
+                            //    return;
+                            //}
+                        }
+
+                        Console.WriteLine("Action Filter is executing....... .");
+                    }
+                }
+            }
+
+    -----------------------------RESULT FILTER FROM InternAPI------------------------------------
+
+        using Azure;
+        using InternAPI.Models;
+        using Microsoft.AspNetCore.Http;
+        using Microsoft.AspNetCore.Http.HttpResults;
+        using Microsoft.AspNetCore.Mvc;
+        using Microsoft.AspNetCore.Mvc.Filters;
+        using Microsoft.Extensions.Hosting;
+        using System.Diagnostics.Metrics;
+        using System;
+        namespace InternAPI.Filters
+        {
+            public class ResultFilter: IResultFilter
+            {
+                public void OnResultExecuting(ResultExecutingContext context)
+                {
+                    Console.WriteLine("Result Filter is executing");
+                    
+                    if (context.Result is OkObjectResult okResult)
+                    {
+                        // Modify the content of the OkObjectResult (the object being returned)
+                        var originalData = okResult.Value;
+                        
+
+                        // Example: Modify the data (e.g., add a custom message or manipulate data)
+                        if (originalData is string strData)
+                        {
+                            okResult.Value = strData.ToUpper(); // Modify string data to uppercase as an example
+                        }
+                        else if (originalData is List<Student> myModel)
+                        {
+                            myModel[0].StudentName = "Modified in ResultFilter"; // Modify a property of the model
+                            myModel[0].Age = 88;
+                            okResult.Value = myModel; // Set the modified model back to the result
+                        }
+
+                        // You can also add custom headers if needed
+                        context.HttpContext.Response.Headers.Add("X-Modified-By", "ResultFilter");
+                    }
+                    Console.WriteLine("Result Filter is about to execute.");
+                }
+
+                public void OnResultExecuted(ResultExecutedContext context)
+                {
+            
+                                var result = context.Result;
+
+                    if (result is OkObjectResult objectResult2)
+                    {
+                        // Modify the result if it's an ObjectResult (most common for returning objects)
+                        var originalValue = objectResult2.Value;
+                            
+                        List<Student> mObj= new List<Student>();
+                        if (originalValue is List<Student> myModel)
+                        {
+                            myModel[0].StudentName = "Modified in ResultFilter4"; // Modify a property of the model
+                            myModel[0].Age = 44;
+                            mObj = myModel; // Set the modified model back to the result
+                        }
+
+
+                        // Example modification: wrap the original response value in a custom response object
+                        objectResult2.Value = new
+                        {
+                            Success = true,
+                            Data = mObj,
+                            Message = "Request processed successfully9"
+                        };
+                    }
+
+                    Console.WriteLine("Result Filter has been executed.");
+                }
+            }
+        }
+    
+
+
+
+
+
     `}
   </>
 );

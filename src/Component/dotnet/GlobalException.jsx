@@ -1,5 +1,8 @@
 const GlobalException = (
   <>
+    <div style={{ textAlign: "left", marginLeft: "3%" }}>
+      <h2>Global Exception</h2>
+    </div>
     {`
 
         🧩 What is Global Exception Handling?
@@ -15,15 +18,16 @@ const GlobalException = (
         It avoids exposing stack traces or internal errors to users.
 
         🧱 There Are 3 Common Ways to Handle It Globally
-        Approach	Description
-        ✅ 1. Custom Middleware (Recommended)	Centralized control, works across the pipeline
-        2. UseExceptionHandler()	Built-in ASP.NET Core feature
-        3. Exception Filters	Controller-level or global MVC filters
+        Approach	                            Description
+        ✅ 1. Custom Middleware (Recommended)   Centralized control, works across the pipeline
+        2. UseExceptionHandler()	            Built-in ASP.NET Core feature
+        3. Exception Filters	                Controller-level or global MVC filters
 
         Let’s focus on the best approach — using a Custom Middleware.
 
         🧠 1️⃣ Create a Custom Exception Middleware
         📄 ExceptionHandlingMiddleware.cs
+        
         using Microsoft.AspNetCore.Http;
         using Microsoft.Extensions.Logging;
         using System.Net;

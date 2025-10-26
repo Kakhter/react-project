@@ -1,5 +1,9 @@
 const ReturnType = (
   <>
+    <div style={{ textAlign: "left", marginLeft: "3%" }}>
+      <h2>Return Type</h2>
+    </div>
+
     {`
         1. Enable XML Formatter in Program.cs
 

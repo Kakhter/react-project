@@ -28,6 +28,20 @@ const MiddleWare = (
         var bodyStream = context.Request.Body;      // Request body stream
         var contentType = context.Request.ContentType;
 
+        Category	          Property / Method	                        Purpose
+        Request Info	        HttpContext.Request	                        =>Access request details like URL, headers, query params, body, etc.
+                                Request.Path, Request.Method, Request.Query	=>To check request route and type (GET, POST etc.)
+                                Request.Headers["Authorization"]	        =>To read custom or JWT headers
+        Response Control        HttpContext.Response	                    =>Modify outgoing response (status, body, headers)
+                                Response.StatusCode	                        =>Set HTTP status code
+                                Response.Headers.Add()	                    =>Add custom response headers
+        User Information	    HttpContext.User	                        =>Access logged-in user claims/principal (from JWT, cookies, etc.)
+        Dependency Services	    HttpContext.RequestServices	                =>Resolve scoped dependencies (e.g., database, logger)
+        Session	                HttpContext.Session	                        =>Store user data during a session
+        Items(Per Request Data) HttpContext.Items["key"]	                =>Store temporary data for this request (used by both middleware and filters)
+        Connection Info	        HttpContext.Connection.RemoteIpAddress	    =>Get client IP address
+        Cancellation Token	    HttpContext.RequestAborted	                =>Detect when the client cancels request
+
 
     What is Middleware?
 

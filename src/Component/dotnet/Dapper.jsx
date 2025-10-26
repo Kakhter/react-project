@@ -1,5 +1,8 @@
 const Dapper = (
   <>
+    <div style={{ textAlign: "left", marginLeft: "3%" }}>
+      <h2>Dapper</h2>
+    </div>
     {/* <span style={{ color: "red", fontWeight: "bold" }}>How to decorate </span>
     <span style={{ textDecoration: "underline", color: "green" }}>
       the text
@@ -8,8 +11,7 @@ const Dapper = (
     <br /> */}
     {/* <img src="/dotnet/Repository.jpg" width="100%"></img> */}
     <br />
-    {`
-      Folder Structure:
+    {`      Folder Structure:
 
       📦 DapperCleanArchitecture
       ┣ 📂 DapperCleanArchitecture.Domain
@@ -33,7 +35,10 @@ const Dapper = (
       ┃ ┗ Program.cs
 
     🧩 1️⃣ Domain Layer
-
+    
+    Install:
+    dotnet add package Dapper
+    
     namespace DapperCleanArchitecture.Domain.Entities
     {
         public class Customer
@@ -284,6 +289,155 @@ const Dapper = (
         ✅ Very fast, lightweight API
         ✅ Easy to extend for more entities (e.g., Orders, Products, etc.)
 
+        ===========================================REAL CODE====================================
+
+        ===========DAPPER
+        ------------------------------------------------------------------------Domain
+        ------------------------------------------------/Entities
+        namespace DapperApi.Domain.Entities
+        {
+            public class Customer
+            {
+                public int Id { get; set; }
+                public string Name { get; set; }
+                public string Email { get; set; }
+            }
+        }
+        ------------------------------------------------/Interfaces
+        using DapperApi.Domain.Entities;
+
+        namespace DapperApi.Domain.Interfaces
+        {
+            public interface ICustomerRepository
+            {
+                Task<IEnumerable<Customer>> GetAllCustomersAsync();
+                Task<Customer> GetCustomerByIdAsync(int id);
+                Task<int> CreateCustomerAsync(Customer customer);
+                Task<int> UpdateCustomerAsync(Customer customer);
+                Task<int> DeleteCustomerAsync(int id);
+            }
+        }
+        ------------------------------------------------------------------------Infrastructure
+        ------------------------------------------------/Data
+        using System.Data;
+        using System.Data.SqlClient;
+
+        namespace DapperApi.Infrastructure.Data
+        {
+            public class DapperContext
+            {
+                private readonly IConfiguration _configuration;
+                public DapperContext(IConfiguration configuration)
+                {
+                    _configuration = configuration;
+                }
+                public IDbConnection CreateConnection()
+                {
+                    return new SqlConnection(_configuration.GetConnectionString("DefaultConnection")); // No changes needed here as the namespace is updated
+                }
+            }
+        }
+        ------------------------------------------------/Repositories
+        using Dapper;
+        using DapperApi.Domain.Entities;
+        using DapperApi.Domain.Interfaces;
+        using DapperApi.Infrastructure.Data;
+
+        namespace DapperApi.Infrastructure.Repositories
+        {
+        
+            public class CustomerRepository : ICustomerRepository
+            {
+                private readonly DapperContext _context;
+
+                public CustomerRepository(DapperContext context)
+                {
+                    _context = context;
+                }
+                public async Task<int> CreateCustomerAsync(Customer customer)
+                {
+                    string sql = "INSERT INTO Customer (Name, Email) VALUES (@Name, @Email); SELECT Id,Name,Email from Customer where Id= CAST(SCOPE_IDENTITY())";
+                    using var connection = _context.CreateConnection();
+                    var id = await connection.QueryAsync<int>(sql, customer);
+                    return id.Single();
+                }
+
+        .....................
+            }
+        }
+
+        ------------------------------------------------------------------------Application
+        ------------------------------------------------/Services
+        using DapperApi.Domain.Interfaces;
+        using DapperApi.Domain.Entities;
+        namespace DapperApi.Application.Services
+        {
+            public class CustomerService
+            {
+                private readonly ICustomerRepository _customerRepository;
+                public CustomerService(ICustomerRepository customerRepository)
+                {
+                    _customerRepository = customerRepository;
+                }
+
+                public async Task<int> CreateCustomerAsync(Customer customer)
+                {
+                    return await _customerRepository.CreateCustomerAsync(customer);
+                }
+
+                public async Task<int> DeleteCustomerAsync(int id)
+                {
+
+                    return await _customerRepository.DeleteCustomerAsync(id);
+                }
+
+                public async Task<IEnumerable<Customer>> GetAllCustomersAsync()
+                {
+                    return await _customerRepository.GetAllCustomersAsync();
+                }
+
+                public async Task<Customer> GetCustomerByIdAsync(int id)
+                {
+                    return await _customerRepository.GetCustomerByIdAsync(id);
+                }
+
+                public async Task<int> UpdateCustomerAsync(Customer customer)
+                {
+                    return await _customerRepository.UpdateCustomerAsync(customer);
+                }   
+            }
+        }
+
+        ------------------------------------------------------------------------Controller
+        public class CustomerController : ControllerBase
+        {
+            private readonly CustomerService _customerService;
+            public CustomerController(CustomerService customerService)
+            {
+                _customerService = customerService;
+            }
+
+            [HttpPost]
+            public async Task<IActionResult> CreateCustomer([FromBody] Customer customer)
+            {
+                if (customer == null)
+                {
+                    return BadRequest("Customer is null.");
+                }
+                var id = await _customerService.CreateCustomerAsync(customer);
+                //return CreatedAtAction(nameof(GetCustomerById), new { id = id }, customer);
+                return Ok(new {Customer="New Customer Created", Id = id });
+            }
+        ------------------------------------------------------------------------Appsetting.json
+
+        "ConnectionStrings": { "DefaultConnection": "Server=IN-3LDLV64;Database=FamilyDB;User Id=sa;Password=sa;Encrypt=False;" }
+
+        ------------------------------------------------------------------------Program.cs
+
+        builder.Services.AddControllers();
+        builder.Services.AddSingleton<DapperApi.Infrastructure.Data.DapperContext>();
+        builder.Services.AddScoped<DapperApi.Domain.Interfaces.ICustomerRepository, DapperApi.Infrastructure.Repositories.CustomerRepository>();
+        builder.Services.AddScoped<DapperApi.Application.Services.CustomerService>();
 
 
 

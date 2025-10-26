@@ -1,5 +1,8 @@
 const EnvironmentSetting = (
   <>
+    <div style={{ textAlign: "left", marginLeft: "3%" }}>
+      <h2>Environment Setting</h2>
+    </div>
     {`
     This is envoronment setting for .net core api.
             MyApi/

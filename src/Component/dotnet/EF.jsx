@@ -1,5 +1,8 @@
 const EF = (
   <>
+    <div style={{ textAlign: "left", marginLeft: "3%" }}>
+      <h2>Entity Framework EF</h2>
+    </div>
     {`
     Step 1:
 

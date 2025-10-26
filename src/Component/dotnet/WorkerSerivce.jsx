@@ -1,5 +1,9 @@
 const WorkerService = (
   <>
+    <div style={{ textAlign: "left", marginLeft: "3%" }}>
+      <h2>Worker Service</h2>
+    </div>
+
     {`      🧩 What is a Worker Service in .NET Core?
 
         A Worker Service is a background application built using the Generic Host in .NET Core.

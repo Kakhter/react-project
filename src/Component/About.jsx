@@ -18,6 +18,15 @@ const About = () => {
         Master of Computer Applications (MCA)  
         khalid.bharat@gmail.com
         Mob: 9430969786
+
+      Dapper File Path:
+      C:\\Users\\KhalidAkhter\\OneDrive - GyanSys Inc\\Desktop\Copy_C_Drive\\inOneFolder\\MyShowCase
+      \\CleanArchitecture\\Dapper.WebApi-master\\Dapper.WebApi-master
+
+      InternAPI File Path:
+      C:\\Users\\KhalidAkhter\\Downloads\\InternAPI\\InternAPI\\InternAPI
+
+
       `}
         </code>
       </pre>

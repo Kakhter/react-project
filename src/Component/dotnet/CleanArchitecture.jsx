@@ -1,5 +1,9 @@
-        const CleanArchitecture =
-        `
+const CleanArchitecture = (
+  <>
+    <div style={{ textAlign: "left", marginLeft: "3%" }}>
+      <h2>Clean Architecture</h2>
+    </div>
+    {`
         Scaffold-DbContext "your-connection-string" Microsoft.EntityFrameworkCore.SqlServer 
         -OutputDir Models -Context AppDbContext
         EF Core generates:
@@ -83,5 +87,7 @@
             │
             └── CustomerDiscount.sln
 
-        `
-        export default CleanArchitecture;
+        `}
+  </>
+);
+export default CleanArchitecture;

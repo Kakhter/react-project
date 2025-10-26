@@ -1,8 +1,9 @@
 const Compression = (
   <>
+    <div style={{ textAlign: "left", marginLeft: "3%" }}>
+      <h2>Compression</h2>
+    </div>
     {`
-        Compression
-        ------------
     🧠 What Is Compression in ASP.NET Core?
 
         Compression means reducing the size of the data (like JSON, XML, HTML, or text) 
