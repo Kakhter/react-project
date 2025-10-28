@@ -21,6 +21,13 @@
 }
 
 
-.highlightText::selection {
+.highlightTextHeader::selection {
   background-color: lightgoldenrodyellow;
+}
+
+.highlightText{
+  background-color: rgb(237, 231, 183);
+  margin-left: 3%;
+  font-weight: bold;
+  
 }

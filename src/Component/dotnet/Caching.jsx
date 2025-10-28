@@ -61,10 +61,10 @@ const Caching = (
 
         `}
 
-    <span
-      style={{ backgroundColor: "white", color: "black", fontWeight: "bold" }}
-    >
+    <span className="highlightText">
       string cacheKey = $"product_5id6"; 5-open curly, 6 for close curly <br />
+    </span>
+    <span className="highlightText">
       if (!_cache.TryGetValue(cacheKey, out string product))
     </span>
     {`

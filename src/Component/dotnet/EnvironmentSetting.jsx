@@ -1,7 +1,7 @@
 const EnvironmentSetting = (
   <>
-    <div style={{ textAlign: "left", marginLeft: "3%" }}>
-      <h2>Environment Setting</h2>
+    <div>
+      <span className="highlightText">API Environment Setting</span>
     </div>
     {`
     This is envoronment setting for .net core api.
@@ -111,7 +111,7 @@ const EnvironmentSetting = (
             "launchBrowser": true,
             "applicationUrl": "https://localhost:7100;http://localhost:5100",
             "environmentVariables": {
-                "ASPNETCORE_ENVIRONMENT": "Development"
+            "ASPNETCORE_ENVIRONMENT": "Development"
             }
             }
         }
@@ -119,9 +119,11 @@ const EnvironmentSetting = (
 
 `}
 
-    <span style={{ color: "blue", marginLeft: "60px" }}>
-      You can change "Development" to "Staging" or "Production" for testing.
-    </span>
+    <div>
+      <span className="highlightText">
+        You can change "Development" to "Staging" or "Production" for testing.
+      </span>
+    </div>
 
     {`
 
@@ -132,6 +134,60 @@ const EnvironmentSetting = (
         ASPNETCORE_ENVIRONMENT	Defines current environment
         builder.Environment.IsDevelopment()	Used for conditional setup
         launchSettings.json	Local debugging environment
+
+`}
+    <div>
+      <span className="highlightText">
+        🧩 Step 2: How .NET Knows Which Environment to Use
+      </span>
+    </div>
+
+    {`
+
+    var builder = WebApplication.CreateBuilder(args);
+    Console.WriteLine($"Current Environment: {builder.Environment.EnvironmentName}");
+
+        The environment is set using the variable:
+        ASPNETCORE_ENVIRONMENT
+        Possible values:
+
+        Development
+        Staging
+        Production
+
+        You can check or set it in multiple ways 👇
+        🔹 Option 1: In Visual Studio (for local run)
+        Open:
+        Properties → launchSettings.json
+        You’ll see something like:
+
+        {
+        "profiles": {
+            "YourAPI": {
+            "commandName": "Project",
+            "dotnetRunMessages": true,
+            "launchBrowser": true,
+            "environmentVariables": {
+            "ASPNETCORE_ENVIRONMENT": "Staging"
+            },
+            "applicationUrl": "https://localhost:7247"
+            }
+        }
+        }
+
+
+        ✅ If that says "Staging", your API will use appsettings.Staging.json.
+`}
+    <span className="highlightText">🔹 Option 2: In command line</span>
+    {`
+
+        You can run:
+
+        set ASPNETCORE_ENVIRONMENT=Staging
+        dotnet run
+
+
+
 
     `}
   </>

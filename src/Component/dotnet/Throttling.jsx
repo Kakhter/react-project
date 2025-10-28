@@ -14,7 +14,7 @@ const Throttling = (
 
         `}
 
-    <span style={{ backgroundColor: "lightyellow", marginLeft: "3%" }}>
+    <span className="highlightText">
       dotnet add package AspNetCoreRateLimit
     </span>
     {`
@@ -78,12 +78,31 @@ const Throttling = (
         "HttpStatusCode": 429,
         "GeneralRules": [
             {
-            "Endpoint": "*",
+            "Endpoint": "ap/login",
             "Period": "1m",
-            "Limit": 5
+            "Limit": 3
+            },
+            {
+              "Endpoint": "/api/customers",
+              "Period": "1m",
+              "Limit": 5
+            },
+            {
+              "Endpoint": "/api/orders",
+              "Period": "1m",
+              "Limit": 3
+            },
+            {
+              "Endpoint":"*",
+              "period": "10m"
+              "Limit":10
             }
         ]
         }
+
+        A specific endpoint rule (like /api/auth/login), and
+        A general wildcard rule (*),
+        the specific rule always takes precedence over the general one
 
 
         🔹 This means: Each IP can call any endpoint at most 5 times per minute.

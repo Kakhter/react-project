@@ -5,6 +5,8 @@ const ndaSeparation = "/resigned/4_NDASeparationAgreementSigned.pdf"
 const ndaSeparationSigned = "/resigned/5_NDASeparationAgreementSignedDone.pdf"
 const ndaAudit = "/resigned/6_NDASeparationAgreement_0994Audit.pdf"
 const fullfinal ="/resigned/fullfinal.pdf"
+const experienceLetter ="./resigned/Pending.pdf"
+const form16AS ="./resigned/Form16AS_AJBPA9805B-2026.pdf"
 
 const offerletter ="resigned/Gyansys_Offer.pdf"
 const salaryRevision ="resigned/SalaryRevision_20250994.pdf"
@@ -14,6 +16,8 @@ const salarySlipJun ="resigned/Payslip_Jun_2025.pdf"
 const salarySlipJul ="resigned/Payslip_Jul_2025.pdf"
 const salarySlipAug ="resigned/Payslip_Aug_2025.pdf"
 const salarySlipSep ="resigned/Payslip_Sep_2025.pdf"
+
+const consultant ="resigned/RetainershipAgreement_Khalid Akhter.pdf"
 
 
 const Data =[
@@ -56,6 +60,16 @@ const Data =[
     id:7,
     pdfLink:fullfinal,
     description:"Full & Final Shuttlement"
+},
+{
+    id:8,
+    pdfLink:experienceLetter,
+    description:"Experience Letter-Pending"
+},
+{
+    id:9,
+    pdfLink:form16AS,
+    description:"Form 16AS, Income Tax Dept."
 }
 ]
 
@@ -100,8 +114,18 @@ const DataSalary =[
     pdfLink:salarySlipSep,
     description:"Salary Slip September, 2025"
     },
+    
 
+]
+
+const Consultant =[
+
+    {
+    id:1,
+    pdfLink:consultant,
+    description:"Consultant Agreement"
+    },
 
 ]
  
-export { Data , DataSalary };  
+export { Data , DataSalary, Consultant};  

@@ -19,6 +19,10 @@ import Swagger from "./Swagger";
 import Compression from "./Compression";
 import WorkerService from "./WorkerSerivce";
 import GlobalException from "./GlobalException";
+import Email from "./Email";
+import SSMSOpenAI from "./SSMSOpenAI";
+import PromptEngineering from "./PromptEngineering";
+import QA from "./QA";
 import Data from "./Data";
 
 import "./dotnet.css";
@@ -47,11 +51,15 @@ const DotNet = () => {
     if (id == 17) setData(Swagger);
     if (id == 18) setData(WorkerService);
     if (id == 19) setData(GlobalException);
+    if (id == 20) setData(Email);
+    if (id == 21) setData(SSMSOpenAI);
+    if (id == 22) setData(PromptEngineering);
+    if (id == 23) setData(QA);
   }
   return (
     <>
       <h1>
-        <span className="highlightText">Dot Net Practices</span>
+        <span className="highlightTextHeader">Dot Net Practices</span>
       </h1>
       Theoretical: <br />
       <div
@@ -149,6 +157,19 @@ const DotNet = () => {
         </div>
         <div className="oval-text" onClick={() => DisplayData(19)}>
           GlobalException
+        </div>
+        <div className="oval-text" onClick={() => DisplayData(20)}>
+          Email
+        </div>
+
+        <div className="oval-text" onClick={() => DisplayData(21)}>
+          SSMSOpenAI
+        </div>
+        <div className="oval-text" onClick={() => DisplayData(22)}>
+          PromptEngineering
+        </div>
+        <div className="oval-text" onClick={() => DisplayData(23)}>
+          General Question/Answer
         </div>
       </div>
       <pre>

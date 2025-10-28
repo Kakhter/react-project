@@ -8,6 +8,14 @@ const About = () => {
     <>
       <h1>About</h1>
 
+      {/* <iframe
+        src="http://localhost:5227/WeatherForecast"
+        width="600"
+        height="400"
+        style={{ border: "2px solid #333" }}
+        title="Wikipedia Example"
+      ></iframe> */}
+
       <pre>
         <code>
           {`
@@ -24,7 +32,23 @@ const About = () => {
       \\CleanArchitecture\\Dapper.WebApi-master\\Dapper.WebApi-master
 
       InternAPI File Path:
-      C:\\Users\\KhalidAkhter\\Downloads\\InternAPI\\InternAPI\\InternAPI
+      C:\\Users\\KhalidAkhter\\OneDrive - GyanSys Inc\\Desktop\\TA-IntrimTraining\\DotNet Day Wise
+      \\Dot Net Training - 2025\\DotNet_Jan302025\\InternAPI\\InternAPI
+
+      GulfTelent: https://www.gulftalent.com/candidates/edit-cv/cv-review
+
+      Pending Tasks: 
+    
+      2***. Gyansys Experience Letter :regined//pending.pdf
+
+      Discuss strategies to secure an ASP.NET Core API using OAuth2 and OpenID Connect.
+     Explain the pros, cons, and implementation details of API versioning in ASP.NET Core.
+
+    How have you optimized database access in Entity Framework Core for large-scale applications?
+
+    Describe how you would implement logging in ASP.NET Core with providers such as Serilog or NLog, including structured logging best practices.
+      
+
 
 
       `}

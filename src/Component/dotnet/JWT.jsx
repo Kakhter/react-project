@@ -103,6 +103,17 @@ const JWT = (
 
             public async Task InvokeAsync(HttpContext context)
             {
+
+            // Skip validation for login or register routes
+                var path = context.Request.Path.Value?.ToLower();
+
+                if (path.Contains("/api/auth/login") || path.Contains("/api/auth/register"))
+                {
+                    await _next(context);
+                    return;
+                }
+
+
                 var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
 
                 if (token == null)

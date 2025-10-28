@@ -1,5 +1,6 @@
 import React from "react";
-import { Data, DataSalary } from "./Data.js";
+import { Consultant, Data, DataSalary } from "./Data.js";
+
 // import "/src/Component/azure/card.css";
 import "./gyansysStyle.css";
 
@@ -34,7 +35,7 @@ const GyansysReg = () => {
         })}
       </div>
 
-      <h2>Salary Slips</h2>
+      <h2>Gyansys Salary Slips</h2>
       <div className="gyancontainer">
         {DataSalary.map(({ id, pdfLink, description }) => {
           return (
@@ -59,6 +60,33 @@ const GyansysReg = () => {
           );
         })}
       </div>
+
+      <h2>Gyansys Consultant Process</h2>
+      <div className="gyancontainer">
+        {Consultant.map(({ id, pdfLink, description }) => {
+          return (
+            <div className="gyancard">
+              <div key={id}>
+                <div className="cardheader">
+                  Step: {id}
+                  {/* <img src={image} alt="image" width="50%" height="50%"></img> */}
+                </div>
+                <br />
+                <div className="carddescription">
+                  <b>Description:</b> {description}
+                </div>
+                <br />
+                <div className="cardlink">
+                  <a href={pdfLink} target="_blank">
+                    <span className="oval-text">PDF Link</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
       <br />
     </>
   );
