@@ -33,8 +33,22 @@ const MiddleWare = (
         *) Cheat-sheet (one-page)
 
         Middleware order (start → end):
-        ExceptionHandler → HSTS → HttpsRedirection → StaticFiles → UseForwardedHeaders → UseRouting → CORS → 
-        ResponseCompression → UseAuthentication → UseAuthorization → CustomMiddlewares → UseEndpoints/MapControllers.
+
+         → ExceptionHandler: app.UseDeveloperExceptionPage(); app.UseExceptionHandler("/error");
+         → HSTS: (app.UseHsts();)
+         → HttpsRedirection: app.UseHttpsRedirection();
+         → StaticFiles: app.UseStaticFiles()
+         → UseForwardedHeaders => behind a proxy or load balancer
+         → UseRouting: app.UseRouting();
+         → CORS: app.UseCors("AllowSpecificOrigin");
+         → ResponseCompression: app.UseResponseCompression(); 
+         → UseAuthentication: app.UseAuthentication();
+         → UseAuthorization: app.UseAuthorization();
+         → Swagger: app.UseSwagger();
+         → SwaggerUI: app.UseSwaggerUI();
+         → CustomMiddlewares: app.UseMiddleware<PerformanceMiddleware>();
+         → app.MapHealthChecks("/health");
+         → MapControllers.: app.MapControllers();
 
 
         Category	        Property / Method	                            Purpose

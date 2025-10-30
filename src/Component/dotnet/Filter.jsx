@@ -14,7 +14,8 @@ const Filter = (
 
     🧠 What is a Filter in ASP.NET Core?
 
-    A Filter in ASP.NET Core is a piece of code that runs automatically before or after certain stages in the request processing pipeline.
+    A Filter in ASP.NET Core is a piece of code that runs automatically before or after certain 
+    stages in the request processing pipeline.
 
     You use filters to:
 
