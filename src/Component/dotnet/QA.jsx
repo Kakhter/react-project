@@ -86,9 +86,9 @@ const QA = (
 
       ASP.NET Core supports multiple versioning strategies — you can use any combination.
 
-      Method	Example	Pros	Cons
-      URL Path Versioning	/api/v1/products	Clear, simple, visible in URL	Requires route updates
-      Query String Versioning	/api/products?api-version=1.0	Easy to add	Less RESTful, harder to cache
+      Method	                  Example	          Pros	                        Cons
+      URL Path Versioning	      /api/v1/products	Clear, simple, visible in URL	Requires route updates
+      Query String Versioning	  /api/products?api-version=1.0	Easy to add	Less RESTful, harder to cache
       Header Versioning	Add x-api-version: 1.0	Clean URL	Clients must set headers manually
       Media Type Versioning	Accept: application/json;version=1.0
 
@@ -140,15 +140,21 @@ const QA = (
       v2	https://localhost:5001/api/v2/products
 
 
-
-
-
-
-
-
-
-
     ❓Question 4: How have you optimized database access in Entity Framework Core for large-scale applications?
+
+    Optimization	            Purpose
+    -------------------------------------------------------------
+    AsNoTracking()	            Disable change tracking for reads
+    Projection (DTOs)	            Fetch only required columns
+    Compiled Queries	            Reuse compiled query plans
+    Pagination	                    Handle large result sets efficiently
+    Eager Loading	            Avoid N+1 query issue
+    DbContext Pooling	            Reuse DB connections
+    Caching	                    Reduce database load
+    Raw SQL / Stored Procs	    Optimize complex logic
+    Indexing	                    Faster lookups
+    ExecuteUpdate/Delete	    Batch operations
+
 
     ❓Question 5: Describe how you would implement logging in ASP.NET Core with providers such as Serilog or NLog, including structured logging best practices.
        
@@ -188,7 +194,48 @@ const QA = (
           return Ok("Serilog is working fine!");
       }
 
-    ❓Question 6: Performance issue..
+      ❓Question 6: Discuss strategies to secure an ASP.NET Core API using OAuth2 and OpenID Connect.
+    
+      dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
+
+      🧩 Step 2: Configure Authentication in Program.cs
+
+      Here’s a simple setup using JWT Bearer tokens (OAuth2 flow):
+
+      var builder = WebApplication.CreateBuilder(args);
+
+      builder.Services.AddControllers();
+
+      // 🔐 Add Authentication & JWT Bearer
+      builder.Services.AddAuthentication("Bearer")
+          .AddJwtBearer("Bearer", options =>
+          {
+              options.Authority = "https://demo.identityserver.io"; // Identity Provider (OIDC)
+              options.Audience = "api1"; // API Resource name
+              options.RequireHttpsMetadata = true;
+          });
+
+      builder.Services.AddAuthorization();
+
+      var app = builder.Build();
+
+      // Middleware order matters
+      app.UseHttpsRedirection();
+      app.UseAuthentication(); // 👈 Must come before UseAuthorization
+      app.UseAuthorization();
+
+      app.MapControllers();
+
+      app.Run();
+
+
+      [HttpGet]
+          [Authorize] // 🔒 Only accessible with valid JWT token
+          public IActionResult GetCustomers()
+          {
+              return Ok(new[] { "John", "Mary", "Steve" });
+          }
+
     `}
   </>
 );
