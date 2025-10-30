@@ -30,6 +30,13 @@ const Filter = (
 
     HTTP Request → Middleware → Filters → Controller → Action → Filters → Middleware → HTTP Response
 
+    Filter execution (inbound):
+    Authorization → Resource (OnResourceExecuting) → Model Binding → Action (OnActionExecuting) → Action → 
+    Action (OnActionExecuted) → ExceptionFilter (if error) → Result (OnResultExecuting) → Result Execution → 
+    Result (OnResultExecuted) → Resource (OnResourceExecuted)
+
+
+
     🧩 Types of Filters in ASP.NET Core
     Filter Type	                  Runs When	                            Common Use
     Authorization Filter	        Before anything else	                Check user permissions (Auth)

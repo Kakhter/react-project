@@ -131,21 +131,21 @@ const FactoryPattern = `
     [HttpGet]
     public IActionResult GetCustomerDetails(string customerName, decimal totalAmount)
     {
-        try(
+        try{
             var customer = _customerResolver(customerName);
             decimal discountAmount = customer.GetDiscount(totalAmount);
             return ok(
                       new {CustomerDiscount = discountAmount, CustomerName=customer.Name };
                     )
-            )
+            }
         catch(ArgumentException ae)
           {
             return BadRequest("Error: " + ae);
           }
         catch( Exception ex)
-        {
+          {
             return BadRequest("Error: " + ex);
-        }
+          }
     }
 }
 `;

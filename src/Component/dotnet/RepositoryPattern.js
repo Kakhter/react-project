@@ -83,56 +83,57 @@
     -------------------------
     public class Customer
     {
-    public string FirstName;
-    public string LastName;
-    public string AadharNumber;
+        public string FirstName;
+        public string LastName;
+        public string AadharNumber;
     }
 
     2. Create ICustomerRepository Interface:
     ----------------------------------------
     public interface ICustomerRepository
     {
-    IEnumeriable<Customer> GetAll();
-    Customer GetByID(int id)
-    void AddCustomer(Customer customer)
-    void DeleteCustomer(int id);
-    void UpdateCustomer(Customer customer)
+        IEnumeriable<Customer> GetAll();
+        Customer GetByID(int id)
+        void AddCustomer(Customer customer)
+        void DeleteCustomer(int id);
+        void UpdateCustomer(Customer customer)
     }
 
     3. Create Customer Service
+
     public class CustomerService{
 
-    private readonly ICustomerRepository _customerRepository;
+        private readonly ICustomerRepository _customerRepository;
 
-    public CustomerService(ICustomerRepository customerRepository)
-    {
-        _customerRepository=customerRepository
-    }
+        public CustomerService(ICustomerRepository customerRepository)
+        {
+            _customerRepository=customerRepository
+        }
 
-    public IEnumeriable<Customer> GetAllCustomer()
-    {
-        return(_customerRepository.GetAll());
-    }
-    
-    public Customer GetCustomer(id int)
-    {
-        return _customerRepository.GetByID(id);
-    }
-    public void DeleteCustomer(id)
-    {
-        _customerRepository.DeleteCustomer(id);
-    }
+        public IEnumeriable<Customer> GetAllCustomer()
+        {           
+            return(_customerRepository.GetAll());
+        }
+        
+        public Customer GetCustomer(id int)
+        {
+            return _customerRepository.GetByID(id);
+        }
 
-    public void UpdateCustomer(Customer customer)
-    {
-        _customerRepository.UpdateCustomer(customer); 
-    }
+        public void DeleteCustomer(id)
+        {
+            _customerRepository.DeleteCustomer(id);
+        }
 
-    public void AddCustomer(Customer customer)
-     {
-        _customerRepository.AddCustomer(customer)
-     }
+        public void UpdateCustomer(Customer customer)
+        {
+            _customerRepository.UpdateCustomer(customer); 
+        }
 
+        public void AddCustomer(Customer customer)
+        {
+            _customerRepository.AddCustomer(customer)
+        }
 
     }
 
@@ -194,7 +195,6 @@
     }
     
     [HttpGet{(id)}]
-
     public IActionResult GetById(int id)
     {
         return Ok(_cs.GetCustomerByID(id))
@@ -228,7 +228,7 @@
     Register IOC:
     builder.Services.AddScoped<ICustomerRepository CustomerRepository>();
     builder.Services.AddScoped<CustomerService>();
-    builder.Services.AddDBContext<MyDBContext>(option=> option.UserSqlServer(builder.Configuration.GetConnectionStrin("conn")));
+    builder.Services.AddDBContext<DBContext>(option=> option.UserSqlServer(builder.Configuration.GetConnectionStrin("conn")));
 
    In AppSetting.json
    ------------------

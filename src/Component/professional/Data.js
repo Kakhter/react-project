@@ -5,7 +5,7 @@ const ndaSeparation = "/resigned/4_NDASeparationAgreementSigned.pdf"
 const ndaSeparationSigned = "/resigned/5_NDASeparationAgreementSignedDone.pdf"
 const ndaAudit = "/resigned/6_NDASeparationAgreement_0994Audit.pdf"
 const fullfinal ="/resigned/fullfinal.pdf"
-const experienceLetter ="./resigned/Pending.pdf"
+const experienceLetter ="./resigned/Experience_Relieving_Letter.pdf"
 const form16AS ="./resigned/Form16AS_AJBPA9805B-2026.pdf"
 
 const offerletter ="resigned/Gyansys_Offer.pdf"
@@ -17,8 +17,10 @@ const salarySlipJul ="resigned/Payslip_Jul_2025.pdf"
 const salarySlipAug ="resigned/Payslip_Aug_2025.pdf"
 const salarySlipSep ="resigned/Payslip_Sep_2025.pdf"
 
-const consultant ="resigned/RetainershipAgreement_Khalid Akhter.pdf"
 
+const consultant ="resigned/RetainershipAgreement_Khalid Akhter.pdf"
+const InvoiceFormatContractors = "resigned/InvoiceFormatContractors.xlsx";
+ 
 
 const Data =[
 {
@@ -64,7 +66,7 @@ const Data =[
 {
     id:8,
     pdfLink:experienceLetter,
-    description:"Experience Letter-Pending"
+    description:"Experience-Relieving Letters"
 },
 {
     id:9,
@@ -125,6 +127,14 @@ const Consultant =[
     pdfLink:consultant,
     description:"Consultant Agreement"
     },
+    {
+    id:2,
+    pdfLink:InvoiceFormatContractors,
+    description:"Invoice Format Contractors: get it approved from your AE, can't consider bill without it."
+    },
+
+
+    
 
 ]
  

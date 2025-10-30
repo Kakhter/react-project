@@ -23,6 +23,7 @@ import Email from "./Email";
 import SSMSOpenAI from "./SSMSOpenAI";
 import PromptEngineering from "./PromptEngineering";
 import QA from "./QA";
+import Performance from "./Performance";
 import Data from "./Data";
 
 import "./dotnet.css";
@@ -55,6 +56,7 @@ const DotNet = () => {
     if (id == 21) setData(SSMSOpenAI);
     if (id == 22) setData(PromptEngineering);
     if (id == 23) setData(QA);
+    if (id == 24) setData(Performance);
   }
   return (
     <>
@@ -170,6 +172,9 @@ const DotNet = () => {
         </div>
         <div className="oval-text" onClick={() => DisplayData(23)}>
           General Question/Answer
+        </div>
+        <div className="oval-text" onClick={() => DisplayData(24)}>
+          Performance API
         </div>
       </div>
       <pre>

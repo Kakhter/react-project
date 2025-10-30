@@ -38,16 +38,23 @@ const About = () => {
       GulfTelent: https://www.gulftalent.com/candidates/edit-cv/cv-review
 
       Pending Tasks: 
-    
-      2***. Gyansys Experience Letter :regined//pending.pdf
-
-      Discuss strategies to secure an ASP.NET Core API using OAuth2 and OpenID Connect.
-     Explain the pros, cons, and implementation details of API versioning in ASP.NET Core.
+ 
+    Discuss strategies to secure an ASP.NET Core API using OAuth2 and OpenID Connect.
+    Explain the pros, cons, and implementation details of API versioning in ASP.NET Core.
 
     How have you optimized database access in Entity Framework Core for large-scale applications?
 
     Describe how you would implement logging in ASP.NET Core with providers such as Serilog or NLog, including structured logging best practices.
       
+    React:
+
+    export const authConfig = {
+      authority: "https://your-ping-tenant-id.pingidentity.com/as",
+      client_id: "YOUR_CLIENT_ID",
+      redirect_uri: "http://localhost:3000/callback",
+      response_type: "token id_token",
+      scope: "openid profile email",
+    };
 
 
 
