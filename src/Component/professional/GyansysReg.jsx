@@ -1,32 +1,17 @@
 import React from "react";
-import { Consultant, Data, DataSalary, AMAT, Docs } from "./Data.js";
-
-import DocViewer, { DocViewerRenderers } from "@cyntler/react-doc-viewer";
-import "@cyntler/react-doc-viewer/dist/index.css";
+import { Consultant, Data, DataSalary, AMAT } from "./Data.js";
 
 // import "/src/Component/azure/card.css";
 import "./gyansysStyle.css";
 
 const GyansysReg = () => {
-  const docs1 = [
-    {
-      uri: "/DML.pdf",
-      fileType: "pdf",
-      fileName: "sample.pdf",
-    },
-    {
-      uri: "https://app.khalida.cloud/resigned/PreEmploymentScreening_Khalid_Akhter.docx",
-      fileType: "docx",
-      fileName: "sample.docx",
-    },
-  ];
   return (
     <>
-      <DocViewer documents={docs1} pluginRenderers={DocViewerRenderers} />
       <div>
         Send invoice to ap.in@gyansys.com <br />
         Fill replicon and get approver by respective approver <br />
       </div>
+
       <h2>AMAT Process: Oct 2025</h2>
       <div className="gyancontainer">
         {AMAT.map(({ id, pdfLink, description }) => {

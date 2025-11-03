@@ -1,12 +1,41 @@
-import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import DocViewer, { DocViewerRenderers } from "@cyntler/react-doc-viewer";
+import React, { useEffect, useState } from "react";
+import mammoth from "mammoth";
+import "@cyntler/react-doc-viewer/dist/index.css";
+
+import "../App.css";
 
 const About = () => {
   const navigate = useNavigate();
 
+  const docs1 = [
+    {
+      uri: "/DML.pdf",
+      fileType: "pdf",
+      fileName: "sample.pdf",
+    },
+    {
+      uri: "https://app.khalida.cloud/resigned/PreEmploymentScreening_Khalid_Akhter.docx",
+      fileType: "docx",
+      fileName: "sample.docx",
+    },
+    {
+      uri: "https://app.khalida.cloud/resigned/InvoiceFormatContractors.xlsx",
+      fileType: "xlsx",
+      fileName: "sample.xlsx",
+    },
+  ];
+
   return (
-    <>
+    <div style={{ height: "80vh", width: "100%" }}>
       <h1>About</h1>
+
+      <DocViewer
+        documents={docs1}
+        pluginRenderers={DocViewerRenderers}
+        style={{ height: "100%" }}
+      />
 
       {/* <iframe
         src="http://localhost:5227/WeatherForecast"
@@ -16,7 +45,7 @@ const About = () => {
         title="Wikipedia Example"
       ></iframe> */}
 
-      <pre>
+      {/* <pre>
         <code>
           {`
       Best regards,  
@@ -60,8 +89,8 @@ const About = () => {
 
       `}
         </code>
-      </pre>
-    </>
+      </pre> */}
+    </div>
   );
 };
 

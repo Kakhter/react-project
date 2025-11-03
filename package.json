@@ -12,6 +12,7 @@
   "dependencies": {
     "@cyntler/react-doc-viewer": "^1.17.1",
     "bootstrap": "^5.3.8",
+    "mammoth": "^1.11.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.1",
