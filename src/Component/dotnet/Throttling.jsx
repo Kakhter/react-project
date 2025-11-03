@@ -49,8 +49,8 @@ const Throttling = (
                 new RateLimitRule
                 {
                     Endpoint = "*",       // All endpoints
-                    Limit = 15,            // Max 5 requests
                     Period = "1m"         // Per 1 minute
+                    Limit = 15,            // Max 5 requests
                 }
             };
         });

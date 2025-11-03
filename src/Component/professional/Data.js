@@ -20,7 +20,17 @@ const salarySlipSep ="resigned/Payslip_Sep_2025.pdf"
 
 const consultant ="resigned/RetainershipAgreement_Khalid Akhter.pdf"
 const InvoiceFormatContractors = "resigned/InvoiceFormatContractors.xlsx";
+
+const workerAgrement ="resigned/AMINDContingentWorkerAgreement_Khalid_Akhter.pdf";
+const employmentScreening ="resigned/PreEmploymentScreening_Khalid_Akhter.pdf";
+const employmentScreeningDocx ="resigned/PreEmploymentScreening_Khalid_Akhter.docx";
  
+const Docs =[
+{uri: "/DML.pdf"},
+{uri: "/resigned/PreEmploymentScreening_Khalid_Akhter.docx"}
+
+] 
+
 
 const Data =[
 {
@@ -132,10 +142,21 @@ const Consultant =[
     pdfLink:InvoiceFormatContractors,
     description:"Invoice Format Contractors: get it approved from your AE, can't consider bill without it."
     },
+]
 
-
+const AMAT =[
+   {
+    id:1,
+    pdfLink:workerAgrement,
+    description:"Worker Agreement 3"
+    },
+    {
+    id:2,
+    pdfLink:employmentScreening,
+    description:"Employment Screening 3"
+    },
+]
     
 
-]
  
-export { Data , DataSalary, Consultant};  
+export { Data , DataSalary, Consultant,AMAT, Docs};  

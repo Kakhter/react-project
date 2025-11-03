@@ -26,8 +26,12 @@
 }
 
 .highlightText{
-  background-color: rgb(237, 231, 183);
-  margin-left: 3%;
+  /* background-color: rgb(237, 231, 183); */
+  flex: 1 1 calc(20.33% - 10px); /* 3 per row */
+  /* max-width: 70%; */
+  margin-left: 7%;
   font-weight: bold;
+  border: solid;
+  border-color:rgb(235, 117, 21);
   
 }

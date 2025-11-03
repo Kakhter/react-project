@@ -59,10 +59,15 @@ const Performance = (
 
             public async Task InvokeAsync(HttpContext context)
             {
-                var watch = Stopwatch.StartNew();
-                await _next(context);
-                watch.Stop();
-
+`}
+    <div className="highlightText">
+      var watch = Stopwatch.StartNew(); <br />
+      await _next(context);
+      <br />
+      watch.Stop();
+      <br />
+    </div>
+    {`
                 _logger.LogInformation("Request [{method}] {url} executed in {duration} ms",
                     context.Request.Method,
                     context.Request.Path,

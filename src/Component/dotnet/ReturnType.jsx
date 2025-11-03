@@ -149,8 +149,20 @@ const ReturnType = (
         <Salary>120000</Salary>
         </Employee>
 
+    Note:
 
+        fetch("https://localhost:5001/api/employees", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/xml",  // 👈 You are sending XML
+            "Accept": "application/xml"         // 👈 You want XML in response
+        },
+        body: xmlData
+        })
 
+        .then(response => response.text())
+        .then(data => console.log("Response:", data))// her we can use setData(Response);
+        .catch(err => console.error(err));
 
         `}
   </>

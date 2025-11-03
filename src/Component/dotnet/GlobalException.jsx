@@ -7,13 +7,10 @@ const GlobalException = (
 
         🧩 What is Global Exception Handling?
 
-        Global Exception Handling in ASP.NET Core ensures that all unhandled exceptions (in controllers, services, etc.) are:
-
-        Caught automatically
-
-        Logged properly
-
-        And a consistent response (JSON or XML) is returned to the client
+        Global Exception Handling in ASP.NET Core ensures that all unhandled exceptions (in controllers, 
+        services, etc.) are:    Caught automatically
+                                Logged properly
+                                And a consistent response (JSON or XML) is returned to the client
 
         It avoids exposing stack traces or internal errors to users.
 
