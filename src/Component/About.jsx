@@ -1,8 +1,8 @@
 import { useNavigate, Link } from "react-router-dom";
-import DocViewer, { DocViewerRenderers } from "@cyntler/react-doc-viewer";
-import React, { useEffect, useState } from "react";
+import DocViewer, { DocViewerRenderers } from "react-doc-viewer";
+import React, { useRef, useEffect, useState } from "react";
 import mammoth from "mammoth";
-import "@cyntler/react-doc-viewer/dist/index.css";
+//import "@cyntler/react-doc-viewer/dist/index.css";
 
 import "../App.css";
 
@@ -28,9 +28,7 @@ const About = () => {
   ];
 
   return (
-    <div style={{ height: "80vh", width: "100%" }}>
-      <h1>About</h1>
-
+    <div style={{ height: "100vh", overflow: "visible" }}>
       <DocViewer
         documents={docs1}
         pluginRenderers={DocViewerRenderers}
