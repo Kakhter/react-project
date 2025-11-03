@@ -15,9 +15,9 @@ const GyansysReg = () => {
       fileName: "sample.pdf",
     },
     {
-      uri: "https://app.khalida.cloud/pqr.txt",
-      fileType: "txt",
-      fileName: "sample.txt",
+      uri: "https://app.khalida.cloud/resigned/PreEmploymentScreening_Khalid_Akhter.docx",
+      fileType: "docx",
+      fileName: "sample.docx",
     },
   ];
   return (
