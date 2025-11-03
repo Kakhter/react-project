@@ -28,14 +28,16 @@ const About = () => {
   ];
 
   return (
-    <div style={{ height: "100vh", overflow: "visible" }}>
-      <DocViewer
-        documents={docs1}
-        pluginRenderers={DocViewerRenderers}
-        style={{ height: "100%" }}
-      />
+    <>
+      <h1>Hi</h1>
+      <div style={{ height: "100vh", overflow: "visible" }}>
+        <DocViewer
+          documents={docs1}
+          pluginRenderers={DocViewerRenderers}
+          style={{ height: "100%" }}
+        />
 
-      {/* <iframe
+        {/* <iframe
         src="http://localhost:5227/WeatherForecast"
         width="600"
         height="400"
@@ -43,7 +45,7 @@ const About = () => {
         title="Wikipedia Example"
       ></iframe> */}
 
-      {/* <pre>
+        {/* <pre>
         <code>
           {`
       Best regards,  
@@ -88,7 +90,8 @@ const About = () => {
       `}
         </code>
       </pre> */}
-    </div>
+      </div>
+    </>
   );
 };
 
