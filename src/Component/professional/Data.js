@@ -24,6 +24,8 @@ const InvoiceFormatContractors = "resigned/InvoiceFormatContractors.xlsx";
 const workerAgrement ="resigned/AMINDContingentWorkerAgreement_Khalid_Akhter.pdf";
 const employmentScreening ="resigned/PreEmploymentScreening_Khalid_Akhter.pdf";
 const employmentScreeningDocx ="resigned/PreEmploymentScreening_Khalid_Akhter.docx";
+
+const onboardingAMAT = "resigned/OnboardingGuideline_AMAT.pdf";
  
 const Docs =[
 {uri: "/DML.pdf"},
@@ -155,6 +157,12 @@ const AMAT =[
     pdfLink:employmentScreening,
     description:"Employment Screening 3"
     },
+    {
+    id:3,
+    pdfLink:onboardingAMAT,
+    description:"AMAT Onboarding Guideline"
+    },
+
 ]
     
 
