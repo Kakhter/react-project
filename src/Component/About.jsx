@@ -14,6 +14,12 @@ const About = () => {
       <pre>
         <code>
           {`
+
+          Custom dome static web: https://www.youtube.com/watch?v=QamPUyCZZpA
+          n&n: https://khalid1972.app.n8n.cloud/signin?redirect=%252Fworkflow%252FrvGvANYgKeIQWIUX
+          n&n chat: https://khalid1972.app.n8n.cloud/webhook/c4b0d7cb-95df-4ee5-bce3-d9c9d5697b85/chat
+
+          git url: https://github.com/Kakhter/react-project/tree/main/.github/workflows
           Home Paper:
 
           Self
