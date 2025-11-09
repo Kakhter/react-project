@@ -8,6 +8,11 @@ const PromptEngineering = (
         Prompt Engineering
       </a>
     </div>
+    <div style={{ textAlign: "left", marginLeft: "3%" }}>
+      <a href="/dotnet/PromptEngineering1.pdf" target="_blank">
+        Prompt Engineering-1
+      </a>
+    </div>
   </>
 );
 

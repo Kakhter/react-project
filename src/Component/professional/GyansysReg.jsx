@@ -1,5 +1,11 @@
 import React from "react";
-import { Consultant, Data, DataSalary, AMAT } from "./Data.js";
+import {
+  Consultant,
+  Data,
+  DataSalary,
+  AMAT,
+  ContractorAdvice,
+} from "./Data.js";
 
 // import "/src/Component/azure/card.css";
 import "./gyansysStyle.css";
@@ -7,9 +13,35 @@ import "./gyansysStyle.css";
 const GyansysReg = () => {
   return (
     <>
+      <h2>Contractor Advice/NEFT</h2>
       <div>
-        Send invoice to ap.in@gyansys.com <br />
-        Fill replicon and get approver by respective approver <br />
+        Send invoice to ap.in@gyansys.com and Fill replicon and get approver by
+        respective approver <br />
+      </div>
+
+      <div className="gyancontainer">
+        {ContractorAdvice.map(({ id, pdfLink, description }) => {
+          return (
+            <div className="gyancard">
+              <div key={id}>
+                <div className="cardheader">
+                  Step: {id}
+                  {/* <img src={image} alt="image" width="50%" height="50%"></img> */}
+                </div>
+                <br />
+                <div className="carddescription">
+                  <b>Description:</b> {description}
+                </div>
+                <br />
+                <div className="cardlink">
+                  <a href={pdfLink} target="_blank">
+                    <span className="oval-text">PDF Link</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </div>
 
       <h2>AMAT Process: Oct 2025</h2>
@@ -37,6 +69,7 @@ const GyansysReg = () => {
           );
         })}
       </div>
+
       <h2>Gyansys Consultant Process</h2>
       <div className="gyancontainer">
         {Consultant.map(({ id, pdfLink, description }) => {

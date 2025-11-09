@@ -19,13 +19,17 @@ const salarySlipSep ="resigned/Payslip_Sep_2025.pdf"
 
 
 const consultant ="resigned/RetainershipAgreement_Khalid Akhter.pdf"
-const InvoiceFormatContractors = "resigned/InvoiceFormatContractors.xlsx";
+const InvoiceFormatContractors = "resigned/Invoice_MonthName2025.xlsx";
 
 const workerAgrement ="resigned/AMINDContingentWorkerAgreement_Khalid_Akhter.pdf";
 const employmentScreening ="resigned/PreEmploymentScreening_Khalid_Akhter.pdf";
 const employmentScreeningDocx ="resigned/PreEmploymentScreening_Khalid_Akhter.docx";
 
 const onboardingAMAT = "resigned/OnboardingGuideline_AMAT.pdf";
+
+const Inv_Oct_2025 ="resigned/contractorBills/Inv_Oct_2025.pdf"
+const NEFT_Oct_2025 ="resigned/contractorBills/NEFT_Oct_2025.pdf"
+
  
 const Docs =[
 {uri: "/DML.pdf"},
@@ -138,12 +142,8 @@ const Consultant =[
     id:1,
     pdfLink:consultant,
     description:"Consultant Agreement"
-    },
-    {
-    id:2,
-    pdfLink:InvoiceFormatContractors,
-    description:"Invoice Format Contractors: get it approved from your AE, can't consider bill without it."
-    },
+    }
+   
 ]
 
 const AMAT =[
@@ -164,7 +164,24 @@ const AMAT =[
     },
 
 ]
-    
+
+const ContractorAdvice =[
+     {
+        id:1,
+        pdfLink:InvoiceFormatContractors,
+        description:"Invoice Format Contractors: get it approved from your AE, can't consider bill without it."
+    },
+    {
+        id:2,
+        pdfLink:Inv_Oct_2025,
+        description:"Contractor Advice Oct 2025"
+    },
+    {
+        id:3,
+        pdfLink:NEFT_Oct_2025,
+        description:"Contractor NEFT Oct 2025"
+    }
+]
 
  
-export { Data , DataSalary, Consultant,AMAT, Docs};  
+export { Data , DataSalary, Consultant,AMAT, Docs,ContractorAdvice};  
