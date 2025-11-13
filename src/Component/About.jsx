@@ -117,6 +117,182 @@ const About = () => {
       response_type: "token id_token",
       scope: "openid profile email",
     };
+
+    -----------------------------------------------------
+    Tata Router:
+    -----------------------------------------
+    IP: 192.168.1.254
+    User: userAdmin
+    Pwd: tsbb@123
+    -----------------------------------------
+
+
+    https://www.naukri.com/
+    khalid.bharat@gmail.com
+    Gyansys@2025
+
+    ---------------------------------------
+    -----------------------------------------
+
+    https://www.naukri.com/
+    akhter.bharat@gmail.com
+    Gyansys@2025
+    ---------------------------------------
+
+
+    https://github.com/login
+    khalid.bharat@gmail.com
+    Gyansys@2025
+    ---------------------------------------
+    Another GitHub
+
+    https://github.com/login
+    khalid.akhter@gyansys.com
+    Gyansys@2025
+    ----------------------------------
+    Akhter.bharat@gmail.com - Farhan@786
+    Gyansys@2025
+    ---------------------------------------
+
+
+    khalidputt: Gyansys@2025 ---Tc4linux/
+    ---------------------------------------
+    SQLDatabase Pwd: Local@854105
+    
+
+    Github: https://github.com/Kakhter/
+
+    Microsoft Account: khalid.bharat@gmail.com/Gyansys@2025
+
+    Github: khalid.bharat@gmail.com/Farhan@7861234
+    Gyansys SQL Database: Test@123
+    AMAT: W@lcometoA99lied2024!
+    ChatGPT: Google Account/Farhan@786
+
+    
+
+
+    https://unifiedportal-mem.epfindia.gov.in/memberinterface/
+    Uan No.
+    100192917945
+    pwd:Farhan@092025
+    Electricity Bill: https://www.mobikwik.com/bescom-bangalore-electricity-bill-payment-online
+    Khalid: 1789430955
+    Motor:  7781836991
+
+    Spe: K: 1259/580
+        M: 659 / 616.54
+
+    New: pin:0133 sbi
+
+    Greythr Salary Slip & IT Declarion
+
+    https://gyansys.greythr.com/uas/portal/auth/login
+    UserName:0994
+    Password:Gyansys@2025
+
+    https://www.incometax.gov.in
+    UserName: AJBPA9805B
+    Password: Farhan@1972
+
+
+
+
+    Replicon
+    uername: khalid.akhter@gyansys.com pwd: Farhan@786
+    Gmail
+    Farhan@786
+    LinkId
+    username: khalid.bharat@gmail.com/Software@92
+    Internet Broadband
+    Account No.: 06452295986
+    Out Gmail:
+    khalid.bharat@gmail.com / Farhan@786
+
+    Electricity: 400689445
+    https://nbpdcl.co.in/(S(dxtcdwemnszcpltr53xeg5p2))/frmQuickBillPaymentAll.aspx
+
+    OurSystemPin: 19721972
+    Pwd: local@854105
+    Password by gyansys: yof07856 (first time)
+
+    ===================================================================================================
+    greythr:\n
+    gyansys id: 0994\n
+    password: Software@92\n
+
+
+    Axis Customer Id: 848762783
+    Axis:152007#farhan
+    5346 8000 2637 5621
+    03/22
+
+    717
+
+    A/C: 487708
+
+
+
+
+
+
+    khalid.bharat@gmail.com
+    Farhan@786
+
+    OutLook: https://outlook.office365.com/mail/
+    Gyansys: outlook: khalid.akhter@gyansys.com
+                      Software@92
+
+    Gyansys salary slip: https://gyansys.greythr.com/v3/portal/ess/home
+    https://gyansys.greythr.com/v3/portal/ess/home
+    Pwd: Gyansys@2025
+
+
+    Router link
+    Router Login: admin/optilink123
+    Wifi pwd: puttu@12345/Farhan@92
+
+    Gyansys Salary Slip:
+    https://gyansys.greythr.com/v3/portal/ess/home
+    ----------------------------------------------------
+
+    https://unifiedportal-mem.epfindia.gov.in/memberinterface/
+    Uan No.
+    100192917945
+    pwd:
+    Software@92
+    old: KKaa@854105
+
+
+    https://wf4.myhcl.com/MySeparation/Login/Ex-HCLitesLogin.aspx
+    khalidakhter
+    Ka@854105
+    ---------------------------------------------------------------
+
+    Aadhaar No.:
+    366130095157
+    -----------------------------------------------
+    Form 19/Composite Form for PF withdrawal duly signed
+    Self attested copy of Aadhar Card
+    Self attested copy of PAN Card
+    Blank cancelled cheque for verification of the IFSC code. Your name must be pre-printed on the Cheque as provided mandatorily. Please note, Joint / NRI/ NRO/ NRE bank account will not be accepted.
+    Please put signatures on all the documents upload within the Form(s) and on the Form(s) wherever required, and on the Cancelled Cheques as well, mandatorily.
+    Signature on uploaded documents & on the associated Form(s) should not differ.
+    ---------------------------
+    Copy of Aadhaar Card.
+    Copy of PAN Card.
+    Upload Copy of cancelled cheques with my pre-printed name for verifying IFSC code.
+    I am the sole holder of this bank account and it's not a joint account with other than my spouse.
+    My account is a saving bank account and is not NRO, NRI or NRE a/c.
+    In case of migration abroad, following documents needs to be uploaded on mandatorily basis,
+    1. Passport copy; 2. Copy of air ticket; 3. Copy of valid VISA (Should be valid for 3 years from the Date of Leaving from HCL)
+
+
+
+
+
+
+
     `}
         </code>
       </pre>
