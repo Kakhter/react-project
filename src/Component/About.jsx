@@ -15,6 +15,17 @@ const About = () => {
         <code>
           {`
 
+          Find the job:
+          https://www.genspark.ai/agents?id=f42f2697-512c-4a54-8ca8-e5f779cf54f5
+
+
+          ATS Resume created
+          https://chatgpt.com/g/g-67b866a648a88191b29e8274026994fd-be10x-ats-resume-generator
+
+          sql 
+          https://goldenrod-motion-1da.notion.site/SQL-using-AI-Tools-Prompts-Codes-1c1e4e54a92e8029a79cdb3e415e8c35
+
+
           Custom dome static web: https://www.youtube.com/watch?v=QamPUyCZZpA
           n&n: https://khalid1972.app.n8n.cloud/signin?redirect=%252Fworkflow%252FrvGvANYgKeIQWIUX
           n&n chat: https://khalid1972.app.n8n.cloud/webhook/c4b0d7cb-95df-4ee5-bce3-d9c9d5697b85/chat
