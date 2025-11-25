@@ -27,8 +27,10 @@ const employmentScreeningDocx ="resigned/PreEmploymentScreening_Khalid_Akhter.do
 
 const onboardingAMAT = "resigned/OnboardingGuideline_AMAT.pdf";
 
-const Inv_Oct_2025 ="resigned/contractorBills/Inv_Oct_2025.pdf"
-const NEFT_Oct_2025 ="resigned/contractorBills/NEFT_Oct_2025.pdf"
+const Inv_Oct_2025 ="resigned/contractorBills/Inv_Oct_2025.pdf";
+const NEFT_Oct_2025 ="resigned/contractorBills/NEFT_Oct_2025.pdf";
+
+const Inv_Nov_2025 ="resigned/contractorBills/Invoice_November_2025.pdf";
 
  
 const Docs =[
@@ -180,7 +182,15 @@ const ContractorAdvice =[
         id:3,
         pdfLink:NEFT_Oct_2025,
         description:"Contractor NEFT Oct 2025"
-    }
+    },
+
+{
+        id:2,
+        pdfLink:Inv_Nov_2025,
+        description:"Contractor Advice Nov 2025"
+    },
+
+    
 ]
 
  
