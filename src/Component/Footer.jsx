@@ -14,7 +14,7 @@ function Footer() {
         height:"20px"
       }}
     >
-       © 2025 My React App. All Rights Reserved.
+       © 2026 My React App. All Rights Reserved.
     </footer>
   );
 }
