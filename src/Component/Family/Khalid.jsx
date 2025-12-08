@@ -24,13 +24,29 @@ const Khalid = () => {
     <br/>
 
      <label>PAN</label><br/>
-  
-     <a href="/KhalidIDs/PAN.pdf" target="_blank">PAN PDF</a>
+       <img src="/KhalidIDs/PAN.jpg" width="20%"></img>
+     {/* <a href="/KhalidIDs/PAN.pdf" target="_blank">PAN PDF</a>
      <div style={{width:"10px"}}>
       <Document file="/KhalidIDs/PAN.pdf">
          <Page pageNumber={1} width={300} height={500} />
       </Document>
-    </div>
+    </div> */}
+
+     <br/>
+     <label>Passport</label><br/>
+      <img src="/KhalidIDs/PassportI.jpeg" width="20%"></img>
+    <img src="/KhalidIDs/PassportII.jpeg" width="20%"></img>
+    <br/>
+
+    <br/>
+     <label>Voter</label><br/>
+      <img src="/KhalidIDs/VoterI.jpeg" width="20%"></img>
+    <img src="/KhalidIDs/VoterII.jpeg" width="20%"></img>
+    <br/>
+    <br/>
+    <br/>
+
+    
     </>
     
 
