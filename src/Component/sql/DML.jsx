@@ -23,11 +23,11 @@ const DML = () => {
       <br />
       <ol>
         <li>Activity Monitor</li>
-        <img src="./sql/activitymonitor.jpeg" width="20%" height="20%"></img>
+        <img src="/sql/activitymonitor.jpeg" width="20%" height="20%"></img>
         <li>SQL Server Profiler</li>
-        <img src="./sql/profiler.jpg" width="20%" height="20%"></img>
+        <img src="/sql/profiler.jpg" width="20%" height="20%"></img>
         <li>Execution Plan</li>
-        <img src="./sql/execution.jpg" width="20%" height="20%"></img>
+        <img src="/sql/execution.jpg" width="20%" height="20%"></img>
         <li>Extended Event</li>
         <li>SQL Server Report</li>
       </ol>
@@ -66,10 +66,10 @@ following the basic rules for performance:
         From - Where - Group By - Having - Select - order by - distinct - top
       </ol>
       <hr />
-      <img src="./WhereHaving.jpeg" width="80%"></img>
+      <img src="/WhereHaving.jpeg" width="80%"></img>
       <hr />
       <li> Azure Service Bus: https://youtu.be/XqhM9vfDmqQ</li>
-      <img src="./ServiceBus.jpg" alt="Service Bus" width="90%"></img>
+      <img src="/ServiceBus.jpg" alt="Service Bus" width="90%"></img>
       <br />
       Question: <br />
       1. How to get Deadlock information.<br></br>

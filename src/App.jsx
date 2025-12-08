@@ -22,6 +22,9 @@ import AppService from "./Component/azure/AppService";
 import GyansysReg from "./Component/professional/GyansysReg";
 import SQL from "./Component/sql/SQL";
 import DotNet from "./Component/dotnet/DotNet";
+import Login from "./Component/Login";
+import Logout from "./Component/Logout";
+import FetchData from "./Component/hooks/FetchData";
 
 const LazyLoading = lazy(() => import("./Component/LazyLoading"));
 function App() {
@@ -46,24 +49,27 @@ function App() {
           fallback={<h3 style={{ textAlign: "center" }}>⏳ Loading Page...</h3>}
         >
           <Routes>
-            <Route path="/contact" element={<ContactUs />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/lazy" element={<LazyLoading />}></Route>
-            <Route path="/react" element={<TutorialReact />}></Route>
-            <Route path="/somecode" element={<SomeCode />} />
-            <Route path="/session3" element={<Session3 />} />
-            <Route path="/interview" element={<Interview />} />
-            <Route path="/session4" element={<Session4></Session4>} />
-            <Route path="/javascript" element={<JavaScript1 />}></Route>
-            <Route path="/usememo" element={<UseMemo />}></Route>
-            <Route path="/usecallback" element={<UseCallback></UseCallback>} />
-            <Route path="/memo" element={<Memo />} />
-            <Route path="/dml" element={<DML />} />
-            <Route path="/tvs" element={<TVSPaper />} />
-            <Route path="/appservice" element={<AppService />} />
-            <Route path="/professional" element={<GyansysReg />} />
-            <Route path="/sql" element={<SQL />} />
-            <Route path="/dotnetdata" element={<DotNet />} />
+            <Route path="login" element={<Login />} />
+            <Route path="logout" element={<Logout />} />
+            <Route path="contact" element={<ContactUs />} />
+            <Route path="about" element={<About />} />
+            <Route path="lazy" element={<LazyLoading />}></Route>
+            <Route path="react" element={<TutorialReact />}></Route>
+            <Route path="somecode" element={<SomeCode />} />
+            <Route path="session3" element={<Session3 />} />
+            <Route path="interview" element={<Interview />} />
+            <Route path="session4" element={<Session4></Session4>} />
+            <Route path="javascript" element={<JavaScript1 />}></Route>
+            <Route path="usememo" element={<UseMemo />}></Route>
+            <Route path="usecallback" element={<UseCallback></UseCallback>} />
+            <Route path="memo" element={<Memo />} />
+            <Route path="dml" element={<DML />} />
+            <Route path="tvs" element={<TVSPaper />} />
+            <Route path="appservice" element={<AppService />} />
+            <Route path="professional" element={<GyansysReg />} />
+            <Route path="sql" element={<SQL />} />
+            <Route path="dotnetdata" element={<DotNet />} />
+            <Route path="fetchdata" element={<FetchData />} />
           </Routes>
         </Suspense>
       </main>

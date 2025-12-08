@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import UserMemoExpensive from "./UseMemoExpensive";
+// import UserMemoExpensive from "./UseMemoExpensive";
 
 const UseMemo = () => {
   const [count, setCount] = useState(0);
@@ -35,7 +35,7 @@ const UseMemo = () => {
     <>
       <div>
         <div style={{ textAlign: "center" }}>
-          <img src="./UseMemo.jpg" alt="use memo" width="70%" />
+          <img src="/UseMemo.jpg" alt="use memo" width="70%" />
         </div>
         <div style={{ display: "flex", marginLeft: "40px" }}>
           <div
@@ -47,7 +47,7 @@ const UseMemo = () => {
           >
             <h2>My Todos</h2>
             {todos.map((todo, index) => {
-              return <p key={index}>{todo}</p>;
+              return <p key={index}>{todo} {index}</p>;
             })}
             <button onClick={addTodo}>Add Todo</button>
           </div>
@@ -77,7 +77,7 @@ const UseMemo = () => {
         </div>
       </div>
 
-      <UserMemoExpensive />
+      {/* <UserMemoExpensive /> */}
     </>
   );
 };

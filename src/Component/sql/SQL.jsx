@@ -9,7 +9,7 @@ const SQL = () => {
     <>
       <h1> SQL Guideline for Developer/DBA</h1>
       <li>
-        <Link to="/dml">Some More SQL</Link>
+        <Link to="/app/dml">Some More SQL</Link>
       </li>
 
       <div className="container">

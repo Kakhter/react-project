@@ -18,39 +18,45 @@ function Sidebar({ isOpen }) {
     >
       {isOpen && (
         <ul style={{ listStyleType: "none", padding: 0 }}>
-          <Link to="/about">🏠 About</Link>
+          <Link to="/app/about">🏠 About</Link>
           <br />
-          <Link to="/contact">📞Contact</Link>
+          <Link to="/app/contact">📞Contact</Link>
           <br />
-          <Link to="/lazy">Lazy Loading</Link>
+          <Link to="/app/logout">Logout</Link>
           <br />
-          <Link to="/react">React Session 1</Link>
+          <Link to="/app/lazy">Lazy Loading</Link>
           <br />
-          <Link to="/somecode">Some Code Session 2</Link>
+          <Link to="/app/login">Login</Link>
           <br />
-          <Link to="/interview">Interview Question</Link>
+          <Link to="/app/react">React Session 1</Link>
           <br />
-          <Link to="/javascript">Java Script</Link>
+          <Link to="/app/somecode">Some Code Session 2</Link>
           <br />
-          <Link to="/session3">useReducer</Link>
+          <Link to="/app/interview">Interview Question</Link>
           <br />
-          <Link to="/session4">useContext </Link>
+          <Link to="/app/javascript">Java Script</Link>
           <br />
-          <Link to="/usememo">useMemo</Link>
+          <Link to="/app/session3">useReducer</Link>
           <br />
-          <Link to="/usecallback">useCallback</Link>
+          <Link to="/app/session4">useContext </Link>
           <br />
-          <Link to="/memo">Memo</Link>
+          <Link to="/app/usememo">useMemo</Link>
           <br />
-          <Link to="/tvs">TVS Paper</Link>
+          <Link to="/app/usecallback">useCallback</Link>
           <br />
-          <Link to="/appservice">Azure</Link>
+          <Link to="/app/memo">Memo P-C</Link>
           <br />
-          <Link to="/professional">Gyansys Documents</Link>
+          <Link to="/app/tvs">TVS Paper</Link>
           <br />
-          <Link to="/sql">SQL DBA/DEV</Link>
+          <Link to="/app/appservice">Azure</Link>
           <br />
-          <Link to="dotnetdata">Dot Net</Link>
+          <Link to="/app/professional">Gyansys Documents</Link>
+          <br />
+          <Link to="/app/sql">SQL DBA/DEV</Link>
+          <br />
+          <Link to="/app/dotnetdata">Dot Net</Link>
+          <br />
+          <Link to="/app/fetchdata">Use Hook to fetch</Link>
         </ul>
       )}
     </aside>

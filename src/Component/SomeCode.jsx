@@ -1,8 +1,14 @@
 import React from "react";
 
 const SomeCode = () => {
+   
+        const fruit =["apple","banana"];
+        const otherFruit=["lichi","gabha","pineapple"];
+        const allFruits = [...fruit, otherFruit];
   return (
     <>
+      
+        <p>{allFruits.join(",")}</p>
       <h3>Other Command</h3>
       <ol>
         <li>Rest Operator</li>
@@ -41,6 +47,7 @@ const SomeCode = () => {
         or
         <br />
         const newState = [ ...fruit,"Mosammi"]
+       
         <br />
         State is mutable.
         <br />
@@ -55,7 +62,10 @@ const SomeCode = () => {
           </code>
         </pre>
         <li>Path concaneting</li>
-        <code>{`<img src={./image/{$}{variable}} `}</code>
+        <code>{`<img src={./image/$/{variable}} `}</code>
+        -- / is extra after $.
+        
+
         <br />
         <li>input button code</li>
         <pre>
@@ -82,7 +92,7 @@ onChange={handleSearchChange}
           <code>
             {`
 const filteredMovies = movies.filter(movie=>
-movies.title.toLowerCase().include(searchTerm.toLowerCase()))
+movie.title.toLowerCase().include(searchTerm.toLowerCase()))
 
 Here 'searchTerm' we are updating from input control property value i.e. value={searchTerm}
 
@@ -107,8 +117,7 @@ d
 `}
           </code>
         </pre>
-        <li>Path concaneting</li>
-        <li>Path concaneting</li>
+
       </ol>
     </>
   );

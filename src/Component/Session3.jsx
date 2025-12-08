@@ -4,7 +4,7 @@ const Session3 = () => {
   return (
     <>
       <h2>Reducer</h2>
-      <img src="./UseReducer.jpg" alt="useReducer" width="100%"></img>
+      <img src="/UseReducer.jpg" alt="useReducer" width="100%"></img>
       <pre>
         <code>
           {`Reducer:

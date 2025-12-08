@@ -7,7 +7,7 @@ const Session4 = () => {
   return (
     <>
       <h1> [Use of useContext]</h1>
-      <img src="./UseContext.jpg" alt="useReducer" width="100%"></img>
+      <img src="/UseContext.jpg" alt="useReducer" width="100%"></img>
       <div>
         <ComponentA></ComponentA>
 

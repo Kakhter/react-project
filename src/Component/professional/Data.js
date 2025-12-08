@@ -6,31 +6,29 @@ const ndaSeparationSigned = "/resigned/5_NDASeparationAgreementSignedDone.pdf"
 const ndaAudit = "/resigned/6_NDASeparationAgreement_0994Audit.pdf"
 const fullfinal ="/resigned/fullfinal.pdf"
 const experienceLetter ="./resigned/Experience_Relieving_Letter.pdf"
-const form16AS ="./resigned/Form16AS_AJBPA9805B-2026.pdf"
+const form16AS ="/resigned/Form16AS_AJBPA9805B-2026.pdf"
 
-const offerletter ="resigned/Gyansys_Offer.pdf"
-const salaryRevision ="resigned/SalaryRevision_20250994.pdf"
-const salarySlipApr ="resigned/Payslip_Apr_2025.pdf"
-const salarySlipMay ="resigned/Payslip_May_2025.pdf"
-const salarySlipJun ="resigned/Payslip_Jun_2025.pdf"
-const salarySlipJul ="resigned/Payslip_Jul_2025.pdf"
-const salarySlipAug ="resigned/Payslip_Aug_2025.pdf"
-const salarySlipSep ="resigned/Payslip_Sep_2025.pdf"
+const offerletter ="/resigned/Gyansys_Offer.pdf"
+const salaryRevision ="/resigned/SalaryRevision_20250994.pdf"
+const salarySlipApr ="/resigned/Payslip_Apr_2025.pdf"
+const salarySlipMay ="/resigned/Payslip_May_2025.pdf"
+const salarySlipJun ="/resigned/Payslip_Jun_2025.pdf"
+const salarySlipJul ="/resigned/Payslip_Jul_2025.pdf"
+const salarySlipAug ="/resigned/Payslip_Aug_2025.pdf"
+const salarySlipSep ="/resigned/Payslip_Sep_2025.pdf"
 
 
-const consultant ="resigned/RetainershipAgreement_Khalid Akhter.pdf"
-const InvoiceFormatContractors = "resigned/Invoice_MonthName2025.xlsx";
+const consultant ="/resigned/RetainershipAgreement_Khalid Akhter.pdf"
+const InvoiceFormatContractors = "/resigned/Invoice_MonthName2025.xlsx";
 
-const workerAgrement ="resigned/AMINDContingentWorkerAgreement_Khalid_Akhter.pdf";
-const employmentScreening ="resigned/PreEmploymentScreening_Khalid_Akhter.pdf";
-const employmentScreeningDocx ="resigned/PreEmploymentScreening_Khalid_Akhter.docx";
+const workerAgrement ="/resigned/AMINDContingentWorkerAgreement_Khalid_Akhter.pdf";
+const employmentScreening ="/resigned/PreEmploymentScreening_Khalid_Akhter.pdf";
+const employmentScreeningDocx ="/resigned/PreEmploymentScreening_Khalid_Akhter.docx";
 
-const onboardingAMAT = "resigned/OnboardingGuideline_AMAT.pdf";
+const onboardingAMAT = "/resigned/OnboardingGuideline_AMAT.pdf";
 
-const Inv_Oct_2025 ="resigned/contractorBills/Inv_Oct_2025.pdf";
-const NEFT_Oct_2025 ="resigned/contractorBills/NEFT_Oct_2025.pdf";
-
-const Inv_Nov_2025 ="resigned/contractorBills/Invoice_November_2025.pdf";
+const Inv_Oct_2025 ="/resigned/contractorBills/Inv_Oct_2025.pdf"
+const NEFT_Oct_2025 ="/resigned/contractorBills/NEFT_Oct_2025.pdf"
 
  
 const Docs =[
@@ -182,15 +180,7 @@ const ContractorAdvice =[
         id:3,
         pdfLink:NEFT_Oct_2025,
         description:"Contractor NEFT Oct 2025"
-    },
-
-{
-        id:2,
-        pdfLink:Inv_Nov_2025,
-        description:"Contractor Advice Nov 2025"
-    },
-
-    
+    }
 ]
 
  

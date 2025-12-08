@@ -1,16 +1,16 @@
 
-var Jan28 ="./dotnet/DotNet_Jan282025.pdf"
-var Jan29 ="./dotnet/DotNet_Jan292025.pdf"
-var Jan29CSharp = "./dotnet/DotNet_C_Jan292025.pdf"
+var Jan28 ="/dotnet/DotNet_Jan282025.pdf"
+var Jan29 ="/dotnet/DotNet_Jan292025.pdf"
+var Jan29CSharp = "/dotnet/DotNet_C_Jan292025.pdf"
 
-var  Jan30= "./dotnet/DotNet_Jan302025.pdf"
-var  Jan30Intro= "./dotnet/DotNet_Jan302025_introduction.pdf"
-var  CORS= "./dotnet/CORS_Implementation.pdf"
-var  JWT= "./dotnet/JWT_Implementation.pdf"
-var  EF= "./dotnet/NetCRUDOperationEF.pdf"
-var  internAPI ="./dotnet/InternAPI.zip"
-var Jan31 = "./dotnet/DotNet_Jan312025.pdf"
-var errFixex = "./dotnet/FixedIssue500.19.pdf"
+var  Jan30= "/dotnet/DotNet_Jan302025.pdf"
+var  Jan30Intro= "/dotnet/DotNet_Jan302025_introduction.pdf"
+var  CORS= "/dotnet/CORS_Implementation.pdf"
+var  JWT= "/dotnet/JWT_Implementation.pdf"
+var  EF= "/dotnet/NetCRUDOperationEF.pdf"
+var  internAPI ="/dotnet/InternAPI.zip"
+var Jan31 = "/dotnet/DotNet_Jan312025.pdf"
+var errFixex = "/dotnet/FixedIssue500.19.pdf"
 
 const Data =
 [

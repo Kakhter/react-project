@@ -6,19 +6,28 @@ const UseCallback = () => {
   const [todos, setTodos] = useState(["Hi this is first"]);
 
   const addTodo = useCallback(() => {
-    setTodos((prev) => [...prev, `Item No: `]);
+    setTodos((prev) => [...prev, `Item No. : `]);
   }, [todos]);
+
+  //   const addTodo = () => {
+  //   setTodos((prev) => [...prev, `Item No: `]);
+  // };
+
+
   function increment() {
     setCount(count + 1);
   }
   return (
     <>
-      <img src="./UseCallback.jpeg" width="95%" alt="Image" />
+      <img src="/UseCallback.jpeg" width="95%" alt="Image" />
       <UseCallbackComponent todos={todos} addTodo={addTodo} />
       <h1>Use of useCallback Parent Component</h1>
       Count: {count}
       <br></br>
       <button onClick={increment}>Increment</button>
+      <br/>
+       <br/>
+        <br/>
     </>
   );
 };

@@ -15,6 +15,11 @@ const About = () => {
         <code>
           {`
 
+          Kill Process
+
+          PS C:\Users\x0107908> Stop-Process -Id (Get-NetTCPConnection -LocalPort 5050 | Select-Object -First 1 -ExpandProperty OwningProcess) -Force
+          
+
           Find the job:
           https://www.genspark.ai/agents?id=f42f2697-512c-4a54-8ca8-e5f779cf54f5
 
