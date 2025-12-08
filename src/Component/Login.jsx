@@ -9,7 +9,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const HARD_USERNAME = "admin";
-  const HARD_PASSWORD = "Gyansys@2025";
+  const HARD_PASSWORD = "Gyansys@202";
 
   function handleSubmit(e) {
     e.preventDefault();
