@@ -1,7 +1,7 @@
 import { useNavigate, Link } from "react-router-dom";
-import DocViewer, { DocViewerRenderers } from "react-doc-viewer";
+//import DocViewer, { DocViewerRenderers } from "react-doc-viewer";
 import React, { useRef, useEffect, useState } from "react";
-import mammoth from "mammoth";
+//import mammoth from "mammoth";
 //import "@cyntler/react-doc-viewer/dist/index.css";
 
 import "../App.css";

@@ -57,6 +57,8 @@ function Sidebar({ isOpen }) {
           <Link to="/app/dotnetdata">Dot Net</Link>
           <br />
           <Link to="/app/fetchdata">Use Hook to fetch</Link>
+          <br/>
+          <Link to="/app/khalid">Khalid IDs</Link>
         </ul>
       )}
     </aside>

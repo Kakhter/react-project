@@ -25,6 +25,7 @@ import DotNet from "./Component/dotnet/DotNet";
 import Login from "./Component/Login";
 import Logout from "./Component/Logout";
 import FetchData from "./Component/hooks/FetchData";
+import Khalid from "./Component/Family/Khalid";
 
 const LazyLoading = lazy(() => import("./Component/LazyLoading"));
 function App() {
@@ -70,6 +71,7 @@ function App() {
             <Route path="sql" element={<SQL />} />
             <Route path="dotnetdata" element={<DotNet />} />
             <Route path="fetchdata" element={<FetchData />} />
+            <Route path="khalid" element={<Khalid />} />
           </Routes>
         </Suspense>
       </main>
