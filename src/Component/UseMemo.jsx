@@ -33,6 +33,30 @@ const UseMemo = () => {
 
   return (
     <>
+
+<b>Code Example:</b>
+<pre><code>
+{`
+  const expensiveCalculation = (num) => {
+  console.log("Calculating...");
+  for (let i = 0; i < 1000000000; i++) {
+    num += 1;
+  }
+  return num;
+  };
+
+   const calculation = useMemo(() => {
+  return expensiveCalculation(count);
+  }, [count]);
+ -----------------
+  In-Html
+
+  The current value of count is: {count}
+  <br />
+  Current value of expensive is {calculation}
+`}
+</code></pre>
+
       <div>
         <div style={{ textAlign: "center" }}>
           <img src="/UseMemo.jpg" alt="use memo" width="70%" />

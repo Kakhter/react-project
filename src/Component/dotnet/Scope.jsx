@@ -4,7 +4,7 @@ const Scope = (
     <div style={{ textAlign: "left", marginLeft: "3%" }}>
       <h2>Scope</h2>
     </div>
-    <span className="highlightText"> Welcome to Scope DI </span>
+    <span className="highlightText"> Welcome to Scope/DI </span>
     {`
 
     🧠 What is Dependency Injection (DI)?

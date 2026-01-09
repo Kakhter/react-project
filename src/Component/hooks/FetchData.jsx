@@ -1,9 +1,15 @@
 
-import React from "react";
-import useFetch from "./fetch-url";
+
+import React, { Suspense, lazy } from "react";
+
+//const useFetch = lazy(()=> import("./fetch-url"));
+
+import useFetch  from "./fetch-url";
 
 function FetchData() {
-  const { data, loading, error } = useFetch("http://localhost:5199/api/Customer?customerName=Gold&amount=5000");
+
+ 
+  const { data, loading, error } = useFetch("http://localhost:5281/api/Customer/GetAllEmployee");
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
@@ -15,9 +21,26 @@ function FetchData() {
         
 
 <div>
+  
     <h1>Customer Details</h1>
-    <p>Name: {data?.name}</p>
-    <p>Discount: {data?.discount}</p>
+    
+    {
+      data.map(cust => (
+        <div key={cust.id}>
+            <b>Customer ID: {cust.id}</b>
+            <p>Name: {cust.name}</p>
+            <p>Description: {cust.description}</p>
+            <p>Salary: {cust.salary}</p>
+            {<hr style={{ width: "25%",  marginLeft: 0 }} />}
+        </div>
+       
+        ))
+    }
+ 
+
+ 
+    {/* <p>Name: {data?.name}</p>
+    <p>Discount: {data?.discount}</p> */}
   </div>
 
 

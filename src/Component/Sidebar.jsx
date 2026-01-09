@@ -59,6 +59,8 @@ function Sidebar({ isOpen }) {
           <Link to="/app/fetchdata">Use Hook to fetch</Link>
           <br/>
           <Link to="/app/khalid">Khalid IDs</Link>
+<br/>
+          <Link to="/app/general">Practice</Link>
         </ul>
       )}
     </aside>

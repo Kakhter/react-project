@@ -11,6 +11,22 @@ const About = () => {
 
   return (
     <>
+    <h2> About Link</h2>
+
+
+
+
+Office 365 Setup:<br/>
+<a href ="https://youtu.be/erXnT4OcVT0" target="_blank">Office Setup</a>
+<br/>
+
+Windows 10/11 Activation
+<br/>
+<a href="https://youtu.be/D6_CA2hDnHU" target="_blank">Windows 10/11 Activation</a>
+<br/>
+
+<a href="https://voters.eci.gov.in/download-eroll?stateCode=S04" target="_blanck">Voter Sir Final List 2025, 63-Katihar, Part-134</a>
+
       <pre>
         <code>
           {`

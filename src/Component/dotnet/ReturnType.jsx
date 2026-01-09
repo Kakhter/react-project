@@ -10,6 +10,8 @@ const ReturnType = (
         builder.Services.AddControllers()
             .AddXmlSerializerFormatters(); // Enables XML output
 
+             and Calling in Header: Accept: application/xml
+
         🧩 3. Example: Controller Method Returning XML
         using Microsoft.AspNetCore.Mvc;
 

@@ -17,7 +17,12 @@ const Khalid = () => {
       <img src="/KhalidIDs/PHOTO.jpg" width="20%"></img>
      
     <br/>
-
+     <a href="/KhalidIDs/Resume.pdf" target="_blank">Resume PDF</a>
+     <div style={{width:"30px"}}>
+      <Document file="/KhalidIDs/Resume.pdf">
+         <Page pageNumber={1} width={500} height={500} />
+      </Document>
+    </div>
 
      <label>Khalid Aadhar</label><br/>
      
@@ -31,12 +36,9 @@ const Khalid = () => {
 
      <label>PAN</label><br/>
        <img src="/KhalidIDs/PAN.jpg" width="20%"></img>
-     {/* <a href="/KhalidIDs/PAN.pdf" target="_blank">PAN PDF</a>
-     <div style={{width:"10px"}}>
-      <Document file="/KhalidIDs/PAN.pdf">
-         <Page pageNumber={1} width={300} height={500} />
-      </Document>
-    </div> */}
+    <br/>
+
+
 
      <br/>
      <label>Passport</label><br/>

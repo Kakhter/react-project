@@ -114,7 +114,7 @@ const Performance = (
         🧠 4️⃣ Optimize API Performance
         Area	                Optimization
         -------------------------------------------------------------
-        Database	        Use async EF Core, indexes, no N+1 queries
+        Database	        Use async EF Core, Dapper, indexes, no N+1 queries
         Caching	                MemoryCache, Redis for frequent calls
         Serialization	        Use System.Text.Json (faster than Newtonsoft)
         Compression	        Enable response compression middleware
@@ -123,6 +123,7 @@ const Performance = (
         Minimize Middleware	Only load what’s needed
         Use CDN	                For static content
         Profiling	        Use MiniProfiler to see slow methods
+         
 
         🧩 Example: Enabling Response Compression
         builder.Services.AddResponseCompression(options =>

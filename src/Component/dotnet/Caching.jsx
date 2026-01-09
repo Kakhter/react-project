@@ -84,15 +84,26 @@ const Caching = (
             return Ok(product);
         }
     }
-    🧩 Explanation:
+    `}
+    🧩 Explanation: <br/><br/>
 
-    _cache.TryGetValue() → checks if data exists in cache.
+    <div style={{marginLeft: "10%", background:"black", color:"white", width: "60%" , padding:"3%" }}>
+<br/>
+      private readonly IMemoryCache _cache; <br/><br/>
 
-    _cache.Set() → stores data with expiration policy.
+     _cache.TryGetValue() → checks if data exists in cache. <br/><br/>
 
-    SlidingExpiration → resets the timer each time it’s accessed.
+      _cache.Set() → stores data with expiration policy. <br/><br/>
 
-    AbsoluteExpiration → removes after fixed duration no matter what.
+      SlidingExpiration → resets the timer each time it’s accessed. <br/><br/>
+      AbsoluteExpiration → removes after fixed duration no matter what.<br/> <br/>
+      
+      _cache.Remove(cacheKey);<br/><br/>
+    </div>
+
+  
+
+   {`
 --------------------------------------------------------------------------
     🧠 Example: Manual Cache Refresh
     [HttpPost("update/{id}")]

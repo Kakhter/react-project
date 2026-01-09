@@ -3,7 +3,10 @@ const CSRF = (
     <div style={{ textAlign: "left", marginLeft: "3%" }}>
       <h2>X-CSRF</h2>
     </div>
+    Good Video Link with Salt <br/>
+    <a href="https://youtu.be/RRLW9dVn7Bg" target="_blank">Video Link</a>
     {`
+
     1. What is CSRF?
 
         CSRF (Cross-Site Request Forgery) is a type of attack where:

@@ -82,6 +82,8 @@ const QA = (
     API versioning allows you to manage changes in your API without breaking existing client applications.
     When you make backward-incompatible updates — like changing endpoints, data structures, or business logic — versioning lets old clients keep using older versions while new clients use the latest one.
 
+    Video URL: "https://youtu.be/yw5NS-FNvew"
+
     🧩 API Versioning Methods
 
       ASP.NET Core supports multiple versioning strategies — you can use any combination.

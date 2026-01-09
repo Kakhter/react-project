@@ -39,27 +39,30 @@ const Throttling = (
 
     //OR
 
-    // Option 2  Throttling
-        builder.Services.AddMemoryCache();
+     --New Code
 
-        builder.Services.Configure<IpRateLimitOptions>(options =>
-        {
-            options.GeneralRules = new List<RateLimitRule>
-            {
-                new RateLimitRule
-                {
-                    Endpoint = "*",       // All endpoints
-                    Period = "1m"         // Per 1 minute
-                    Limit = 15,            // Max 5 requests
-                }
-            };
-        });
+      builder.Services.AddMemoryCache();
+      builder.Services.AddInMemoryRateLimiting();
 
-        builder.Services.AddInMemoryRateLimiting();
-        builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
-    //----------------End of Option 2
+      builder.Services.Configure<IpRateLimitOptions>(options =>
+      {
+          options.GeneralRules = new List<RateLimitRule>
+                  {
+                      new RateLimitRule
+                      {
+                          Endpoint = "*",       // All endpoints
+                          Period = "5s",       // Per m s
+                          Limit = 2            // Max 5 requests
+                      }
+                  };
+      });
+      builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
+      ......
+      app.UseIpRateLimiting();
+      ---------------------------End of new code
 
-    builder.Services.AddControllers();
+
+        builder.Services.AddControllers();
 
         var app = builder.Build();
 

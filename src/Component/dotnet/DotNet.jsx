@@ -144,7 +144,7 @@ const DotNet = () => {
           Throttling
         </div>
         <div className="oval-text" onClick={() => DisplayData(15)}>
-          DI Scope
+          DI/Scope
         </div>
 
         <div className="oval-text" onClick={() => DisplayData(16)}>
