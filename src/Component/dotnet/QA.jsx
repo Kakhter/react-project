@@ -3,8 +3,55 @@ const QA = (
     <div style={{ textAlign: "left", marginLeft: "20px" }}>
       <h1>Question & Answer</h1>
     </div>
+    Solid Principal Link
+   <br/>
+  <a href="https://www.google.com/search?q=solid+principles+in+c%23+with+examples+in+hindi&sca_esv=b04cb06c25fa1fe2&udm=7&biw=1366&bih=633&aic=0&sxsrf=ANbL-n5efZeMIyjxGIq8kjAxifNgeflkrw%3A1767971656094&ei=SBthabTFBaidseMP5c3R2Q0&ved=0ahUKEwi0iaPU3_6RAxWoTmwGHeVmNNsQ4dUDCBE&uact=5&oq=solid+principles+in+c%23+with+examples+in+hindi&gs_lp=EhZnd3Mtd2l6LW1vZGVsZXNzLXZpZGVvIi1zb2xpZCBwcmluY2lwbGVzIGluIGMjIHdpdGggZXhhbXBsZXMgaW4gaGluZGkyBRAhGKABMgUQIRigATIFECEYnwVIsRVQkglY8hJwAXgBkAEAmAGaAaABhAiqAQMwLjm4AQPIAQD4AQGYAgqgAqkIwgIKEAAYsAMY1gQYR8ICBRAAGIAEwgIGEAAYFhgewgILEAAYgAQYhgMYigXCAggQABiiBBiJBcICCBAAGIAEGKIEmAMAiAYBkAYEkgcDMS45oAeCKrIHAzAuObgHpgjCBwUwLjkuMcgHFoAIAA&sclient=gws-wiz-modeless-video#fpstate=ive&vld=cid:0d1d2beb,vid:Xm9fezWpHPg,st:0" target ="_blank">Sold Principal Link </a>
+   <br/>
 
     {`
+           Implicit and Explicit Interface
+
+           Example of Explicit Interface
+
+            Public interface IAnimal 
+             { 
+               void Speak(); 
+             } 
+               
+             public class Cat : IAnimal 
+             { 
+             // Explicit implementation 
+       
+             void IAnimal.Speak() 
+              { 
+                 Console.WriteLine("Meow!"); 
+              } 
+              } 
+              
+              Cat c = new Cat(); // 
+              c.Speak(); ❌ Not accessible 
+              ((IAnimal)c).Speak(); // ✅ Works
+
+              public class GetUniqueNumber
+              {
+                  public HashSet<int> GetUnique()
+                  {
+                      Random rand = new Random();
+                      HashSet<int> numbers = new HashSet<int>();
+
+                      while (numbers.Count < 10)
+                      {
+                          numbers.Add((rand.Next(1, 101))); // 1 to 100 inclusive
+                      }
+                      Console.WriteLine(numbers.Count);
+                      Console.WriteLine(numbers.ToList()[4]);
+                    
+                      return numbers;
+
+                  }
+              }
+
+
     ❓Question 1: ASP.NET Core Request Lifecycle
 
     🔍 Diagram: ASP.NET Core Request Lifecycle

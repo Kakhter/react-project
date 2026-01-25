@@ -25,6 +25,7 @@ import PromptEngineering from "./PromptEngineering";
 import QA from "./QA";
 import Performance from "./Performance";
 import Data from "./Data";
+import Interview from "./Interview";
 
 import "./dotnet.css";
 
@@ -57,6 +58,7 @@ const DotNet = () => {
     if (id == 22) setData(PromptEngineering);
     if (id == 23) setData(QA);
     if (id == 24) setData(Performance);
+    if (id==25) setData(Interview);
   }
   return (
     <>
@@ -175,6 +177,9 @@ const DotNet = () => {
         </div>
         <div className="oval-text" onClick={() => DisplayData(24)}>
           Performance API
+        </div>
+         <div className="oval-text" onClick={() => DisplayData(25)}>
+          Interview Question
         </div>
       </div>
       <pre>
