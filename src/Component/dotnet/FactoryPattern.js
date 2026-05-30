@@ -61,36 +61,39 @@ const FactoryPattern = `
         private readonly CustomerResolver _customerResolver;
 
     --------------------------IMPLEMENTATION---------------------------
-
+   ---------------ICustomer Interface
     public interface ICustomer{
         string Name {get;}
         decimal GetDiscount(decimal amount);
     }
 
+    ----------------Gold Customer Class--------------------------------------
+
     public class GoldCustomer: ICustomer
     {
-        public string Name=> "Gold";
-        public string Name {
-        get{ return("Gold");};
+       -- public string Name=> "Gold";
+        public string Name { get{ return("Gold");};
+    
+        public decimal GetDiscount(decimal amount)
+            {
+                return (amount * 10 /100);
+            }
     }
-
-    public class GetDiscount(decimal amount)
-    {
-        return (amount * 10 /100);
-    }
+----------------Silver Customer Class--------------------------------------
 
     public class SilverCustomer: ICustomer
     {
 
-        public string Name=> "Silver";
-        public string Name {
-        get{ return("Silver");};
+        --public string Name=> "Silver";
+        public string Name { get{ return("Silver");};
+   
+
+        public class GetDiscount(decimal amount)
+        {
+            return (amount * 5 /100);
+        }
     }
 
-    public class GetDiscount(decimal amount)
-    {
-        return (amount * 5 /100);
-    }
 
     In program.cs
     -------------
