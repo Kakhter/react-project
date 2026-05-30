@@ -61,39 +61,31 @@ const FactoryPattern = `
         private readonly CustomerResolver _customerResolver;
 
     --------------------------IMPLEMENTATION---------------------------
-   ---------------ICustomer Interface
+                                            ---------------ICustomer Interface
     public interface ICustomer{
         string Name {get;}
         decimal GetDiscount(decimal amount);
     }
-
-    ----------------Gold Customer Class--------------------------------------
-
+                                            ----------------Gold Customer Class
     public class GoldCustomer: ICustomer
     {
        -- public string Name=> "Gold";
         public string Name { get{ return("Gold");};
-    
         public decimal GetDiscount(decimal amount)
             {
                 return (amount * 10 /100);
             }
     }
-----------------Silver Customer Class--------------------------------------
-
+                                            ----------------Silver Customer Class
     public class SilverCustomer: ICustomer
     {
-
         --public string Name=> "Silver";
         public string Name { get{ return("Silver");};
-   
-
         public class GetDiscount(decimal amount)
-        {
-            return (amount * 5 /100);
-        }
+            {
+                return (amount * 5 /100);
+            }
     }
-
 
     In program.cs
     -------------
@@ -102,6 +94,7 @@ const FactoryPattern = `
         builder.Services.AddSingleton<ICustomer SilverCustomer>();
         builder.Services.AddSingleton<CustomerResolver>();
 
+    ----------------------------------------------------------------------
     public class CustomerResolver
     {
       private readonly IEnumeriable<ICustomer> _customers;
@@ -140,12 +133,15 @@ const FactoryPattern = `
     public IActionResult GetCustomerDetails(string customerName, decimal totalAmount)
     {
         try{
-            var customer = _customerResolver(customerName);
+            var customer = _customerResolver.GetCustomer(customerName);
             decimal discountAmount = customer.GetDiscount(totalAmount);
             return ok(
                       new {CustomerDiscount = discountAmount, CustomerName=customer.Name };
                     )
             }
+            -------or--------
+            return Ok($"Dicount Amount:  '{discountAmount}', on Amount '{totalAmount}' for user '{customerName}'");
+            -----------------
         catch(ArgumentException ae)
           {
             return BadRequest("Error: " + ae);
