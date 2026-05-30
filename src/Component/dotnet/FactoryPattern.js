@@ -46,11 +46,10 @@ const FactoryPattern = `
                 ┗ (Optional: if you later add DB, file storage, or caching logic)
 
 
-
     1. Create interface ICustomer;
     2. Implement different Customer inherits from ICustomer;
     3. Create CustomerResolver using DI
-    private readonly IEnumeriable<ICustomer> _customers;
+       private readonly IEnumeriable<ICustomer> _customers;
     
     get Customer Class as per customer name input.
     4. Register All Customer in program.cs
@@ -60,7 +59,7 @@ const FactoryPattern = `
     5. In Controller
         private readonly CustomerResolver _customerResolver;
 
-    --------------------------IMPLEMENTATION---------------------------
+    --------------------------IMPLEMENTATION----------------------------------
                                             ---------------ICustomer Interface
     public interface ICustomer{
         string Name {get;}
@@ -120,37 +119,34 @@ const FactoryPattern = `
 
     public class CustomerController: ControllerBase
     {
-
       private readonly CustomerResolver _customerResolver;
-
       public CustomerController(CustomerResolver customerResolver)
+        {
+            _customerResolver= customerResolver;
+        }
 
-    {
-        _customerResolver= customerResolver;
-    }
-
-    [HttpGet]
-    public IActionResult GetCustomerDetails(string customerName, decimal totalAmount)
-    {
-        try{
-            var customer = _customerResolver.GetCustomer(customerName);
-            decimal discountAmount = customer.GetDiscount(totalAmount);
-            return ok(
-                      new {CustomerDiscount = discountAmount, CustomerName=customer.Name };
-                    )
+        [HttpGet]
+        public IActionResult GetCustomerDetails(string customerName, decimal totalAmount)
+        {
+            try{
+                var customer = _customerResolver.GetCustomer(customerName);
+                decimal discountAmount = customer.GetDiscount(totalAmount);
+                return ok(
+                        new {CustomerDiscount = discountAmount, CustomerName=customer.Name };
+                        )
+                }
+                -------or--------
+                return Ok($"Dicount Amount:  '{discountAmount}', on Amount '{totalAmount}' for user '{customerName}'");
+                -----------------
+            catch(ArgumentException ae)
+            {
+                return BadRequest("Error: " + ae);
             }
-            -------or--------
-            return Ok($"Dicount Amount:  '{discountAmount}', on Amount '{totalAmount}' for user '{customerName}'");
-            -----------------
-        catch(ArgumentException ae)
-          {
-            return BadRequest("Error: " + ae);
-          }
-        catch( Exception ex)
-          {
-            return BadRequest("Error: " + ex);
-          }
-    }
+            catch( Exception ex)
+            {
+                return BadRequest("Error: " + ex);
+            }
+        }
 }
 `;
 export default FactoryPattern;
