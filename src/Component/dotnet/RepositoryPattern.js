@@ -1,6 +1,15 @@
 
-    const RepositoryPattern =`
+const RepositoryPattern = `
     ------------------------REPOSITORY PATTERN----------------------
+    
+    
+    The Repository Pattern in C# is a design pattern that provides a 
+    clean abstraction between the data access layer and the business 
+    logic layer of an application. Instead of letting your business 
+    logic directly query the database, you use a repository class that 
+    encapsulates all the data access code.
+
+
 
     Folder Structure with DTO:
 
@@ -241,4 +250,4 @@
 
     `;
 
-    export default RepositoryPattern;
+export default RepositoryPattern;

@@ -11,21 +11,21 @@ const About = () => {
 
   return (
     <>
-    <h2> About Link</h2>
+      <h2> About Link</h2>
 
 
 
 
-Office 365 Setup:<br/>
-<a href ="https://youtu.be/erXnT4OcVT0" target="_blank">Office Setup</a>
-<br/>
+      Office 365 Setup:<br />
+      <a href="https://youtu.be/erXnT4OcVT0" target="_blank">Office Setup</a>
+      <br />
 
-Windows 10/11 Activation
-<br/>
-<a href="https://youtu.be/D6_CA2hDnHU" target="_blank">Windows 10/11 Activation</a>
-<br/>
+      Windows 10/11 Activation
+      <br />
+      <a href="https://youtu.be/D6_CA2hDnHU" target="_blank">Windows 10/11 Activation</a>
+      <br />
 
-<a href="https://voters.eci.gov.in/download-eroll?stateCode=S04" target="_blanck">Voter Sir Final List 2025, 63-Katihar, Part-134</a>
+      <a href="https://voters.eci.gov.in/download-eroll?stateCode=S04" target="_blanck">Voter Sir Final List 2025, 63-Katihar, Part-134, PDF-512</a>
 
       <pre>
         <code>
@@ -196,7 +196,8 @@ Windows 10/11 Activation
     https://unifiedportal-mem.epfindia.gov.in/memberinterface/
     Uan No.
     100192917945
-    pwd:Farhan@092025
+    pwd:Farhan@032026
+    </br>
     Electricity Bill: https://www.mobikwik.com/bescom-bangalore-electricity-bill-payment-online
     Khalid: 1789430955
     Motor:  7781836991

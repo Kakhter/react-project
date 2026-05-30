@@ -1,14 +1,14 @@
 import React from "react";
 
 const SomeCode = () => {
-   
-        const fruit =["apple","banana"];
-        const otherFruit=["lichi","gabha","pineapple"];
-        const allFruits = [...fruit, otherFruit];
+
+  const fruit = ["apple", "banana"];
+  const otherFruit = ["lichi", "gabha", "pineapple"];
+  const allFruits = [...fruit, otherFruit];
   return (
     <>
-      
-        <p>{allFruits.join(",")}</p>
+
+      <p>{allFruits.join(",")}</p>
       <h3>Other Command</h3>
       <ol>
         <li>Rest Operator</li>
@@ -33,6 +33,17 @@ const SomeCode = () => {
         y<br />
         [z,1,2,3]
         <br />
+        <code>
+          <br />
+          {`
+          Destructuring: 
+          const person = {name: "Harry", age: 25 };
+          const {name, age} = person;
+          `}
+        </code>
+        <br />
+
+        <br />
         <li>Spread Operator</li>
         <br />
         const fruit =["apple","banana"];
@@ -47,7 +58,7 @@ const SomeCode = () => {
         or
         <br />
         const newState = [ ...fruit,"Mosammi"]
-       
+
         <br />
         State is mutable.
         <br />
@@ -64,7 +75,7 @@ const SomeCode = () => {
         <li>Path concaneting</li>
         <code>{`<img src={./image/$/{variable}} `}</code>
         -- / is extra after $.
-        
+
 
         <br />
         <li>input button code</li>

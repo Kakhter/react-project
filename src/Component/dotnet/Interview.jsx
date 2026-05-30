@@ -11,12 +11,15 @@ return<>
 3. How .Net core is plateform independent. <br/>
 4. Link List<br/>
 5. CQRS (Command Query Responsilitity Segregation)<br/>
-6. DDD: Domain Driven Design (UBIQUITOUS Language), TDD, BDD<br/>
+6. DDD: Domain Driven Design (UBIQUITOUS Language),<br/>
+  <a href="https://youtu.be/Tnecs_7OT74" target="_blank">DDD Video</a>
+
+ TDD, BDD<br/>
 7. CDC: DB Related, Capture row-level changes.<br/>
 8. Sync and Async Program in .Net Core.<br/>
 9. SSIS <br/>
 10. Fact and Dimention Table in Datawarehouse. <br/>
-11. Architecture Design.<br/>
+11. Architecture Design. <a href= "https://www.youtube.com/watch?v=gwczmxK-XyU" target="_blank">Video Link</a><br/>
 12 Data Science:<br/>
 <ul>
     <li>Bobble Sort</li>
@@ -24,7 +27,10 @@ return<>
 </ul>
 
 13. xUnit <br/>
-14. Microservices
+14. Microservices<br/>
+15. Singleton implementation <br/>
+16. UML <br/>
+17. Unit of work <br/>
 </>
 }
 

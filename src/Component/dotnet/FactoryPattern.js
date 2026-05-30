@@ -1,6 +1,11 @@
 
 const FactoryPattern = `
     ------------------------FACTORY PATTERN----------------------------------------
+    Defination:
+    The Factory Pattern is one of the most commonly used creational design patterns in 
+    object-oriented programming. Its purpose is to encapsulate object creation logic 
+    so that client code doesn’t need to know the exact class being instantiated.
+
     Scenario based
     There are two customer say "Gold" and "Silver" and having discount 10% and 5%.
     We have some rule for each customer. Write C# programe in such a way that we can
