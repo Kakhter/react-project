@@ -196,7 +196,7 @@ const About = () => {
     https://unifiedportal-mem.epfindia.gov.in/memberinterface/
     Uan No.
     100192917945
-    pwd:Farhan@032026
+    pwd:Farhan@032026 -- old Farhan@092025
     </br>
     Electricity Bill: https://www.mobikwik.com/bescom-bangalore-electricity-bill-payment-online
     Khalid: 1789430955
