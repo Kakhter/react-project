@@ -1,15 +1,18 @@
 .gyancontainer {
   display: flex;
-  flex-wrap: wrap;          /* allows wrapping to next line */
+  flex-wrap: wrap;
+  /* allows wrapping to next line */
   /* justify-content: space-between; */
   justify-content: left;
-  gap:15px;        /* space between divs */
-  
- }
+  gap: 15px;
+  /* space between divs */
+
+}
 
 .gyancard {
-  flex: 1 1 calc(20.33% - 10px); /* 3 per row */
-  max-width: calc(20.33% - 10px); 
+  flex: 1 1 calc(20.33% - 10px);
+  /* 3 per row */
+  max-width: calc(20.33% - 10px);
   background-color: #ffffff;
   text-align: center;
   padding: 5px;
@@ -20,40 +23,43 @@
   border-style: outset;
 }
 
- .gyancard:hover{
-    background-color: rgb(233, 240, 232);
-    box-shadow: 0px 5px 10px #222;  
-    /* max-width:calc(15.33% - 10px); */
-    transition: all 400ms ease-in-out;
-  }  
+.gyancard:hover {
+  background-color: rgb(233, 240, 232);
+  box-shadow: 0px 5px 10px #222;
+  /* max-width:calc(15.33% - 10px); */
+  transition: all 400ms ease-in-out;
+}
+
 .cardheader {
-width: 100%;
-background-color: lightblue;
-font-size: 19px;
+  width: 100%;
+  background-color: lightblue;
+  font-size: 19px;
 }
 
 .cardheader1 {
-width: 100%;
-background-color: rgb(210, 231, 161);
-font-size: 19px;
+  width: 100%;
+  background-color: rgb(210, 231, 161);
+  font-size: 19px;
 }
 
-.carddescription{
-    text-align: left;
+.carddescription {
+  text-align: left;
 }
 
 .cardlink {
-    margin-top: auto;
-    text-align: right;
-   
+  margin-top: auto;
+  text-align: right;
+
 }
 
 .oval-text {
   display: inline-block;
   background-color: lightblue;
   color: rgb(82, 73, 73);
-  padding: 4px 15px;   /* More horizontal padding = oval shape */
-  border-radius: 50px;  /* Keeps corners rounded */
+  padding: 4px 15px;
+  /* More horizontal padding = oval shape */
+  border-radius: 50px;
+  /* Keeps corners rounded */
   font-size: 12px;
   text-align: center;
 }
@@ -62,9 +68,16 @@ font-size: 19px;
   display: inline-block;
   background-color: rgb(210, 231, 161);
   color: rgb(82, 73, 73);
-  padding: 4px 15px;   /* More horizontal padding = oval shape */
-  border-radius: 50px;  /* Keeps corners rounded */
+  padding: 4px 15px;
+  /* More horizontal padding = oval shape */
+  border-radius: 50px;
+  /* Keeps corners rounded */
   font-size: 12px;
   text-align: center;
 }
-                   
+
+.card-container {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1rem;
+}

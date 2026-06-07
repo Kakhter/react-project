@@ -221,6 +221,7 @@ const About = () => {
 
 
     Replicon
+    Outlook: Farhan@786
     uername: khalid.akhter@gyansys.com pwd: Farhan@786
     Gmail
     Farhan@786
@@ -263,7 +264,7 @@ const About = () => {
 
     OutLook: https://outlook.office365.com/mail/
     Gyansys: outlook: khalid.akhter@gyansys.com
-                      Software@92
+                      Farhan@786
 
     Gyansys salary slip: https://gyansys.greythr.com/v3/portal/ess/home
     https://gyansys.greythr.com/v3/portal/ess/home

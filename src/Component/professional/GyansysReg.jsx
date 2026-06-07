@@ -13,6 +13,14 @@ import "./gyansysStyle.css";
 const GyansysReg = () => {
   return (
     <>
+
+      {/* <a href="/resigned/contractorBills/msgFile.msg" download>
+        Download MSG File
+      </a> */}
+
+
+
+
       <h2>Contractor Advice/NEFT</h2>
       <div>
         Send invoice to ap.in@gyansys.com and Fill replicon and get approver by
@@ -20,7 +28,7 @@ const GyansysReg = () => {
       </div>
 
       <div className="gyancontainer">
-        {ContractorAdvice.map(({ id, pdfLink, description }) => {
+        {ContractorAdvice.map(({ id, pdfLink, emailLink, description }) => {
           return (
             <div className="gyancard">
               <div key={id}>
@@ -33,11 +41,19 @@ const GyansysReg = () => {
                   <b>Description:</b> {description}
                 </div>
                 <br />
-                <div className="cardlink">
-                  <a href={pdfLink} target="_blank">
-                    <span className="oval-text">PDF Link</span>
-                  </a>
+                <div className="card-container">
+                  <div className="cardlink">
+                    <a href={pdfLink} target="_blank">
+                      <span className="oval-text">PDF Link</span>
+                    </a>
+                  </div>
+                  <div className="cardlink">
+                    <a href={emailLink} download>
+                      <span className="oval-text">Email Download</span>
+                    </a>
+                  </div>
                 </div>
+
               </div>
             </div>
           );
@@ -87,7 +103,7 @@ const GyansysReg = () => {
                 <br />
                 <div className="cardlink">
                   <a href={pdfLink} target="_blank">
-                    <span className="oval-text">PDF Link</span>
+                    <span className="oval-text">MSG Link</span>
                   </a>
                 </div>
               </div>
