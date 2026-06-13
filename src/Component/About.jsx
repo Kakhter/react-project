@@ -139,57 +139,68 @@ const About = () => {
       scope: "openid profile email",
     };
 
-    -----------------------------------------------------
-    Tata Router:
     -----------------------------------------
+    Tata Router:
+    ------------------
     IP: 192.168.1.254
     User: userAdmin
     Pwd: tsbb@123
     -----------------------------------------
-
-
+    Naukri
+    ----------------
     https://www.naukri.com/
     khalid.bharat@gmail.com
     Gyansys@2025
-
-    ---------------------------------------
-    -----------------------------------------
-
+    -------------------------
     https://www.naukri.com/
     akhter.bharat@gmail.com
     Gyansys@2025
-    ---------------------------------------
-
-
+    ------------------------------------------
+    GitHub:
+    ---------------
+    1:
     https://github.com/login
     khalid.bharat@gmail.com
     Gyansys@2025
-    ---------------------------------------
-    Another GitHub
-
+    ----------------
+    2:
     https://github.com/login
     khalid.akhter@gyansys.com
     Gyansys@2025
-    ----------------------------------
-    Akhter.bharat@gmail.com - Farhan@786
+    ---------------
+    3: (working)
+    akhter.bharat@gmail.com - Gyansys@2025
+    ------------------------
+    URl: https://github.com/
+    userName: Kakhter
+    Pwd: Gyansys@2025
+    OR
+    Github: https://github.com/Kakhter/ (no password) public
+    ----------------------------------------------------------
+    Azure Site:
+    https://portal.azure.com/
+    akhter.bharat@gmail.com
     Gyansys@2025
+
+    Azure DevOps
+    https://dev.azure.com/
+    
     ---------------------------------------
-
-
+    Railway
+    --------
     khalidputt: Gyansys@2025 ---Tc4linux/
     ---------------------------------------
-    SQLDatabase Pwd: Local@854105
-    
-
-    Github: https://github.com/Kakhter/
+    Microsoft:
 
     Microsoft Account: khalid.bharat@gmail.com/Gyansys@2025
-
+    -------------------------------------------------------
     Github: khalid.bharat@gmail.com/Farhan@7861234
     Gyansys SQL Database: Test@123
+    -------------------------------------------------------
+    AMAT:
     AMAT: W@lcometoA99lied2024!
     ChatGPT: Google Account/Farhan@786
-
+    ---------------------------------------------------------
     
 
 
@@ -219,7 +230,7 @@ const About = () => {
 
 
 
-
+    --------------------------
     Replicon
     Outlook: Farhan@786
     uername: khalid.akhter@gyansys.com pwd: Farhan@786
@@ -244,21 +255,15 @@ const About = () => {
     gyansys id: 0994\n
     password: Software@92\n
 
-
+    -------------------------------
     Axis Customer Id: 848762783
     Axis:152007#farhan
     5346 8000 2637 5621
     03/22
-
     717
-
     A/C: 487708
 
-
-
-
-
-
+    ------------------------
     khalid.bharat@gmail.com
     Farhan@786
 
