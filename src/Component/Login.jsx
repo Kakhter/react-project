@@ -3,13 +3,13 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [username, setUsername] = useState("admin");
-  const [password, setPassword] = useState("Gyansys@2025");
+  const [password, setPassword] = useState("Ultra@2026");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
   const navigate = useNavigate();
 
   const HARD_USERNAME = "admin";
-  const HARD_PASSWORD = "Gyansys@202";
+  const HARD_PASSWORD = "Ultra@202";
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -18,7 +18,7 @@ const Login = () => {
       try {
         localStorage.setItem("isAuth", "1");
         localStorage.setItem("username", username);
-      } catch (e) {}
+      } catch (e) { }
       setSuccess(true);
       // simple redirect after 1s
       setTimeout(() => navigate("/app"), 1000);
@@ -64,7 +64,7 @@ const Login = () => {
         <button type="submit" style={{ padding: "8px 12px" }}>Sign In</button>
       </form>
       <div style={{ marginTop: "12px", fontSize: "13px", color: "#555" }}>
-        Demo credentials: <b>admin</b> / <b>Gyansys</b>
+        Demo credentials: <b>admin</b> / <b>Ultra</b>
       </div>
     </div>
   );

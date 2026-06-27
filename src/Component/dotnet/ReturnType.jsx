@@ -1,17 +1,19 @@
 const ReturnType = (
-  <>
-    <div style={{ textAlign: "left", marginLeft: "3%" }}>
-      <h2>Return Type</h2>
-    </div>
+    <>
+        <div style={{ textAlign: "left", marginLeft: "3%" }}>
+            <h2>Return Type Json/XML</h2>
+        </div>
 
-    {`
-        1. Enable XML Formatter in Program.cs
 
-        builder.Services.AddControllers()
-            .AddXmlSerializerFormatters(); // Enables XML output
+        <b>Enable XML Formatter in Program.cs </b><br />
+        <p style={{ marginLeft: "40px" }}>
+            builder.Services.AddControllers()<br />
+            .AddXmlSerializerFormatters(); // Enables XML output<br />
 
-             and Calling in Header: Accept: application/xml
-
+            and Calling in Header: Accept: application/xml <br />
+            --------------------------------------------------------------<br />
+        </p>
+        {`
         🧩 3. Example: Controller Method Returning XML
         using Microsoft.AspNetCore.Mvc;
 
@@ -167,7 +169,7 @@ const ReturnType = (
         .catch(err => console.error(err));
 
         `}
-  </>
+    </>
 );
 
 export default ReturnType;

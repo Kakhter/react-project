@@ -7,7 +7,8 @@ const Throttling = (
     {`
     -------------------------------Welcome to Throttling--------------------------------------------
 
-    Throttling in ASP.NET (or any web API) means limiting the number of requests a client (user, IP, or application) can send to your API within a specific time window.
+    Throttling in ASP.NET (or any web API) means limiting the number of requests a client (user, IP, or application) 
+    can send to your API within a specific time window.
     It helps you control the traffic load and prevent abuse (like Denial-of-Service or brute-force attacks)
 
         🧰 Step 1: Install Package
@@ -51,8 +52,8 @@ const Throttling = (
                       new RateLimitRule
                       {
                           Endpoint = "*",       // All endpoints
-                          Period = "5s",       // Per m s
-                          Limit = 2            // Max 5 requests
+                          Period = "10s",       // Per m/s
+                          Limit = 5            // Max 5 requests
                       }
                   };
       });

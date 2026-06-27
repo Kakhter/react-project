@@ -174,8 +174,11 @@ const About = () => {
     URl: https://github.com/
     userName: Kakhter
     Pwd: Gyansys@2025
+
+    It allow to creatge new repository after login
     OR
     Github: https://github.com/Kakhter/ (no password) public
+    working Project: Kakhter/react-project
     ----------------------------------------------------------
     Azure Site:
     https://portal.azure.com/
@@ -184,7 +187,7 @@ const About = () => {
 
     Azure DevOps
     https://dev.azure.com/
-    
+    akhter.bharat@gmail.com
     ---------------------------------------
     Railway
     --------
