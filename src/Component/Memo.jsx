@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Momo from "././MemoChild";
 
 const useCallback = () => {
-  const [count, setCount] = useState(0);
-  const [child, setChild] = useState("send to child");
+  const [count, setCount] = useState();
+  const [child, setChild] = useState();
   return (
     <>
       <h1>Use of memo Parent Component</h1>
@@ -23,7 +23,7 @@ const useCallback = () => {
       <br />
       <hr />
       <Momo value={child} />
-      <br/>
+      <br />
     </>
   );
 };

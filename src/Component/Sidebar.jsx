@@ -57,10 +57,12 @@ function Sidebar({ isOpen }) {
           <Link to="/app/dotnetdata">Dot Net</Link>
           <br />
           <Link to="/app/fetchdata">Use Hook to fetch</Link>
-          <br/>
+          <br />
           <Link to="/app/khalid">Khalid IDs</Link>
-<br/>
+          <br />
           <Link to="/app/general">Practice</Link>
+          <br />
+          <Link to="/app/shortsyntax">Short Syntax</Link>
         </ul>
       )}
     </aside>

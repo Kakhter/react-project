@@ -3,26 +3,33 @@ import React from "react";
 const Session3 = () => {
   return (
     <>
-      <h2>Reducer</h2>
+      <h2>Reducer Hook</h2>
       <img src="/UseReducer.jpg" alt="useReducer" width="100%"></img>
       <pre>
         <code>
+          📌 What is a Reducer?
+          A pure function: It takes the current state and an action as inputs, and returns the new state.<br />
+
+          No side effects: Reducers don’t modify state directly; they return a new state object.<br />
+
+          Action-driven: State changes are triggered by dispatching actions (objects with a type and optional payload).<br />
+          <br />
           {`Reducer:
-Reducer manages the state in a centralized way.
-Component- What should happe
-Reducer: How it's done.
+          Reducer manages the state in a centralized way.
+          Component- What should happe
+          Reducer: How it's done.
 
-ticketReducer.js
-Action:
-1. Add ticket
-2. Delete ticket
-3. Update ticket
+          ticketReducer.js
+          Action:
+          1. Add ticket
+          2. Delete ticket
+          3. Update ticket
 
-React Reducer
-1. Manages state in a centralized way
-2. Separating logic from user actions.
-3. Dispatch actions from components (handled by reducer)
-4. Information gets passed to the reducer in the payload
+          React Reducer
+          1. Manages state in a centralized way
+          2. Separating logic from user actions.
+          3. Dispatch actions from components (handled by reducer)
+          4. Information gets passed to the reducer in the payload
 
 Code Example:
 

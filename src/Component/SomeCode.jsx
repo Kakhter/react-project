@@ -9,6 +9,17 @@ const SomeCode = () => {
     <>
 
       <p>{allFruits.join(",")}</p>
+
+      Dependency: <br />
+      [] → run once (like componentDidMount).<br />
+
+      [deps] → run when those deps change.<br />
+
+      No array → run every render.<br />
+
+      null or invalid → ❌ error (must always be an array).<br />
+
+
       <h3>Other Command</h3>
       <ol>
         <li>Rest Operator</li>
@@ -46,37 +57,74 @@ const SomeCode = () => {
         <br />
         <li>Spread Operator</li>
         <br />
-        const fruit =["apple","banana"];
-        <br />
-        const otherFruit=["lichi","gabha","pineapple"];
-        <br />
-        const allFruits = [...fruit, otherFruit];
-        <br />
-        The above syntax merging two array and '...' triple dot symbol called
-        spread operator.
-        <br />
-        or
-        <br />
-        const newState = [ ...fruit,"Mosammi"]
+        What the Spread Operator Does <br />
+        Expands arrays/objects into individual elements.<br />
+        Copies data immutably (important in React state management).<br />
+        Passes props cleanly to child components.<br />
 
+        Merges multiple arrays/objects without mutating originals.<br />
         <br />
-        State is mutable.
+        🔗 Examples in React<br />
+        <pre> {`
+        1. Copying 
+
+            jsx:
+            const numbersOne = [1, 2, 3];
+            const numbersTwo = [4, 5, 6];
+            const combined = [...numbersOne, ...numbersTwo];
+            // [1, 2, 3, 4, 5, 6]
+
+        2. Copying/Merging Objects
+
+            jsx:
+            const car = {brand: 'Ford', color: 'red' };
+            const carMore = {year: 2025, color: 'blue' };
+            const myCar = {...car, ...carMore };
+
+            // {brand: 'Ford', year: 2025, color: 'blue' }
+            👉 Notice how color was overwritten by the last object.
+        
+        3. Passing Props to Components
+
+          jsx:
+          const person = {name: "Khalid", age: 35 };
+          <Profile {...person} title="Developer" />
+
+          Equivalent to:
+
+          jsx:
+          <Profile name="Khalid" age={35} title="Developer" />
+
+        4. Updating State Immutably
+
+          jsx:
+            this.setState(prevState => ({
+            ...prevState,
+            user: {
+            ...prevState.user, name: "New Name" }
+
+            }));
+        `}
+        </pre>
+        👉 Ensures React sees a new object and re-renders correctly.
+        <br />
         <br />
         <li>map function</li>
         <pre>
           <code>
             {`movies.map(movie => (
-<div key={movie.id}>
-<p>Movie Title: {movie.title}</p>
-</div>
-))`}
+            <div key={movie.id}>
+            <p>Movie Title: {movie.title}</p>
+            </div>
+            ))`}
           </code>
         </pre>
+        <br />
         <li>Path concaneting</li>
         <code>{`<img src={./image/$/{variable}} `}</code>
         -- / is extra after $.
 
-
+        <br />
         <br />
         <li>input button code</li>
         <pre>

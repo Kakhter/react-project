@@ -27,6 +27,7 @@ import Logout from "./Component/Logout";
 import FetchData from "./Component/hooks/FetchData";
 import Khalid from "./Component/Family/Khalid";
 import General from "./Component/Practices/General";
+import ShortSyntax from "./Component/ShortSyntax";
 
 const LazyLoading = lazy(() => import("./Component/LazyLoading"));
 function App() {
@@ -73,7 +74,8 @@ function App() {
             <Route path="dotnetdata" element={<DotNet />} />
             <Route path="fetchdata" element={<FetchData />} />
             <Route path="khalid" element={<Khalid />} />
-            <Route path="general" element={<General/>} />
+            <Route path="general" element={<General />} />
+            <Route path="shortsyntax" element={<ShortSyntax />} />
           </Routes>
         </Suspense>
       </main>

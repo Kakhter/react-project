@@ -7,6 +7,11 @@ const Session4 = () => {
   return (
     <>
       <h1> [Use of useContext]</h1>
+      <br />
+      useContext in React is a hook that lets you access values from a Context directly, <br />
+      without having to pass props down manually through multiple levels of components.<br />
+
+      <br />
       <img src="/UseContext.jpg" alt="useReducer" width="100%"></img>
       <div>
         <ComponentA></ComponentA>
