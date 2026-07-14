@@ -14,7 +14,8 @@ const Logout = () => {
     }
 
     // small delay to show message if needed
-    const t = setTimeout(() => navigate("/app/Login"), 800);
+    // const t = setTimeout(() => navigate("/app/Login"), 800);
+    const t = setTimeout(() => navigate("/"), 800);
     return () => clearTimeout(t);
   }, [navigate]);
 

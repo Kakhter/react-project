@@ -11,6 +11,10 @@ const ContactUs = () => {
       <pre>
         <code>
           {`
+          n8n:
+          https://www.google.com/search?rlz=1C1CHBD_en-GBIN1189IN1189&sca_esv=a707d86a229c684a&sxsrf=APpeQnu9gp_4UjEZBjQJ9CRS6UHDCy96Vw:1783874200084&udm=7&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8cxpBkeIeqYwoCbfNVc4vKE9OqRMKGD2T9lFDfEKBBAAmW5ocR386QO4cT2Z22CGZR-lG_dnZTBDkDAZZ-sV6vXVq8lWenx01Be5VWhhOPqR1Untj6x7mDqp2PrNNE1lh7yAMRS19W3wbAZQ1I3WsQPw7UGDRkw2-CGQVEOrF0kItzTLwsULoz9pGPi-UBSsrvkha-2A&q=i+want+to+create+a+system+message+chat+boat+workflow+using+n8n,+give+the+message+and+get+the+response+from+our+system+message&sa=X&sqi=2&ved=2ahUKEwjRjpSgyc2VAxV8ka8BHfkDJiMQtKgLegQIFhAB&biw=1366&bih=633&dpr=1#fpstate=ive&vld=cid:f8273fd3,vid:mLTqabG0l7c,st:0
+
+          https://www.youtube.com/watch?v=MkFJX2wHFTE (n8n email/chat boat)
 --------------------------------------------------------------------------------------------------------------------
             1. How to display dynamic html data in react ?
             Ans:

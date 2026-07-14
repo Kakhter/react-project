@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function Header({ onToggleSidebar }) {
   return (
     <header
@@ -8,13 +8,15 @@ function Header({ onToggleSidebar }) {
         color: "white",
         padding: "3px",
         display: "flex",
+        justifyContent: "space-between",
         alignItems: "center",
+
       }}
     >
       <button
         onClick={onToggleSidebar}
         style={{
-          marginRight: "10px",
+          marginRight: "3px",
           fontSize: "20px",
           background: "transparent",
           border: "none",
@@ -24,7 +26,8 @@ function Header({ onToggleSidebar }) {
       >
         ☰
       </button>
-      My React App
+      My React App, .Net Code and SQL DBA/DEV
+      <div><Link to="/app/logout"><img src="/logout.jpg" style={{ width: "25px", height: "25px" }}></img></Link></div>
     </header>
   );
 }

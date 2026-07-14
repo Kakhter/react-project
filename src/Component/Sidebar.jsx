@@ -21,12 +21,12 @@ function Sidebar({ isOpen }) {
           <Link to="/app/about">🏠 About</Link>
           <br />
           <Link to="/app/contact">📞Contact</Link>
-          <br />
-          <Link to="/app/logout">Logout</Link>
+          {/* <br /> */}
+          {/* <Link to="/app/logout">Logout</Link> */}
           <br />
           <Link to="/app/lazy">Lazy Loading</Link>
-          <br />
-          <Link to="/app/login">Login</Link>
+          {/* <br /> */}
+          {/* <Link to="/app/login">Login</Link> */}
           <br />
           <Link to="/app/react">React Session 1</Link>
           <br />
