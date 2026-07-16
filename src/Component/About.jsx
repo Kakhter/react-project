@@ -16,7 +16,7 @@ const About = () => {
 
 
 
-      Office 365 Setup:<br />
+      Office 365 Setup::<br />
       <a href="https://youtu.be/erXnT4OcVT0" target="_blank">Office Setup</a>
       <br />
 
