@@ -11,17 +11,17 @@ const ShortSyntax = () => {
         <>
             <pre>
                 {`
-SWAGGER
-----------------------------------------------------
+--------------------------------------------------------------------------------------------------------
+                                            SWAGGER
+--------------------------------------------------------------------------------------------------------
 builder.Services.AddSwaggerGen() -- DEFAULT
 
 app.UseSwagger();
 app.UseSwaggerUI()
 
-----------------------------------------------------
-
-RESPONSE COMPRESSION:
-----------------------------------------------------
+--------------------------------------------------------------------------------------------------------
+                                            RESPONSE COMPRESSION:
+--------------------------------------------------------------------------------------------------------
 dotnet add package Microsoft.AspNetCore.ResponseCompression
 
         using Microsoft.AspNetCore.ResponseCompression;
@@ -52,9 +52,9 @@ Postman
 --------
 Accept-Encoding: gzip, br
 
-----------------------------------------------------
-THROTTLING
---------------------------------
+--------------------------------------------------------------------------------------------------------
+                                            THROTTLING
+--------------------------------------------------------------------------------------------------------
 dotnet add package AspNetCoreRateLimit
 
    builder.Services.AddMemoryCache();
@@ -73,10 +73,9 @@ builder.Services.Configure<IpRateLimitOptions>(options =>
                   };
       });
       builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
---------------------------------------------
-
-XML RESPONSE
-----------------------------------------------------
+--------------------------------------------------------------------------------------------------------
+                                            XML RESPONSE
+--------------------------------------------------------------------------------------------------------
         headers: {
             "Content-Type": "application/xml",  // 👈 You are sending XML
             "Accept": "application/xml"         // 👈 You want XML in response
@@ -85,8 +84,9 @@ XML RESPONSE
 ADD in Asp.net
 builder.Services.AddControllers().AddXmlSerializerFormatters();
 
-SERILOG IMPLEMENTATION
-----------------------------------------------------
+--------------------------------------------------------------------------------------------------------
+                                            SERILOG IMPLEMENTATION
+--------------------------------------------------------------------------------------------------------
 using Serilog;
 
 /*Install
@@ -118,7 +118,49 @@ Log.Logger = new LoggerConfiguration()
     .CreateLogger();
 
 builder.Host.UseSerilog(); // replace default ILogger with Serilog
--------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
+                                            EF Short notes:
+--------------------------------------------------------------------------------------------------------
+1. public class Customer
+2. Create ICustomerRepository Interface:
+public interface ICustomerRepository
+            {
+                Task<IEnumerable<Customer>> GetAllAsync();
+                Task<Customer?> GetByIdAsync(int id);
+                Task<int> AddAsync(Customer customer);
+                Task<int> UpdateAsync(Customer customer);
+                Task<int> DeleteAsync(int id);
+            }
+
+3. Create Customer Service
+
+4. public class CustomerRepository:ICustomerRepository => Infrastructure Layer
+    {
+        private readonly DBContext _db;
+        public CustomerRepository(DBContext db)
+        {
+        _db=db;
+        }
+    
+        public IEnumeriable<Customer>GetAll()
+        {
+            return _db.tblCustomer;
+        }
+            Similarly implement other methods of the interface:
+            return _db.tblCustomer.Find(id);
+
+            _db.tblCustomer.Add(customer);
+            _db.SaveChanges();
+
+            _db.tblCustomer.Remove(id);
+            _db.SaveChanges();
+
+            _db.tblCustomer.Update(customer);
+            _db.SaveChanges();
+
+
+
+
 
 `}
             </pre>
