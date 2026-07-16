@@ -6,7 +6,7 @@ const Session3 = () => {
       <h2>Reducer Hook</h2>
 
       <img src="/useReducerHook.jpg" alt="useReducer" width="100%"></img>
-
+      <br />
       <br />
       <img src="/UseReducer.jpg" alt="useReducer" width="100%"></img>
       <pre>
