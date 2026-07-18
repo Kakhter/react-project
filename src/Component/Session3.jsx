@@ -3,9 +3,19 @@ import React from "react";
 const Session3 = () => {
   return (
     <>
+      <h2>Hook Definition</h2>
+      <p>
+        A React Hook is a JavaScript function that allow us to access
+        React features such as state management, side effects, context,
+        refs, and performance optimizations directly inside
+
+        Hooks provide a way to “hook into” React’s internal mechanisms for managing component behavior
+
+      </p>
       <h2>Reducer Hook</h2>
 
-      <img src="/useReducerHook.jpg" alt="useReducer" width="100%"></img>
+
+      <img src="/useReducerHook.jpg" alt="useReducer" width="80%"></img>
       <br />
       <br />
       <img src="/UseReducer.jpg" alt="useReducer" width="100%"></img>
