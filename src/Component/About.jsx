@@ -11,7 +11,7 @@ const About = () => {
 
   return (
     <>
-      <h2> About Link</h2>
+      <h2> About Link</h2> : Password <br />
 
 
 
