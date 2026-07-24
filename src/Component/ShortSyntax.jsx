@@ -11,124 +11,48 @@ const ShortSyntax = () => {
         <>
             <pre>
                 {`
-                 
---------------------------------------------------------------------------------------------------------
-                                            CORS
---------------------------------------------------------------------------------------------------------
-    builder.Services.AddCors(options =>
-    {
-    options.AddPolicy("AllowSpecificOrigin",
-        policy => policy.WithOrigins("https://example.com")  // Allow this domain
-                        .AllowAnyHeader()
-                        .AllowAnyMethod());
-    });
-    
-    var app = builder.Build();
-    app.UseCors("AllowSpecificOrigin")
---------------------------------------------------------------------------------------------------------
-                                            Filters
--------------------------------------------------------------------------------------------------------- 
-    public class LogActionFilter : IActionFilter
-    {
-        private readonly ILogger<LogActionFilter> _logger;
-
-        public LogActionFilter(ILogger<LogActionFilter> logger)
-        {
-            _logger = logger;
-        }
-
-        public void OnActionExecuting(ActionExecutingContext context)
-        {
-            _logger.LogInformation($"➡️ Action {context.ActionDescriptor.DisplayName} starting...");
-        }
-
-        public void OnActionExecuted(ActionExecutedContext context)
-        {
-            _logger.LogInformation($"✅ Action {context.ActionDescriptor.DisplayName} finished.");
-        }
-    }
-
---------------------------------------------------------------------------------------------------------
-                                            Middlewares
---------------------------------------------------------------------------------------------------------  
-            public class RequestLoggingMiddleware
-            {
-                private readonly RequestDelegate _next;
-                private readonly ILogger<RequestLoggingMiddleware> _logger;
-
-                public RequestLoggingMiddleware(RequestDelegate next, ILogger<RequestLoggingMiddleware> logger)
-                {
-                    _next = next;
-                    _logger = logger;
-                }
-
-                public async Task InvokeAsync(HttpContext context)
-                {
-                    _logger.LogInformation($"Request: {context.Request.Method} {context.Request.Path}");
-                    await _next(context);
-                    _logger.LogInformation($"Response: {context.Response.StatusCode}");
-                }
-            }
-
-            Register in Program.cs:
-
-            app.UseMiddleware<RequestLoggingMiddleware>();
-
 --------------------------------------------------------------------------------------------------------
                                             SWAGGER
 --------------------------------------------------------------------------------------------------------
-        builder.Services.AddSwaggerGen() -- DEFAULT
+builder.Services.AddSwaggerGen() -- DEFAULT
 
-        app.UseSwagger();
-        app.UseSwaggerUI()
+app.UseSwagger();
+app.UseSwaggerUI()
 
 --------------------------------------------------------------------------------------------------------
                                             RESPONSE COMPRESSION:
 --------------------------------------------------------------------------------------------------------
-        dotnet add package Microsoft.AspNetCore.ResponseCompression
+dotnet add package Microsoft.AspNetCore.ResponseCompression
 
-                using Microsoft.AspNetCore.ResponseCompression;
-                using System.IO.Compression;
+        using Microsoft.AspNetCore.ResponseCompression;
+        using System.IO.Compression;
 
-        builder.Services.AddResponseCompression() -- only for Gzip
+builder.Services.AddResponseCompression() -- only for Gzip
 
-        builder.Services.AddResponseCompression(options =>
-        {
-            options.EnableForHttps = true; // ✅ compress HTTPS responses
-            options.Providers.Add<GzipCompressionProvider>();
-            options.Providers.Add<BrotliCompressionProvider>();
-        });
+builder.Services.AddResponseCompression(options =>
+{
+    options.EnableForHttps = true; // ✅ compress HTTPS responses
+    options.Providers.Add<GzipCompressionProvider>();
+    options.Providers.Add<BrotliCompressionProvider>();
+});
 
-        builder.Services.Configure<GzipCompressionProviderOptions>(opts =>
-        {
-            opts.Level = System.IO.Compression.CompressionLevel.Fastest;
-        });
+builder.Services.Configure<GzipCompressionProviderOptions>(opts =>
+{
+    opts.Level = System.IO.Compression.CompressionLevel.Fastest;
+});
 
-        builder.Services.Configure<BrotliCompressionProviderOptions>(opts =>
-        {
-            opts.Level = System.IO.Compression.CompressionLevel.Fastest;
-        });
+builder.Services.Configure<BrotliCompressionProviderOptions>(opts =>
+{
+    opts.Level = System.IO.Compression.CompressionLevel.Fastest;
+});
 
-        app.UseResponseCompression();
+app.UseResponseCompression();
 
-        Postman
-        --------
-        Accept-Encoding: gzip, br
+Postman
+--------
+Accept-Encoding: gzip, br
+
 --------------------------------------------------------------------------------------------------------
-                                            CACHING
---------------------------------------------------------------------------------------------------------
-        private readonly IMemoryCache _cache; 
-
-        _cache.TryGetValue() → checks if data exists in cache. 
-
-        _cache.Set() → stores data with expiration policy. 
-
-        SlidingExpiration → resets the timer each time it’s accessed. 
-
-        AbsoluteExpiration → removes after fixed duration no matter what.
-        
-        _cache.Remove(cacheKey);
-        --------------------------------------------------------------------------------------------------------
                                             THROTTLING
 --------------------------------------------------------------------------------------------------------
 dotnet add package AspNetCoreRateLimit
@@ -197,14 +121,9 @@ builder.Host.UseSerilog(); // replace default ILogger with Serilog
 --------------------------------------------------------------------------------------------------------
                                             EF Short notes:
 --------------------------------------------------------------------------------------------------------
-    Required to install:
-    Microsoft.EntityFrameCore.SqlServer
-    Microsoft.EnityFrameCore.Design 
-    Microsoft.EntityFrameCore.Tool
-
 1. public class Customer
 2. Create ICustomerRepository Interface:
-            public interface ICustomerRepository
+public interface ICustomerRepository
             {
                 Task<IEnumerable<Customer>> GetAllAsync();
                 Task<Customer?> GetByIdAsync(int id);
@@ -228,6 +147,7 @@ builder.Host.UseSerilog(); // replace default ILogger with Serilog
             return _db.tblCustomer;
         }
             Similarly implement other methods of the interface:
+            
             return _db.tblCustomer.Find(id);
 
             _db.tblCustomer.Add(customer);
