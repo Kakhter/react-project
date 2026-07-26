@@ -1,9 +1,9 @@
 const Filter = (
-  <>
-    <div style={{ textAlign: "left", marginLeft: "3%" }}>
-      <h2>Filter</h2>
-    </div>
-    {`
+    <>
+        <div style={{ textAlign: "left", marginLeft: "3%" }}>
+            <h2>Filter</h2>
+        </div>
+        {`
 
     ├── WebAPI/
     │    ├── Controllers/
@@ -39,7 +39,7 @@ const Filter = (
 
 
     🧩 Types of Filters in ASP.NET Core
-    Filter Type	                  Runs When	                            Common Use
+    Filter Type	                    Runs When	                            Common Use
     Authorization Filter	        Before anything else	                Check user permissions (Auth)
     Resource Filter	                Before model binding	                Caching, short-circuit logic
     Action Filter	                Before and after an action executes	  Logging, validation, timing
@@ -135,12 +135,14 @@ const Filter = (
     5️⃣ Exception filters (on errors)
 
     ✅ Summary
-    Type	Interface	Purpose
+    Type	        Interface	            Purpose
+    -----------------------------------------------------------------------------
     Authorization	IAuthorizationFilter	Access control
-    Resource	IResourceFilter	Caching, short-circuiting
-    Action	IActionFilter	Before/after action execution
-    Exception	IExceptionFilter	Centralized error handling
-    Result	IResultFilter	Before/after response formatting
+    Resource	    IResourceFilter	        Caching, short-circuiting
+    Action	        IActionFilter	        Before/after action execution
+    Exception	    IExceptionFilter	    Centralized error handling
+    Result	        IResultFilter	        Before/after response formatting
+
     💡 Filters vs Middleware
     Middleware	Filter
     Works outside MVC pipeline	Works inside MVC pipeline
@@ -312,7 +314,7 @@ const Filter = (
 
 
     `}
-  </>
+    </>
 );
 
 export default Filter;
