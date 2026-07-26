@@ -39,11 +39,12 @@ const Filter = (
 
 
     🧩 Types of Filters in ASP.NET Core
-    Filter Type	                    Runs When	                            Common Use
+    -----------------------------------------------------------------------------------------------------
+    Filter Type	                        Runs When	                            Common Use
     Authorization Filter	        Before anything else	                Check user permissions (Auth)
     Resource Filter	                Before model binding	                Caching, short-circuit logic
     Action Filter	                Before and after an action executes	  Logging, validation, timing
-    Exception Filter	            When an exception occurs	            Custom error handling
+    Exception Filter	                When an exception occurs	            Custom error handling
     Result Filter	                Before and after result execution	    Modify response or headers
 
     Let’s create a simple Action Filter to log every request.
@@ -138,9 +139,9 @@ const Filter = (
     Type	        Interface	            Purpose
     -----------------------------------------------------------------------------
     Authorization	IAuthorizationFilter	Access control
-    Resource	    IResourceFilter	        Caching, short-circuiting
+    Resource	        IResourceFilter	    Caching, short-circuiting
     Action	        IActionFilter	        Before/after action execution
-    Exception	    IExceptionFilter	    Centralized error handling
+    Exception	        IExceptionFilter	    Centralized error handling
     Result	        IResultFilter	        Before/after response formatting
 
     💡 Filters vs Middleware
