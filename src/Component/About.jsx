@@ -139,8 +139,24 @@ const About = () => {
       scope: "openid profile email",
     };
 
+    -----------------------------------------latest
+    Gmail: khalid.bharat@gmail.com
+           Gyansys@2025
+    Gmail: akhter.bharat@gmail.com
+           Farhan@786
     -----------------------------------------
-    Tata Router:
+    PIN-Nargish- 1972
+    Mi Account Nargish: Farhan@786 
+
+    mine Mi Pwd: Farhan@1972
+    -----------------------------------------
+    HDFC Bank App: Pin: 0133
+    -----------------------------------------
+    SBI Bank ATM: Pin: 0133
+    -----------------------------------------
+    1. https://www.naukri.com/
+
+    Tata Router Bengaluru:
     ------------------
     IP: 192.168.1.254
     User: userAdmin
@@ -217,7 +233,7 @@ const About = () => {
     Motor:  7781836991
 
     Spe: K: 1259/580
-        M: 659 / 616.54
+         M: 659 / 616.54
 
     New: pin:0133 sbi
 
