@@ -18,7 +18,7 @@ const TVSPaper = () => {
       <br></br>
       <h3 className={styles.box}>Insurance Current</h3>
       <hr />
-      <img src="/Vehicle/Insurance.png" width="90%"></img>
+      <img src="/Vehicle/Policy.png" width="90%"></img>
       <br></br>
 
 
