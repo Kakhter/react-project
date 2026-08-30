@@ -9,11 +9,22 @@ const TVSPaper = () => {
       </h3>
       <hr />
       <img src="/Vehicle/TransportDepartment.jpeg" width="90%"></img>
+
+
       <br></br>
-      <h3 className={styles.box}>Insurance</h3>
+      <h3 className={styles.box}>Insurance Expired</h3>
       <hr />
       <img src="/Vehicle/Insurance.jpeg" width="90%"></img>
       <br></br>
+      <h3 className={styles.box}>Insurance Current</h3>
+      <hr />
+      <img src="/Vehicle/Insurance.png" width="90%"></img>
+      <br></br>
+
+
+
+
+
       <h3 className={styles.box}>Invoice</h3>
       <hr />
       <img src="/Vehicle/Invoice.jpeg" width="90%"></img>
