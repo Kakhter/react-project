@@ -5,6 +5,10 @@ const CORS = (
     </div>
 
     {`
+
+    In ASP.NET Core APIs, CORS (Cross‑Origin Resource Sharing) is a browser security standard 
+    that lets your API accept requests from different domains, ports, or schemes. 
+    -----------------------------------------------------------------------------------------
     Import in program.cs
     using Microsoft.EntityFrameworkCore;
     

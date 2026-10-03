@@ -141,10 +141,10 @@ const About = () => {
 
     -----------------------------------------latest
     Gmail: khalid.bharat@gmail.com
-           Gyansys@2025
+           Farhan@786--Gyansys@2025
     Gmail: akhter.bharat@gmail.com
            Farhan@786
-    -----------------------------------------
+    ----------------------------------------BB@092026-
     PIN-Nargish- 1972
     Mi Account Nargish: Farhan@786 
 

@@ -5,6 +5,7 @@ const SomeCode = () => {
   const fruit = ["apple", "banana"];
   const otherFruit = ["lichi", "gabha", "pineapple"];
   const allFruits = [...fruit, otherFruit];
+
   return (
     <>
 
@@ -59,6 +60,11 @@ const SomeCode = () => {
         <br />
         What the Spread Operator Does <br />
         Expands arrays/objects into individual elements.<br />
+        OR <br />
+        Spread Operator = ... allows an iterable such as an array or string to be expanded
+        <br /><br />
+        into separate elements (unpacks the elements) <br />
+        USESES:
         Copies data immutably (important in React state management).<br />
         Passes props cleanly to child components.<br />
 
@@ -109,14 +115,32 @@ const SomeCode = () => {
         👉 Ensures React sees a new object and re-renders correctly.
         <br />
         <br />
+
         <li>map function</li>
+        <br />
+        is the standard way to loop through an array and dynamically render a list of JSX elements. <br />
+        Because React uses JSX, you cannot use a traditional for loop directly inside your <br />
+        component's template. Instead, map() transforms each item in an array into a new JSX element <br />
+        and returns a clean array that React can immediately display.
         <pre>
           <code>
-            {`movies.map(movie => (
-            <div key={movie.id}>
-            <p>Movie Title: {movie.title}</p>
-            </div>
-            ))`}
+            {`
+            import React from 'react';
+
+            function FruitList() {
+              const fruits = ['Apple', 'Banana', 'Orange'];
+
+              return (
+                <ul>
+                  {fruits.map((fruit, index) => (
+                    <li key={index}>{fruit}</li>
+                  ))}
+                </ul>
+              );
+            }
+
+            export default FruitList;
+            `}
           </code>
         </pre>
         <br />
