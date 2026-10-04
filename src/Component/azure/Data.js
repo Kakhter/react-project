@@ -2,7 +2,7 @@ const appServicePDFLink = "/azure/AppService.pdf"
 const appServiceImg = "/azure/AppService.jpeg"
 const azureDevOpsLink = "/azure/AzureDevOps.pdf"
 const azureDevOpsImg = "/azure/DevOps.jpeg"
-const azureDevOpsVideo = "/azure/Create-DevOps-Pipeline.mp4";
+const azureDevOpsVideo = "/azure/Create-Static-Web-Apps.mp4"; //"/azure/Create-DevOps-Pipeline.mp4";
 const azureStaticWebAppVideo = "/azure/Create-Static-Web-Apps.mp4";
 
 
