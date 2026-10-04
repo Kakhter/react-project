@@ -42,9 +42,11 @@ const AppService = () => {
           padding: "10px",
         }}
       >
-        {Data.map(({ id, pdfLink, description, image }) => {
+        {Data.map(({ id, pdfLink, description, image, video1 }) => {
+          console.log({ video1 })
           return (
-            <div className="card">
+            <div className="card" key={id}>
+
               <div
                 key={id}
                 style={{ padding: "3px", backgroundColor: "white" }}
@@ -53,6 +55,13 @@ const AppService = () => {
                   <h3>Topic No: {id}</h3>
                   <img src={image} alt="image" width="50%" height="50%"></img>
                 </div>
+
+                <video width="500" controls>
+                  <source src={video1} type="video/mp4" />
+                  Your browser does not support the video tag.
+
+                </video>
+
                 <p>
                   <b>Description:</b> {description}
                 </p>
