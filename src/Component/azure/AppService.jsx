@@ -35,7 +35,7 @@ const AppService = () => {
       <div
         style={{
           backgroundColor: "ThreeDFace",
-          display: "flex",
+          // display: "flex",
           // justifyContent: "space-between",
           // alignItems: "center",
           width: "100%",
@@ -45,38 +45,40 @@ const AppService = () => {
         {Data.map(({ id, pdfLink, description, image, video1 }) => {
           console.log({ video1 })
           return (
-            <div className="card" key={id}>
+            <div key={id}>
 
-              <div
-                key={id}
-                style={{ padding: "3px", backgroundColor: "white" }}
-              >
-                <div style={{ textAlign: "center" }}>
-                  <h3>Topic No: {id}</h3>
-                  <img src={image} alt="image" width="50%" height="50%"></img>
-                </div>
 
-                {/* <video width="500" controls>
+
+              {/* <div style={{ textAlign: "center" }}>
+                <h3>Topic No: {id}</h3>
+                <img src={image} alt="image" width="50%" height="50%"></img>
+              </div> */}
+
+              {/* <video width="500" controls>
                   <source src={video1} type="video/mp4" />
                   Your browser does not support the video tag.
 
                 </video> */}
+              <p style={{ fontSize: "20px", fontWeight: "bold" }}>
+                <b>Description:</b> {description}
+              </p>
+              <div>
                 {
                   <iframe
                     src={video1}
-                    width="500"
-                    height="300"
+                    width="90%"
+                    height="550px"
                     allow="autoplay">
                   </iframe>
                 }
-
-                <p>
-                  <b>Description:</b> {description}
-                </p>
-                <a href={pdfLink} target="_blank">
-                  PDF Link
-                </a>
               </div>
+
+
+              {/* <a href={pdfLink} target="_blank">
+                PDF Link
+              </a> */}
+              ---------------------------------------------------------------------------------------------------------------
+
             </div>
           );
         })}
