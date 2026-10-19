@@ -56,11 +56,19 @@ const AppService = () => {
                   <img src={image} alt="image" width="50%" height="50%"></img>
                 </div>
 
-                <video width="500" controls>
+                {/* <video width="500" controls>
                   <source src={video1} type="video/mp4" />
                   Your browser does not support the video tag.
 
-                </video>
+                </video> */}
+                {
+                  <iframe
+                    src={video1}
+                    width="500"
+                    height="300"
+                    allow="autoplay">
+                  </iframe>
+                }
 
                 <p>
                   <b>Description:</b> {description}
