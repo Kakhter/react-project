@@ -6,6 +6,7 @@ const azureDevOpsVideo = "https://drive.google.com/file/d/1Y4OCWSZWR5fETyVg4QLf1
 const azureStaticWebAppVideo = "https://drive.google.com/file/d/1cXboP1_EuDDe_QrMuUIb_2zcujqY8Bgh/preview";
 const azurekeyVaultVideo = "https://drive.google.com/file/d/1AR3esKCfNtpDthNnPI6vvUrVsFQPAWT6/preview";
 const azureServiceBusVideo = "https://drive.google.com/file/d/1ZzRff5g3XaaXqiU91P0ZHM9sOkm6TJCO/preview";
+const azureFunctionVideo = "https://drive.google.com/file/d/1EEvfi-frbARIRiQufxooedV9fsVEq5lU/preview";
 
 
 const AzureData = [
@@ -40,6 +41,13 @@ const AzureData = [
         description: "Azure Service Bus Demo",
         image: "",
         video1: azureServiceBusVideo
+    },
+    {
+        id: 5,
+        pdfLink: "",
+        description: "Azure Functions Demo",
+        image: "",
+        video1: azureFunctionVideo
     }
 ]
 
