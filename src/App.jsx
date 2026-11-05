@@ -40,6 +40,7 @@ function App() {
 
   return (
     <div>
+      <br />
       <Header onToggleSidebar={handleToggleSidebar} />
       <Sidebar isOpen={isSidebarOpen} />
       <main
