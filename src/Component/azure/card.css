@@ -22,3 +22,18 @@
     height: 31%;
     transition: all 400ms ease-in-out;
 } */
+
+.btn {
+    background-color: #0078D7;
+    color: white;
+    border: none;
+    padding: 5px 5px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #005A9E;
+}

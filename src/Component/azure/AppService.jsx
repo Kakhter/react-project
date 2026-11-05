@@ -16,7 +16,7 @@ const AppService = () => {
         }}
       >
         <div>
-          <h3> Azure Service:</h3>
+          <h3> Azure Service Videos:</h3>
         </div>
 
         <div style={{ display: "flex" }}>
@@ -53,7 +53,7 @@ const AppService = () => {
           return (
             <>
               <div key={id}>
-                <button onClick={() => setVideo(video1)} > {description} </button>
+                <button className="btn" onClick={() => setVideo(video1)} > {description} </button>
               </div>
             </>
 

@@ -9,11 +9,11 @@ const ShortSyntax = () => {
     return (
 
         <>
-            Image-1:<br />
+            Image-1: for SignalR<br />
             ChatHub.cs <br />
             <img src='/SignalR-1.jpg' alt='SignalR-1' width={800} height={400} />
             <br />
-            Image-2:<br />
+            Image-2: for SignalR<br />
 
 
             <img src='/SignalR-2.jpg' alt='SignalR-2' width={800} height={1000} />

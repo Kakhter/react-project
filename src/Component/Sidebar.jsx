@@ -63,6 +63,8 @@ function Sidebar({ isOpen }) {
           <Link to="/app/general">Practice</Link>
           <br />
           <Link to="/app/shortsyntax">Short Syntax</Link>
+          <br />
+          <Link to="/app/commonhooks">Common Hooks</Link>
         </ul>
       )}
     </aside>
