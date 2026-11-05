@@ -13,7 +13,7 @@ const AzureData = [
     {
         id: 1,
         pdfLink: appServicePDFLink,
-        description: "Azure Apps:Create Static Web Apps .",
+        description: "Create Static Web Apps .",
         image: appServiceImg,
         video1: azureStaticWebAppVideo
     },

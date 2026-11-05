@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Data from "./Data";
 import "/src/Component/azure/card.css";
 
 const AppService = () => {
+
+  const [video, setVideo] = React.useState("");
   return (
     <>
       <div
@@ -14,7 +16,7 @@ const AppService = () => {
         }}
       >
         <div>
-          <h3> App Service:</h3>
+          <h3> Azure Service:</h3>
         </div>
 
         <div style={{ display: "flex" }}>
@@ -35,30 +37,48 @@ const AppService = () => {
       <div
         style={{
           backgroundColor: "ThreeDFace",
-          // display: "flex",
-          // justifyContent: "space-between",
-          // alignItems: "center",
-          width: "100%",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          width: "85%",
           padding: "10px",
         }}
       >
+
+
+
+
         {Data.map(({ id, pdfLink, description, image, video1 }) => {
-          console.log({ video1 })
+          //console.log({ video1 })
+          return (
+            <>
+              <div key={id}>
+                <button onClick={() => setVideo(video1)} > {description} </button>
+              </div>
+            </>
+
+          )
+        })}
+      </div>
+      <div>
+        {
+          <iframe
+            src={video}
+            width="90%"
+            height="550px"
+            allow="autoplay">
+          </iframe>
+        }
+      </div>
+
+
+      {/* 
+
+        {Data.map(({ id, pdfLink, description, image, video1 }) => {
+
           return (
             <div key={id}>
 
-
-
-              {/* <div style={{ textAlign: "center" }}>
-                <h3>Topic No: {id}</h3>
-                <img src={image} alt="image" width="50%" height="50%"></img>
-              </div> */}
-
-              {/* <video width="500" controls>
-                  <source src={video1} type="video/mp4" />
-                  Your browser does not support the video tag.
-
-                </video> */}
               <p style={{ fontSize: "20px", fontWeight: "bold" }}>
                 <b>Description:</b> {description}
               </p>
@@ -74,15 +94,14 @@ const AppService = () => {
               </div>
 
 
-              {/* <a href={pdfLink} target="_blank">
-                PDF Link
-              </a> */}
-              ---------------------------------------------------------------------------------------------------------------
+              
 
             </div>
           );
         })}
-      </div>
+ */}
+
+
 
       {/* <iframe src="/azure/AppService.pdf" width="100%" height="600px" /> */}
     </>

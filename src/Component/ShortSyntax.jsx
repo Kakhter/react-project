@@ -9,8 +9,167 @@ const ShortSyntax = () => {
     return (
 
         <>
+            Image-1:<br />
+            ChatHub.cs <br />
+            <img src='/SignalR-1.jpg' alt='SignalR-1' width={800} height={400} />
+            <br />
+            Image-2:<br />
+
+
+            <img src='/SignalR-2.jpg' alt='SignalR-2' width={800} height={1000} />
             <pre>
                 {`
+-------------------------------------------------------------------------------------------------------
+                                            SignalR **
+-------------------------------------------------------------------------------------------------------
+        Create Hub Connection
+        |
+        v
+        Register event handlers (connection.on)
+        |
+        v
+        Start connection (connection.start)
+        |
+        v
+        Invoke Hub methods (connection.invoke)
+        |
+        v
+        Server processes request
+        |
+        v
+        Server sends message back
+        |
+        v
+        Client receives message in connection.on
+
+        Image 1:
+                Program.cs
+                        builder.Services.AddSignalR();
+                        …
+                        app.MapHub<ChatHub>("/hubs/chat");
+
+
+        Image 2:
+
+                React Client:
+                         
+
+        Finally:
+
+        Establish the connection
+        Connection.on => receive message from Server (HUB) for “ReceiveMessage” function.
+        Connection.Start=>
+        Connection.invoke => Send message to the HUB using “SendMessage” method.
+
+
+-------------------------------------------------------------------------------------------------------
+                                            Microservice Circuit Breaker **
+-------------------------------------------------------------------------------------------------------
+using Polly;
+using Polly.Timeout;
+
+using System.Net.Http;
+using static System.Net.WebRequestMethods;
+
+
+class Program
+{
+    static async Task Main()
+    {
+       
+
+    /* Policy Wrapping Order
+    Fallback
+↓
+    Circuit Breaker
+        ↓
+    Retry
+        ↓
+    Timeout
+        ↓
+    HTTP Call
+     */
+    var fallback = Policy<string>
+            .Handle<Exception>()
+            .FallbackAsync("Fallback");
+
+        var retry = Policy<string>
+            .Handle<Exception>()
+            .WaitAndRetryAsync(
+                2,
+                _ => TimeSpan.FromSeconds(1));
+
+        var timeout = Policy.TimeoutAsync<string>(
+            3,
+            TimeoutStrategy.Pessimistic);
+
+        var breaker = Policy<string>
+            .Handle<Exception>()
+            .CircuitBreakerAsync(
+                2,
+                TimeSpan.FromSeconds(5));
+
+        var pipeline = Policy.WrapAsync(
+            fallback,
+            retry,
+            timeout,
+            breaker);
+
+        string data = await pipeline.ExecuteAsync(async () =>
+        {
+            Console.WriteLine("Calling slow API...");
+            //"
+            var handler = new HttpClientHandler
+            {
+                UseDefaultCredentials = true
+            };
+            using var client = new HttpClient(handler);
+            string url = "https://localhost:64300/api/ADUser";
+            HttpResponseMessage response = await client.GetAsync(url);
+            response.EnsureSuccessStatusCode();
+
+            return await response.Content.ReadAsStringAsync();
+            //if (response.IsSuccessStatusCode)
+            //{
+            //    string result = await response.Content.ReadAsStringAsync();
+            //    //Console.WriteLine(result);
+            //    return result;
+            //}
+            //else
+            //{
+            //    Console.WriteLine($"Error: {response.StatusCode}");
+            //}
+
+            // await Task.Delay(3000);
+
+            throw new Exception("API failed");
+        });
+
+        Console.WriteLine(data);
+    }
+}
+
+
+-------------------------------------------------------------------------------------------------------
+                                            Filter **
+-------------------------------------------------------------------------------------------------------
+Authorization Filter : Attribute, IAuthorizationFilter
+    void OnAuthorization(AuthorizationFilterContext context)
+
+Resource Filter: IResourceFilter
+    void OnResourceExecuting(ResourceExecutingContext context)
+
+Action Filter:IActionFilter
+    void OnActionExecuting (ActionExecutingContext context)
+    void OnActionExecuted (ActionExecutedContext context)
+
+Exception Filter:IExceptionFilter
+    void OnException(ExceptionContex context)
+
+Result Filter:IResultFilter
+    void OnResultExecuting(ResultExecutingContext context)
+    void OnResultExecuted(ResultExecutedContext context)
+                
 --------------------------------------------------------------------------------------------------------
                                             SWAGGER
 --------------------------------------------------------------------------------------------------------
