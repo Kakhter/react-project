@@ -64,7 +64,17 @@ function Sidebar({ isOpen }) {
           <br />
           <Link to="/app/shortsyntax">Short Syntax</Link>
           <br />
-          <Link to="/app/commonhooks">Common Hooks</Link>
+          <Link to="/app/commonhooks">Common React Hooks</Link>
+          <br />
+          <Link to="/app/cqrs">CQRS</Link>
+          <br />
+          <Link to="/app/architecture">Architecture</Link>
+          <br />
+          <Link to="/app/microservices">Micro Services</Link>
+          <br />
+          <Link to="/app/signalr">SignalR</Link>
+
+          <br />
         </ul>
       )}
     </aside>

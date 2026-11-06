@@ -9,321 +9,184 @@ const ShortSyntax = () => {
     return (
 
         <>
-            Image-1: for SignalR<br />
-            ChatHub.cs <br />
-            <img src='/SignalR-1.jpg' alt='SignalR-1' width={800} height={400} />
-            <br />
-            Image-2: for SignalR<br />
-
-
-            <img src='/SignalR-2.jpg' alt='SignalR-2' width={800} height={1000} />
-            <pre>
-                {`
+            <div className="code_css">
+                <pre>
+                    {`
 -------------------------------------------------------------------------------------------------------
-                                            SignalR **
+                                            Filter 
 -------------------------------------------------------------------------------------------------------
-        Create Hub Connection
-        |
-        v
-        Register event handlers (connection.on)
-        |
-        v
-        Start connection (connection.start)
-        |
-        v
-        Invoke Hub methods (connection.invoke)
-        |
-        v
-        Server processes request
-        |
-        v
-        Server sends message back
-        |
-        v
-        Client receives message in connection.on
+            Authorization Filter : Attribute, IAuthorizationFilter
+                void OnAuthorization(AuthorizationFilterContext context)
 
-        Image 1:
-                Program.cs
-                        builder.Services.AddSignalR();
-                        …
-                        app.MapHub<ChatHub>("/hubs/chat");
+            Resource Filter: IResourceFilter
+                void OnResourceExecuting(ResourceExecutingContext context)
 
+            Action Filter:IActionFilter
+                void OnActionExecuting (ActionExecutingContext context)
+                void OnActionExecuted (ActionExecutedContext context)
 
-        Image 2:
+            Exception Filter:IExceptionFilter
+                void OnException(ExceptionContex context)
 
-                React Client:
-                         
-
-        Finally:
-
-        Establish the connection
-        Connection.on => receive message from Server (HUB) for “ReceiveMessage” function.
-        Connection.Start=>
-        Connection.invoke => Send message to the HUB using “SendMessage” method.
-
-
--------------------------------------------------------------------------------------------------------
-                                            Microservice Circuit Breaker **
--------------------------------------------------------------------------------------------------------
-using Polly;
-using Polly.Timeout;
-
-using System.Net.Http;
-using static System.Net.WebRequestMethods;
-
-
-class Program
-{
-    static async Task Main()
-    {
-       
-
-    /* Policy Wrapping Order
-    Fallback
-↓
-    Circuit Breaker
-        ↓
-    Retry
-        ↓
-    Timeout
-        ↓
-    HTTP Call
-     */
-    var fallback = Policy<string>
-            .Handle<Exception>()
-            .FallbackAsync("Fallback");
-
-        var retry = Policy<string>
-            .Handle<Exception>()
-            .WaitAndRetryAsync(
-                2,
-                _ => TimeSpan.FromSeconds(1));
-
-        var timeout = Policy.TimeoutAsync<string>(
-            3,
-            TimeoutStrategy.Pessimistic);
-
-        var breaker = Policy<string>
-            .Handle<Exception>()
-            .CircuitBreakerAsync(
-                2,
-                TimeSpan.FromSeconds(5));
-
-        var pipeline = Policy.WrapAsync(
-            fallback,
-            retry,
-            timeout,
-            breaker);
-
-        string data = await pipeline.ExecuteAsync(async () =>
-        {
-            Console.WriteLine("Calling slow API...");
-            //"
-            var handler = new HttpClientHandler
-            {
-                UseDefaultCredentials = true
-            };
-            using var client = new HttpClient(handler);
-            string url = "https://localhost:64300/api/ADUser";
-            HttpResponseMessage response = await client.GetAsync(url);
-            response.EnsureSuccessStatusCode();
-
-            return await response.Content.ReadAsStringAsync();
-            //if (response.IsSuccessStatusCode)
-            //{
-            //    string result = await response.Content.ReadAsStringAsync();
-            //    //Console.WriteLine(result);
-            //    return result;
-            //}
-            //else
-            //{
-            //    Console.WriteLine($"Error: {response.StatusCode}");
-            //}
-
-            // await Task.Delay(3000);
-
-            throw new Exception("API failed");
-        });
-
-        Console.WriteLine(data);
-    }
-}
-
-
--------------------------------------------------------------------------------------------------------
-                                            Filter **
--------------------------------------------------------------------------------------------------------
-Authorization Filter : Attribute, IAuthorizationFilter
-    void OnAuthorization(AuthorizationFilterContext context)
-
-Resource Filter: IResourceFilter
-    void OnResourceExecuting(ResourceExecutingContext context)
-
-Action Filter:IActionFilter
-    void OnActionExecuting (ActionExecutingContext context)
-    void OnActionExecuted (ActionExecutedContext context)
-
-Exception Filter:IExceptionFilter
-    void OnException(ExceptionContex context)
-
-Result Filter:IResultFilter
-    void OnResultExecuting(ResultExecutingContext context)
-    void OnResultExecuted(ResultExecutedContext context)
+            Result Filter:IResultFilter
+                void OnResultExecuting(ResultExecutingContext context)
+                void OnResultExecuted(ResultExecutedContext context)
                 
 --------------------------------------------------------------------------------------------------------
                                             SWAGGER
 --------------------------------------------------------------------------------------------------------
-builder.Services.AddSwaggerGen() -- DEFAULT
+            builder.Services.AddSwaggerGen() -- DEFAULT
 
-app.UseSwagger();
-app.UseSwaggerUI()
+            app.UseSwagger();
+            app.UseSwaggerUI()
 
 --------------------------------------------------------------------------------------------------------
                                             RESPONSE COMPRESSION:
 --------------------------------------------------------------------------------------------------------
-dotnet add package Microsoft.AspNetCore.ResponseCompression
+            dotnet add package Microsoft.AspNetCore.ResponseCompression
 
-        using Microsoft.AspNetCore.ResponseCompression;
-        using System.IO.Compression;
+                    using Microsoft.AspNetCore.ResponseCompression;
+                    using System.IO.Compression;
 
-builder.Services.AddResponseCompression() -- only for Gzip
+            builder.Services.AddResponseCompression() -- only for Gzip
 
-builder.Services.AddResponseCompression(options =>
-{
-    options.EnableForHttps = true; // ✅ compress HTTPS responses
-    options.Providers.Add<GzipCompressionProvider>();
-    options.Providers.Add<BrotliCompressionProvider>();
-});
+            builder.Services.AddResponseCompression(options =>
+            {
+                options.EnableForHttps = true; // ✅ compress HTTPS responses
+                options.Providers.Add<GzipCompressionProvider>();
+                options.Providers.Add<BrotliCompressionProvider>();
+            });
 
-builder.Services.Configure<GzipCompressionProviderOptions>(opts =>
-{
-    opts.Level = System.IO.Compression.CompressionLevel.Fastest;
-});
+            builder.Services.Configure<GzipCompressionProviderOptions>(opts =>
+            {
+                opts.Level = System.IO.Compression.CompressionLevel.Fastest;
+            });
 
-builder.Services.Configure<BrotliCompressionProviderOptions>(opts =>
-{
-    opts.Level = System.IO.Compression.CompressionLevel.Fastest;
-});
+            builder.Services.Configure<BrotliCompressionProviderOptions>(opts =>
+            {
+                opts.Level = System.IO.Compression.CompressionLevel.Fastest;
+            });
 
-app.UseResponseCompression();
+            app.UseResponseCompression();
 
-Postman
---------
-Accept-Encoding: gzip, br
+            Postman
+            --------
+            Accept-Encoding: gzip, br
 
 --------------------------------------------------------------------------------------------------------
                                             THROTTLING
 --------------------------------------------------------------------------------------------------------
-dotnet add package AspNetCoreRateLimit
+            dotnet add package AspNetCoreRateLimit
 
-   builder.Services.AddMemoryCache();
-   builder.Services.AddInMemoryRateLimiting();
+            builder.Services.AddMemoryCache();
+            builder.Services.AddInMemoryRateLimiting();
 
-builder.Services.Configure<IpRateLimitOptions>(options =>
-      {
-          options.GeneralRules = new List<RateLimitRule>
-                  {
-                      new RateLimitRule
-                      {
-                          Endpoint = "*",       // All endpoints
-                          Period = "10s",       // Per m/s
-                          Limit = 5            // Max 5 requests
-                      }
-                  };
-      });
-      builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
---------------------------------------------------------------------------------------------------------
-                                            XML RESPONSE
---------------------------------------------------------------------------------------------------------
-        headers: {
-            "Content-Type": "application/xml",  // 👈 You are sending XML
-            "Accept": "application/xml"         // 👈 You want XML in response
-        },
+            builder.Services.Configure<IpRateLimitOptions>(options =>
+                {
+                    options.GeneralRules = new List<RateLimitRule>
+                            {
+                                new RateLimitRule
+                                {
+                                    Endpoint = "*",       // All endpoints
+                                    Period = "10s",       // Per m/s
+                                    Limit = 5            // Max 5 requests
+                                }
+                            };
+                });
+                builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
+            --------------------------------------------------------------------------------------------------------
+                                                        XML RESPONSE
+            --------------------------------------------------------------------------------------------------------
+                    headers: {
+                        "Content-Type": "application/xml",  // 👈 You are sending XML
+                        "Accept": "application/xml"         // 👈 You want XML in response
+                    },
 
-ADD in Asp.net
-builder.Services.AddControllers().AddXmlSerializerFormatters();
+            ADD in Asp.net
+            builder.Services.AddControllers().AddXmlSerializerFormatters();
 
 --------------------------------------------------------------------------------------------------------
                                             SERILOG IMPLEMENTATION
 --------------------------------------------------------------------------------------------------------
-using Serilog;
+            using Serilog;
 
-/*Install
-dotnet add package Serilog.AspNetCore
-dotnet add package Serilog.Sinks.File
-dotnet add package Serilog.Sinks.Console
+            /*Install
+            dotnet add package Serilog.AspNetCore
+            dotnet add package Serilog.Sinks.File
+            dotnet add package Serilog.Sinks.Console
 
-Configure the Serilog as below in the Program.cs file. 
-This configuration will log error-level messages to both the console and a file named "error_log.txt" 
-in a "Logs" directory. The logs will be rolled daily, and the output template includes the timestamp, 
-source context, message, and exception details.
+            Configure the Serilog as below in the Program.cs file. 
+            This configuration will log error-level messages to both the console and a file named "error_log.txt" 
+            in a "Logs" directory. The logs will be rolled daily, and the output template includes the timestamp, 
+            source context, message, and exception details.
 
-Use
-  private readonly ILogger<CustomerController> _logger;
-  and inject in Constructor of the controller and use it as below in the action method
- */
+            Use
+            private readonly ILogger<CustomerController> _logger;
+            and inject in Constructor of the controller and use it as below in the action method
+            */
 
 
-var builder = WebApplication.CreateBuilder(args);
+            var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-Log.Logger = new LoggerConfiguration()
-    .MinimumLevel.Information()
-    .WriteTo.Console() // logs to console
-    .WriteTo.File("Logs/error_log.txt",
-        rollingInterval: RollingInterval.Day,
-        restrictedToMinimumLevel: Serilog.Events.LogEventLevel.Information,
-        outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss} | {SourceContext} | {Message:lj} | {Exception}")
-    .CreateLogger();
+            // Add services to the container.
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Information()
+                .WriteTo.Console() // logs to console
+                .WriteTo.File("Logs/error_log.txt",
+                    rollingInterval: RollingInterval.Day,
+                    restrictedToMinimumLevel: Serilog.Events.LogEventLevel.Information,
+                    outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss} | {SourceContext} | {Message:lj} | {Exception}")
+                .CreateLogger();
 
-builder.Host.UseSerilog(); // replace default ILogger with Serilog
+            builder.Host.UseSerilog(); // replace default ILogger with Serilog
 --------------------------------------------------------------------------------------------------------
                                             EF Short notes:
 --------------------------------------------------------------------------------------------------------
-1. public class Customer
-2. Create ICustomerRepository Interface:
-public interface ICustomerRepository
-            {
-                Task<IEnumerable<Customer>> GetAllAsync();
-                Task<Customer?> GetByIdAsync(int id);
-                Task<int> AddAsync(Customer customer);
-                Task<int> UpdateAsync(Customer customer);
-                Task<int> DeleteAsync(int id);
-            }
+            1. public class Customer
+            2. Create ICustomerRepository Interface:
+                        public interface ICustomerRepository
+                        {
+                            Task<IEnumerable<Customer>> GetAllAsync();
+                            Task<Customer?> GetByIdAsync(int id);
+                            Task<int> AddAsync(Customer customer);
+                            Task<int> UpdateAsync(Customer customer);
+                            Task<int> DeleteAsync(int id);
+                        }
 
-3. Create Customer Service
+            3. Create Customer Service
 
-4. public class CustomerRepository:ICustomerRepository => Infrastructure Layer
-    {
-        private readonly DBContext _db;
-        public CustomerRepository(DBContext db)
-        {
-        _db=db;
-        }
-    
-        public IEnumeriable<Customer>GetAll()
-        {
-            return _db.tblCustomer;
-        }
-            Similarly implement other methods of the interface:
-            
-            return _db.tblCustomer.Find(id);
+            4. public class CustomerRepository:ICustomerRepository => Infrastructure Layer
+                {
+                    private readonly DBContext _db;
+                    public CustomerRepository(DBContext db)
+                    {
+                    _db=db;
+                    }
+                
+                    public IEnumeriable<Customer>GetAll()
+                    {
+                        return _db.tblCustomer;
+                    }
+                        Similarly implement other methods of the interface:
+                        
+                        return _db.tblCustomer.Find(id);
 
-            _db.tblCustomer.Add(customer);
-            _db.SaveChanges();
+                        _db.tblCustomer.Add(customer);
+                        _db.SaveChanges();
 
-            _db.tblCustomer.Remove(id);
-            _db.SaveChanges();
+                        _db.tblCustomer.Remove(id);
+                        _db.SaveChanges();
 
-            _db.tblCustomer.Update(customer);
-            _db.SaveChanges();
+                        _db.tblCustomer.Update(customer);
+                        _db.SaveChanges();
 
 
 
 
 
 `}
-            </pre>
+                </pre>
+            </div>
         </>
     )
 }

@@ -29,6 +29,11 @@ import Khalid from "./Component/Family/Khalid";
 import General from "./Component/Practices/General";
 import ShortSyntax from "./Component/ShortSyntax";
 import CommonHooks from "./Component/hooks/CommonHook";
+import Cqrs from "./Advance/Cqrs";
+import Architecture from "./Advance/Architecture";
+import MicroServices from "./Advance/MicroServices";
+import SignalR from "./Advance/SignalR";
+
 
 const LazyLoading = lazy(() => import("./Component/LazyLoading"));
 function App() {
@@ -79,6 +84,10 @@ function App() {
             <Route path="general" element={<General />} />
             <Route path="shortsyntax" element={<ShortSyntax />} />
             <Route path="commonhooks" element={<CommonHooks />} />
+            <Route path="cqrs" element={<Cqrs />} />
+            <Route path="architecture" element={<Architecture />} />
+            <Route path="microservices" element={<MicroServices />} />
+            <Route path="signalr" element={<SignalR />} />
           </Routes>
         </Suspense>
       </main>

@@ -6,6 +6,7 @@ const CommonHook = () => {
     return (
 
         <>
+            <h1>Common React Hooks</h1>
             <div className="code_css">
                 <pre>
                     <code>

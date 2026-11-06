@@ -11,10 +11,10 @@ function Footer() {
         position: "fixed",
         bottom: 0,
         width: "100%",
-        height:"20px"
+        height: "20px"
       }}
     >
-       © 2026 My React App. All Rights Reserved.
+      © 2026 My React App. All Rights Reserved.
     </footer>
   );
 }
