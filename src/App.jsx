@@ -33,6 +33,8 @@ import Cqrs from "./Advance/Cqrs";
 import Architecture from "./Advance/Architecture";
 import MicroServices from "./Advance/MicroServices";
 import SignalR from "./Advance/SignalR";
+import Kafka from "./Advance/Kafka";
+
 
 
 const LazyLoading = lazy(() => import("./Component/LazyLoading"));
@@ -88,6 +90,7 @@ function App() {
             <Route path="architecture" element={<Architecture />} />
             <Route path="microservices" element={<MicroServices />} />
             <Route path="signalr" element={<SignalR />} />
+            <Route path="kafka" element={<Kafka />} />
           </Routes>
         </Suspense>
       </main>

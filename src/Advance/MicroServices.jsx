@@ -60,8 +60,9 @@ const MicroServices = () => {
                     
 
                     /* Policy Wrapping Order
+                    
                     Fallback
-                ↓
+                        ↓
                     Circuit Breaker
                         ↓
                     Retry
@@ -92,9 +93,10 @@ const MicroServices = () => {
 
                         var pipeline = Policy.WrapAsync(
                             fallback,
+                            breaker,
                             retry,
-                            timeout,
-                            breaker);
+                            timeout
+                            );
 
                         string data = await pipeline.ExecuteAsync(async () =>
                         {

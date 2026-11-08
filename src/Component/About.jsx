@@ -161,6 +161,8 @@ const About = () => {
     IP: 192.168.1.254
     User: userAdmin
     Pwd: tsbb@123
+
+    Public Address: 103.80.162.113
     -----------------------------------------
     Naukri
     ----------------

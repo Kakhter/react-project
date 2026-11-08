@@ -73,8 +73,11 @@ function Sidebar({ isOpen }) {
           <Link to="/app/microservices">Micro Services</Link>
           <br />
           <Link to="/app/signalr">SignalR</Link>
-
           <br />
+          <Link to="/app/cleanarchitecture">Clean Architecture</Link>
+          <br />
+          <Link to="/app/kafka">Kafka</Link>
+
         </ul>
       )}
     </aside>
